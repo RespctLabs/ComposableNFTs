@@ -358,4 +358,3 @@ contract ERC998ERC1155TopDown is
         return array;
     }
 }
-gi

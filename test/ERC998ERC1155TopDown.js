@@ -4,34 +4,9 @@ const web3 = require('web3');
 
 contract("ERC998ERC1155TopDownPresetMinterPauser", accounts => {
   let admin;
-  let erc998;
-  let erc1155;
-  let composable1 = 1;
-  let composable2 = 2;
-  let multiTokenTier0 = 0;  //tier 0
-  let multiTokenTier1 = 1;  //tier 1
-  let multiTokenTier2 = 2;  //tier 2
-  let user1 = accounts[1];
-  let user2 = accounts[2];
+   
 
-  before(async () => {
-    admin = accounts[0];
-    let multiTokenMaxSuply = 100;
-    // deploy erc1155 ie tier factory
-    erc1155 = await ERC1155PresetMinterPauser.new("https://ERC1155.com/{id}", { from: admin });
-    // MINTING TIERS
-    erc1155.mint(admin, multiTokenTier0, multiTokenMaxSuply, "0x");
-    erc1155.mint(admin, multiTokenTier1, multiTokenMaxSuply, "0x");
-    erc1155.mint(admin, multiTokenTier2, multiTokenMaxSuply, "0x");
-  });
-
-  // minting 998 composables {composable 998)) FOR EACH USER}
-  beforeEach(async () => {
-    erc998 = await ERC998ERC1155TopDownPresetMinterPauser.new("erc998", "ERC998", "https://ERC998.com/{id}", { from: admin });
-    await erc998.mint(user1, composable1, { from: admin });
-    await erc998.mint(user2, composable2, { from: admin });
-  })
-/// @param
+  
 /// @param
 /// @param
 /// @param
