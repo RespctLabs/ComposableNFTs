@@ -23,6 +23,7 @@ contract ERC998ERC1155TopDown is
         private _holdersOf;
 
     mapping(uint256 => EnumerableSet.AddressSet) private _childContract;
+
     mapping(uint256 => mapping(address => EnumerableSet.UintSet))
         private _childsForChildContract;
 
@@ -59,6 +60,7 @@ contract ERC998ERC1155TopDown is
      *
      * @dev Gives list of child contract where token ID has childs.
      */
+
     function childContractsFor(uint256 tokenId)
         external
         view
@@ -142,12 +144,7 @@ contract ERC998ERC1155TopDown is
     //         data
     //     );
     //     TransferSingleChild(
-    //         fromTokenId,
-    //         to,
-    //         childContract,
-    //         childTokenId,
-    //         amount
-    //     );
+    //         fromTokenId,ERC998ERC1155TopDownPresetMinterPauser
     // }
 
     /**
@@ -169,7 +166,7 @@ contract ERC998ERC1155TopDown is
 
     //     address operator = _msgSender();
     //     require(
-    //         ownerOf(fromTokenId) == operator ||
+    //         ownerOf(fromTokenId) == operator ||ERC998ERC1155TopDownPresetMinterPauser
     //             isApprovedForAll(ownerOf(fromTokenId), operator),
     //         "ERC998: caller is not owner nor approved"
     //     );
@@ -209,11 +206,11 @@ contract ERC998ERC1155TopDown is
     /**
      * @dev Receives a child token, the receiver token ID must be encoded in the
      * field data.
-      @param operator    Source address
-        @param from      Target address
-        @param id   IDs of each token type (order and length must match _values array)
-        @param amount  Transfer amounts per token type (order and length must match _ids array)
-        @param data    Additional data with no specified format, MUST be sent unaltered in call to the `ERC1155TokenReceiver` hook(s) on `_to`
+       @param operator    Source address
+       @param from      Target address
+       @param id   IDs of each token type (order and length must match _values array)
+       @param amount  Transfer amounts per token type (order and length must match _ids array)
+       @param data    Additional data with no specified format, MUST be sent unaltered in call to the `ERC1155TokenReceiver` hook(s) on `_to`
 
      */
     function onERC1155Received(
@@ -223,7 +220,8 @@ contract ERC998ERC1155TopDown is
         uint256 amount,
         bytes memory data
     ) public virtual override returns (bytes4) {
-        // require(id == (tier.add(1))); // check
+        // require(id == (tier.add(1)));
+        // checks
         require(
             data.length == 32,
             "ERC998: data must contain the unique uint256 tokenId to transfer the child token to"
@@ -281,7 +279,7 @@ contract ERC998ERC1155TopDown is
             data
         );
 
-        uint256 _receiverTokenId;
+        uint256 _receiverTokenId; //composableID
         uint256 _index = msg.data.length - 32;
         assembly {
             _receiverTokenId := calldataload(_index)
@@ -299,19 +297,26 @@ contract ERC998ERC1155TopDown is
         return this.onERC1155BatchReceived.selector;
     }
 
+    // function _upgradeSNFTtier() {}
+
     function _receiveChild(
-        uint256 tokenId,
+        uint256 tokenId, // composableId
         address childContract,
-        uint256 childTokenId,
-        uint256 amount
+        uint256 tierId,
+        uint256 amount // must be 1
     ) internal virtual {
+        //  a tier can only be added once to  a composable
+        require(_balances[tokenId][childContract][tierId] == 0 && amount == 1); //
+        // check last tier must be <tierId
+
+        // check
         if (!_childContract[tokenId].contains(childContract)) {
             _childContract[tokenId].add(childContract);
         }
-        if (_balances[tokenId][childContract][childTokenId] == 0) {
-            _childsForChildContract[tokenId][childContract].add(childTokenId);
+        if (_balances[tokenId][childContract][tierId] == 0) {
+            _childsForChildContract[tierId][childContract].add(tierId);
         }
-        _balances[tokenId][childContract][childTokenId] += amount;
+        _balances[tokenId][childContract][tierId] += amount;
     }
 
     function _removeChild(
