@@ -14,11 +14,15 @@ contract ERC998ERC1155TopDown is
     ERC1155Receiver,
     IERC998ERC1155TopDown
 {
+    // RESERVING TIER  index 0 is buying price set by creator
+    //                 index 1
+    uint256[] private tierPrice; //
     using EnumerableSet for EnumerableSet.AddressSet;
     using EnumerableSet for EnumerableSet.UintSet;
-
+    // composableId         address
     mapping(uint256 => mapping(address => mapping(uint256 => uint256)))
-        private _balances;
+        private _balances; // _ballance is current tier level for a user
+
     mapping(address => mapping(uint256 => EnumerableSet.UintSet))
         private _holdersOf;
 
@@ -33,10 +37,11 @@ contract ERC998ERC1155TopDown is
     constructor(
         string memory name,
         string memory symbol,
-        string memory baseURI
+        string memory baseURI,
+        uint256 csnftPrice
     ) public ERC721(name, symbol) {
         _setBaseURI(baseURI);
-        //  tier = 0;
+        tierPrice.add(csnftPrice);
     }
 
     /**
@@ -44,15 +49,17 @@ contract ERC998ERC1155TopDown is
      *
      *
      * @dev Gives child balance for a specific child contract and child id .
-     * @param tokenId,childContract, childTokenId,
-     * @return balance
+     * @param tokenId, composable ID
+     * @param childContract 1155tier upgrade contract
+     * @param tierId
+     * @return uint _balance
      */
     function childBalance(
         uint256 tokenId,
         address childContract,
-        uint256 childTokenId
+        uint256 tierId
     ) external view override returns (uint256) {
-        return _balances[tokenId][childContract][childTokenId];
+        return _balances[tokenId][childContract][tierId];
     }
 
     /**
@@ -87,7 +94,7 @@ contract ERC998ERC1155TopDown is
         override
         returns (uint256[] memory)
     {
-        uint256[] memory childTokenIds = new uint256[](
+        uint256[] memory tierIds = new uint256[](
             _childsForChildContract[tokenId][childContract].length()
         );
 
@@ -96,112 +103,11 @@ contract ERC998ERC1155TopDown is
             i < _childsForChildContract[tokenId][childContract].length();
             i++
         ) {
-            childTokenIds[i] = _childsForChildContract[tokenId][childContract]
-                .at(i);
+            tierIds[i] = _childsForChildContract[tokenId][childContract].at(i);
         }
 
-        return childTokenIds;
+        return tierIds;
     }
-
-    /**
-     * @dev Transfers child token from a token ID.
-     */
-    // function safeTransferChildFrom(
-    //     uint256 fromTokenId,
-    //     address to,
-    //     address childContract,
-    //     uint256 childTokenId,
-    //     uint256 amount,
-    //     bytes memory data
-    // ) public override {
-    //     require(to != address(0), "ERC998: transfer to the zero address");
-
-    //     address operator = _msgSender();
-    //     require(
-    //         ownerOf(fromTokenId) == operator ||
-    //             isApprovedForAll(ownerOf(fromTokenId), operator),
-    //         "ERC998: caller is not owner nor approved"
-    //     );
-
-    //     _beforeChildTransfer(
-    //         operator,
-    //         fromTokenId,
-    //         to,
-    //         childContract,
-    //         _asSingletonArray(childTokenId),
-    //         _asSingletonArray(amount),
-    //         data
-    //     );
-
-    //     _removeChild(fromTokenId, childContract, childTokenId, amount);
-
-    //     // TODO: maybe check if to == this
-    //     ERC1155(childContract).safeTransferFrom(
-    //         address(this),
-    //         to,
-    //         childTokenId,
-    //         amount,
-    //         data
-    //     );
-    //     TransferSingleChild(
-    //         fromTokenId,ERC998ERC1155TopDownPresetMinterPauser
-    // }
-
-    /**
-     * @dev Transfers batch of child tokens from a token ID.
-     */
-    // function safeBatchTransferChildFrom(
-    //     uint256 fromTokenId,
-    //     address to,
-    //     address childContract,
-    //     uint256[] memory childTokenIds,
-    //     uint256[] memory amounts,
-    //     bytes memory data
-    // ) public override {
-    //     require(
-    //         childTokenIds.length == amounts.length,
-    //         "ERC998: ids and amounts length mismatch"
-    //     );
-    //     require(to != address(0), "ERC998: transfer to the zero address");
-
-    //     address operator = _msgSender();
-    //     require(
-    //         ownerOf(fromTokenId) == operator ||ERC998ERC1155TopDownPresetMinterPauser
-    //             isApprovedForAll(ownerOf(fromTokenId), operator),
-    //         "ERC998: caller is not owner nor approved"
-    //     );
-
-    //     _beforeChildTransfer(
-    //         operator,
-    //         fromTokenId,
-    //         to,
-    //         childContract,
-    //         childTokenIds,
-    //         amounts,
-    //         data
-    //     );
-
-    //     for (uint256 i = 0; i < childTokenIds.length; ++i) {
-    //         uint256 childTokenId = childTokenIds[i];
-    //         uint256 amount = amounts[i];
-
-    //         _removeChild(fromTokenId, childContract, childTokenId, amount);
-    //     }
-    //     ERC1155(childContract).safeBatchTransferFrom(
-    //         address(this),
-    //         to,
-    //         childTokenIds,
-    //         amounts,
-    //         data
-    //     );
-    //     TransferBatchChild(
-    //         fromTokenId,
-    //         to,
-    //         childContract,
-    //         childTokenIds,
-    //         amounts
-    //     );
-    // }
 
     /**
      * @dev Receives a child token, the receiver token ID must be encoded in the
@@ -226,15 +132,15 @@ contract ERC998ERC1155TopDown is
             data.length == 32,
             "ERC998: data must contain the unique uint256 tokenId to transfer the child token to"
         );
-        _beforeChildTransfer(
-            operator,
-            0,
-            address(this),
-            from,
-            _asSingletonArray(id),
-            _asSingletonArray(amount),
-            data
-        );
+        // _beforeChildTransfer(
+        //     operator,
+        //     0,
+        //     address(this),
+        //     from,
+        //     _asSingletonArray(id),
+        //     _asSingletonArray(amount),
+        //     data
+        // );
         uint256 _receiverTokenId;
         uint256 _index = msg.data.length - 32;
         assembly {
@@ -244,16 +150,13 @@ contract ERC998ERC1155TopDown is
         _receiveChild(_receiverTokenId, msg.sender, id, amount);
         ReceivedChild(from, _receiverTokenId, msg.sender, id, amount);
         //  tier++;
-
         return this.onERC1155Received.selector;
     }
-
-    /// @dev add Tier upgrade logic to batch receive
 
     /**
      * @dev Receives a batch of child tokens, the receiver token ID must be
      * encoded in the field data.
-     */
+
     function onERC1155BatchReceived(
         address operator,
         address from,
@@ -295,15 +198,15 @@ contract ERC998ERC1155TopDown is
             );
         }
         return this.onERC1155BatchReceived.selector;
-    }
+    }    */
 
     // function _upgradeSNFTtier() {}
 
     function _receiveChild(
         uint256 tokenId, // composableId
-        address childContract,
+        address childContract, // 1155 tier contract
         uint256 tierId,
-        uint256 amount // must be 1
+        uint256 amount // must be 1   a tier can only be upgrded once
     ) internal virtual {
         //  a tier can only be added once to  a composable
         require(_balances[tokenId][childContract][tierId] == 0 && amount == 1); //
@@ -316,26 +219,23 @@ contract ERC998ERC1155TopDown is
         if (_balances[tokenId][childContract][tierId] == 0) {
             _childsForChildContract[tierId][childContract].add(tierId);
         }
-        _balances[tokenId][childContract][tierId] += amount;
+        _balances[tokenId][childContract][tierId] += amount; //this
     }
 
     function _removeChild(
         uint256 tokenId,
         address childContract,
-        uint256 childTokenId,
+        uint256 tierId,
         uint256 amount
     ) internal virtual {
         require(
-            amount != 0 ||
-                _balances[tokenId][childContract][childTokenId] >= amount,
+            amount != 0 || _balances[tokenId][childContract][tierId] >= amount,
             "ERC998: insufficient child balance for transfer"
         );
-        _balances[tokenId][childContract][childTokenId] -= amount;
-        if (_balances[tokenId][childContract][childTokenId] == 0) {
-            _holdersOf[childContract][childTokenId].remove(tokenId);
-            _childsForChildContract[tokenId][childContract].remove(
-                childTokenId
-            );
+        _balances[tokenId][childContract][tierId] -= amount;
+        if (_balances[tokenId][childContract][tierId] == 0) {
+            _holdersOf[childContract][tierId].remove(tokenId);
+            _childsForChildContract[tokenId][childContract].remove(tierId);
             if (_childsForChildContract[tokenId][childContract].length() == 0) {
                 _childContract[tokenId].remove(childContract);
             }

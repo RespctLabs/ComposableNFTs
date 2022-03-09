@@ -2,61 +2,62 @@
 pragma solidity ^0.6.0;
 
 /// @notice create tier supply and attach to composable
-/// receive MATIC and mint tier to msg.sender
-///             must own cSNFT
-
-/// @title A title that should describe the contract/interface
-/// @author The name of the author
-/// @notice Explain to an end user what this does
-/// @dev Explain to a developer any extra details
-
 import "@openzeppelin/contracts/presets/ERC1155PresetMinterPauser.sol";
 
-// contract snft1155UpgradePresetMinterPauser is ERC1155PresetMinterPauser {
-//     /// @notice attaches minted tier1155 to 998 composable
-//     ///
-//     /// @dev
-//     /// @param csnft composable contract address
-//     /// erc1155.safeTransferFrom(admin, SNFTerc998.address, multiTokenTier0, 1, web3.utils.encodePacked(composable1));
-//     /// mint(admin, multiTokenTier2, multiTokenMaxSuply, "0x")
-//     /// tierIds 1,2,3, ...
+contract snft1155UpgradePresetMinterPauser is ERC1155PresetMinterPauser {
+    // id 0 holds engagement F tokens;
+    // if user sends 'sufficient' F tokens, upgrade tier of composable
 
-//     /// @notice Explain to an end user what this does
-//     /// @dev Explain to a developer any extra details
-//     /// @param from erc1155 tierToken holder's address
-//     /// @param csnftContract address
-//     /// @param data arbitrary , for now
-//     /// @return Documents the return variables of a contract’s function state variable
-//     /// @inheritdoc	Copies all missing tags from the base function (must be followed by the contract name)
-//     function upgradeSNFT(
-//         address _from,
-//         address csnftContract,
-//         uint256 tierId,
-//         uint256 composableId
-//         bytes data,
-//     ) public payable {
-//         //receive F token
+    /// @dev add Tier upgrade logic to batch receive Add
+    function _upgradeSNFT(
+        uint256 fromTokenId,
+        address csnftContract,
+        uint256 tierId,
+        uint256 amount,
+        bytes memory data
+    ) private {
+        require(tierId > 0 && amount == 1);
 
-//         //checks cSNFT is held by msg.sender
-//         //
-//         mint(this, tierId, 1, data); // supply
+        // 0 address
+        require(to != address(0), "ERC998: transfer to the zero address");
+        // caller  of composable is owner of composable or is approved to transfer composable ,
+        address operator = _msgSender();
+        // require(
+        //     ownerOf(fromTokenId) == operator ||
+        //         isApprovedForAll(ownerOf(fromTokenId), operator),
+        //     "ERC998: caller is not owner nor approved"
+        // );
 
-//         _upgradeSNFT()
-//     }
+        // receive the F tiers
 
-//     /// @notice Explain to an end user what this does
-//     /// @dev Explain to a developer any extra details
-//     /// @param Documents a parameter just like in doxygen (must be followed by parameter name)
-//     /// @return Documents the return variables of a contract’s function state variable
-//     /// @inheritdoc	Copies all missing tags from the base function (must be followed by the contract name)
-//     function _upgradeSNFT() private {
-//         safeTransferFrom(
-//             _from,
-//             csnft,
-//             tierId,
-//             1, // only single transfer
-//             web3.utils.encodePacked(composableId)
-//         );
-//     }
+        safeTransferFrom(
+            _from,
+            csnftContract,
+            tierId,
+            1, // only single transfer
+            web3.utils.encodePacked(composableId)
+        );
+    }
 
-//     // rec
+    /// @todo handle recieving of F engagement token
+    /// then
+
+    /// @notice on receive F engagement  &token upgrade specified composable SNFT
+
+    /// @dev  receive tokens & execute _upgradeSNFT
+
+    function onERC1155Received(
+        address operator,
+        address from,
+        uint256 id,
+        uint256 composableId,
+        uint256 amount,
+        bytes memory data
+    ) public virtual override returns (bytes4) {
+        //on eceive
+        //  execute _
+        // _upgradeSNFT(composableId, csnftContract, id, amount, data);
+    }
+
+    // rec
+}

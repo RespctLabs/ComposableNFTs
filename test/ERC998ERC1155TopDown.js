@@ -42,7 +42,7 @@ contract("ERC998ERC1155TopDownPresetMinterPauser", accounts => {
   });
   it("receive tier0 again,should fail", async () => {
     await erc1155.safeTransferFrom(admin, erc998.address, multiTokenTier0, 1, web3.utils.encodePacked(composable1));
-    assert.equal(await erc998.childBalance(composable1, erc1155.address, multiTokenTier0), 2);
+    assert.equal3(await erc998.childBalance(composable1, erc1155.address, multiTokenTier0), 2);
   });
 // updated functionality, no transfer of child
   it("transfer child to other erc998, must fail", async () => {
