@@ -17,6 +17,7 @@ contract ERC998ERC1155TopDown is
     // RESERVING TIER  index 0 is buying price set by creator
     //                 index 1
     uint256[] private tierPrice; //
+
     using EnumerableSet for EnumerableSet.AddressSet;
     using EnumerableSet for EnumerableSet.UintSet;
     // composableId         address
@@ -33,7 +34,7 @@ contract ERC998ERC1155TopDown is
 
     // map each composable to maxTier
     /// (erc998.address , id )
-
+    /// @param csnftPrice marketplace buying price
     constructor(
         string memory name,
         string memory symbol,
@@ -45,17 +46,17 @@ contract ERC998ERC1155TopDown is
     }
 
     /**
-     * @notice tier balance
+     * @notice tier level for a composable
      *
      *
      * @dev Gives child balance for a specific child contract and child id .
      * @param tokenId, composable ID
      * @param childContract 1155tier upgrade contract
      * @param tierId
-     * @return uint _balance
+     * @return uint tier
      */
     function childBalance(
-        uint256 tokenId,
+        uint256 composableId,
         address childContract,
         uint256 tierId
     ) external view override returns (uint256) {
@@ -68,18 +69,18 @@ contract ERC998ERC1155TopDown is
      * @dev Gives list of child contract where token ID has childs.
      */
 
-    function childContractsFor(uint256 tokenId)
+    function childContractsFor(uint256 composableId)
         external
         view
         override
         returns (address[] memory)
     {
         address[] memory childContracts = new address[](
-            _childContract[tokenId].length()
+            _childContract[composableId].length()
         );
 
-        for (uint256 i = 0; i < _childContract[tokenId].length(); i++) {
-            childContracts[i] = _childContract[tokenId].at(i);
+        for (uint256 i = 0; i < _childContract[composableId].length(); i++) {
+            childContracts[i] = _childContract[composableId].at(i);
         }
 
         return childContracts;
@@ -88,22 +89,23 @@ contract ERC998ERC1155TopDown is
     /**
      * @dev Gives list of owned child ID on a child contract by token ID.
      */
-    function childIdsForOn(uint256 tokenId, address childContract)
+    function childIdsForOn(uint256 composableId, address childContract)
         external
         view
         override
         returns (uint256[] memory)
     {
         uint256[] memory tierIds = new uint256[](
-            _childsForChildContract[tokenId][childContract].length()
+            _childsForChildContract[composableId][childContract].length()
         );
 
         for (
             uint256 i = 0;
-            i < _childsForChildContract[tokenId][childContract].length();
+            i < _childsForChildContract[composableId][childContract].length();
             i++
         ) {
-            tierIds[i] = _childsForChildContract[tokenId][childContract].at(i);
+            tierIds[i] = _childsForChildContract[composableId][childContract]
+                .at(i);
         }
 
         return tierIds;
