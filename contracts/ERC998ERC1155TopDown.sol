@@ -14,7 +14,7 @@ contract ERC998ERC1155TopDown is
     ERC1155Receiver,
     IERC998ERC1155TopDown
 {
-    using SafeMath for uint256;
+ 
     // RESERVING TIER  index 0 is buying price set by creator
     //                 index 1
 
