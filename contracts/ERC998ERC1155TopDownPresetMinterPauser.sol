@@ -185,10 +185,20 @@ contract ERC1155TierUpgradePresetMinterPauser is ERC1155PresetMinterPauser {
     bytes4 internal constant ERC1155_ACCEPTED = 0xf23a6e61; // bytes4(keccak256("onERC1155Received(address,address,uint256,uint256,bytes)"))
     bytes4 internal constant ERC1155_BATCH_ACCEPTED = 0xbc197c81; // bytes4(keccak256("onERC1155BatchReceived(address,address,uint256[],uint256[],bytes)"))
 
-    constructor(string memory tierUri)
-        public
-        ERC1155PresetMinterPauser(tierUri)
-    {}
+    constructor(
+        string memory _name,
+        string memory _symbol,
+        string memory _baseURI,
+        uint256 _csnftBasePrice,
+        string memory tierUri
+    ) public ERC1155PresetMinterPauser(tierUri) {
+        ERC998ERC1155TopDownPresetMinterPauser csnftContract = new ERC998ERC1155TopDownPresetMinterPauser(
+                _name,
+                _symbol,
+                _baseURI,
+                _csnftBasePrice
+            );
+    }
 
     // function _mintTier(CSNFTContract csnftContract, uint tierId, bytes data ) private {
     //     uint256 amt = 1;
