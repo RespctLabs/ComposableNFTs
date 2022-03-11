@@ -6145,12 +6145,12 @@
         }
       },
       "links": {},
-      "address": "0x5Ee7ca34eA0b9751B5Deb42D60a51d981feE3f84",
-      "transactionHash": "0x27094e64e3a4d246366dfd03e38fd1de92201aabe24ae5594ecb5f748200e179"
+      "address": "0xE27cb432c9D5969d04eaf4f9E7c580AeA302820D",
+      "transactionHash": "0x9e5a4e4214b0f3220ec405b225163d5c39ad9f93fca5cbb1050c7687f035a92a"
     }
   },
   "schemaVersion": "3.4.1",
-  "updatedAt": "2022-03-11T16:05:17.653Z",
+  "updatedAt": "2022-03-11T21:51:04.434Z",
   "networkType": "ethereum",
   "devdoc": {
     "details": "{ERC1155} token, including: *  - ability for holders to burn (destroy) their tokens - a minter role that allows for token minting (creation) - a pauser role that allows to stop all token transfers * This contract uses {AccessControl} to lock permissioned functions using the different roles - head to its documentation for details. * The account that deploys the contract will be granted the minter and pauser roles, as well as the default admin role, which will let it grant both minter and pauser roles to other accounts.",
