@@ -14,9 +14,11 @@ contract ERC998ERC1155TopDown is
     ERC1155Receiver,
     IERC998ERC1155TopDown
 {
+    using SafeMath for uint256;
     // RESERVING TIER  index 0 is buying price set by creator
     //                 index 1
-    uint256[] private tierPrice; //
+
+    uint[] storage tierPrice;
 
     using EnumerableSet for EnumerableSet.AddressSet;
     using EnumerableSet for EnumerableSet.UintSet;
@@ -34,15 +36,15 @@ contract ERC998ERC1155TopDown is
 
     // map each composable to maxTier
     /// (erc998.address , id )
-    /// @param csnftPrice marketplace buying price
+    /// @param csnftBasePrice marketplace buying price
     constructor(
         string memory name,
         string memory symbol,
         string memory baseURI,
-        uint256 csnftPrice
+        uint256 csnftBasePrice
     ) public ERC721(name, symbol) {
         _setBaseURI(baseURI);
-        tierPrice.add(csnftPrice);
+        uint[] storage tierPrice[0] = csnftBasePrice;
     }
 
     /**
@@ -50,9 +52,9 @@ contract ERC998ERC1155TopDown is
      *
      *
      * @dev Gives child balance for a specific child contract and child id .
-     * @param tokenId, composable ID
+     * @param composableId, composable ID
      * @param childContract 1155tier upgrade contract
-     * @param tierId
+     * @param tierId tier level
      * @return uint tier
      */
     function childBalance(
@@ -60,7 +62,7 @@ contract ERC998ERC1155TopDown is
         address childContract,
         uint256 tierId
     ) external view override returns (uint256) {
-        return _balances[tokenId][childContract][tierId];
+        return _balances[composableId][childContract][tierId];
     }
 
     /**
@@ -111,16 +113,6 @@ contract ERC998ERC1155TopDown is
         return tierIds;
     }
 
-    /**
-     * @dev Receives a child token, the receiver token ID must be encoded in the
-     * field data.
-       @param operator    Source address
-       @param from      Target address
-       @param id   IDs of each token type (order and length must match _values array)
-       @param amount  Transfer amounts per token type (order and length must match _ids array)
-       @param data    Additional data with no specified format, MUST be sent unaltered in call to the `ERC1155TokenReceiver` hook(s) on `_to`
-
-     */
     function onERC1155Received(
         address operator,
         address from,
@@ -134,15 +126,15 @@ contract ERC998ERC1155TopDown is
             data.length == 32,
             "ERC998: data must contain the unique uint256 tokenId to transfer the child token to"
         );
-        // _beforeChildTransfer(
-        //     operator,
-        //     0,
-        //     address(this),
-        //     from,
-        //     _asSingletonArray(id),
-        //     _asSingletonArray(amount),
-        //     data
-        // );
+        _beforeChildTransfer(
+            operator,
+            0,
+            address(this),
+            from,
+            _asSingletonArray(id),
+            _asSingletonArray(amount),
+            data
+        );
         uint256 _receiverTokenId;
         uint256 _index = msg.data.length - 32;
         assembly {
@@ -154,53 +146,6 @@ contract ERC998ERC1155TopDown is
         //  tier++;
         return this.onERC1155Received.selector;
     }
-
-    /**
-     * @dev Receives a batch of child tokens, the receiver token ID must be
-     * encoded in the field data.
-
-    function onERC1155BatchReceived(
-        address operator,
-        address from,
-        uint256[] memory ids,
-        uint256[] memory values,
-        bytes memory data
-    ) public virtual override returns (bytes4) {
-        require(
-            data.length == 32,
-            "ERC998: data must contain the unique uint256 tokenId to transfer the child token to"
-        );
-        require(
-            ids.length == values.length,
-            "ERC1155: ids and values length mismatch"
-        );
-        _beforeChildTransfer(
-            operator,
-            0,
-            address(this),
-            from,
-            ids,
-            values,
-            data
-        );
-
-        uint256 _receiverTokenId; //composableID
-        uint256 _index = msg.data.length - 32;
-        assembly {
-            _receiverTokenId := calldataload(_index)
-        }
-        for (uint256 i = 0; i < ids.length; i++) {
-            _receiveChild(_receiverTokenId, msg.sender, ids[i], values[i]);
-            ReceivedChild(
-                from,
-                _receiverTokenId,
-                msg.sender,
-                ids[i],
-                values[i]
-            );
-        }
-        return this.onERC1155BatchReceived.selector;
-    }    */
 
     // function _upgradeSNFTtier() {}
 
@@ -263,5 +208,52 @@ contract ERC998ERC1155TopDown is
         array[0] = element;
 
         return array;
+    }
+
+    /**
+     * @dev Receives a batch of child tokens, the receiver token ID must be
+     * encoded in the field data.
+     */
+    function onERC1155BatchReceived(
+        address operator,
+        address from,
+        uint256[] memory ids,
+        uint256[] memory values,
+        bytes memory data
+    ) public virtual override returns (bytes4) {
+        require(
+            data.length == 32,
+            "ERC998: data must contain the unique uint256 tokenId to transfer the child token to"
+        );
+        require(
+            ids.length == values.length,
+            "ERC1155: ids and values length mismatch"
+        );
+        _beforeChildTransfer(
+            operator,
+            0,
+            address(this),
+            from,
+            ids,
+            values,
+            data
+        );
+
+        uint256 _receiverTokenId;
+        uint256 _index = msg.data.length - 32;
+        assembly {
+            _receiverTokenId := calldataload(_index)
+        }
+        for (uint256 i = 0; i < ids.length; i++) {
+            _receiveChild(_receiverTokenId, msg.sender, ids[i], values[i]);
+            ReceivedChild(
+                from,
+                _receiverTokenId,
+                msg.sender,
+                ids[i],
+                values[i]
+            );
+        }
+        return this.onERC1155BatchReceived.selector;
     }
 }
