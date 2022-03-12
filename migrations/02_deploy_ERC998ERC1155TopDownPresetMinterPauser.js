@@ -9,6 +9,6 @@ let csnftPrice = 1000;
 
 // name, string memory symbol, string memory baseURI
 module.exports = function (deployer) {
-  deployer.deploy(ERC998ERC1155TopDownPresetMinterPauser, name, symbol, baseURI,csnftPrice);
-  deployer.deploy(ERC1155PresetMinterPauser,"https://ERC1155.com/{id}");
+  // deployer.deploy(ERC998ERC1155TopDownPresetMinterPauser, name, symbol, baseURI,csnftPrice);
+  deployer.deploy(ERC1155PresetMinterPauser,"https://ERC1155.com/{id}",  name, symbol, baseURI,csnftPrice);
 };

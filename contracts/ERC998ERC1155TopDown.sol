@@ -14,11 +14,10 @@ contract ERC998ERC1155TopDown is
     ERC1155Receiver,
     IERC998ERC1155TopDown
 {
-
     // RESERVING TIER  index 0 is buying price set by creator
     //                 index 1
 
-    uint256 tierPrice;
+    uint256 csnftBasePrice;
 
     using EnumerableSet for EnumerableSet.AddressSet;
     using EnumerableSet for EnumerableSet.UintSet;
@@ -38,13 +37,13 @@ contract ERC998ERC1155TopDown is
     /// (erc998.address , id )
     /// @param _csnftBasePrice marketplace buying price
     constructor(
-            string memory _name,
-            string memory _symbol,
-            string memory _baseURI,
-            uint256 _csnftBasePrice
+        string memory _name,
+        string memory _symbol,
+        string memory _baseURI,
+        uint256 _csnftBasePrice
     ) public ERC721(_name, _symbol) {
         _setBaseURI(_baseURI);
-        uint256 tierPrice = _csnftBasePrice;
+        csnftBasePrice = _csnftBasePrice;
     }
 
     /**
