@@ -17,8 +17,6 @@ contract ERC998ERC1155TopDown is
     // RESERVING TIER  index 0 is buying price set by creator
     //                 index 1
 
-    uint256 csnftBasePrice;
-
     using EnumerableSet for EnumerableSet.AddressSet;
     using EnumerableSet for EnumerableSet.UintSet;
     // composableId         address
@@ -35,15 +33,12 @@ contract ERC998ERC1155TopDown is
 
     // map each composable to maxTier
     /// (erc998.address , id )
-    /// @param _csnftBasePrice marketplace buying price
     constructor(
         string memory _name,
         string memory _symbol,
-        string memory _baseURI,
-        uint256 _csnftBasePrice
+        string memory _baseURI
     ) public ERC721(_name, _symbol) {
         _setBaseURI(_baseURI);
-        csnftBasePrice = _csnftBasePrice;
     }
 
     /**
