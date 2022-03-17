@@ -50,6 +50,7 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
         _setupRole(DEFAULT_ADMIN_ROLE, _msgSender());
         _setupRole(MINTER_ROLE, _msgSender());
         _setupRole(PAUSER_ROLE, _msgSender());
+        composableCount = 0;
     }
 
     /**
@@ -62,17 +63,22 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
      *
      * - the caller must have the `MINTER_ROLE`.
      */
+
+    ///
     function mint(address to, uint256 tokenId) public virtual {
         require(
             hasRole(MINTER_ROLE, _msgSender()),
             "ERC721: must have minter role to mint"
         );
-        require(tokenId > composableCount);
-
+        require(tokenId == (composableCount + 1)); // implement safemath
+        require(
+            ownerToComposableId[msg.sender] == 0,
+            " mint only once per user"
+        );
         // We cannot just use balanceOf to create the new tokenId because tokens
         // can be burned (destroyed), so we need a separate counter.
         _mint(to, tokenId);
-        indexedComposableId[tokenId] = msg.sender;
+        // indexedComposableId[tokenId] = msg.sender;
         composableCount++;
     }
 
@@ -165,5 +171,3 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
         );
     }
 }
-
-
