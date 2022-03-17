@@ -32,8 +32,10 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
     bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
 
     uint256 composableCount;
-    address[] public indexedComposableId;
-    mapping(address => uint256) public ownerToComposableId;
+
+    // address[] public indexedComposableId;
+    // mapping(address => uint256) public ownerToComposableId;
+    // mapping(address => uint8) ownerIsHolder; //0 for false ,1 for true
 
     /**
      * @dev Grants `DEFAULT_ADMIN_ROLE`, `MINTER_ROLE` and `PAUSER_ROLE` to the
@@ -64,21 +66,22 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
      * - the caller must have the `MINTER_ROLE`.
      */
 
-    ///
-    function mint(address to, uint256 tokenId) public virtual {
+    /// admin would be marketplace
+
+    // require to isnt an holder of snft
+    function mint(address to) public virtual {
         require(
             hasRole(MINTER_ROLE, _msgSender()),
             "ERC721: must have minter role to mint"
         );
-        require(tokenId == (composableCount + 1)); // implement safemath
-        require(
-            ownerToComposableId[msg.sender] == 0,
-            " mint only once per user"
-        );
-        // We cannot just use balanceOf to create the new tokenId because tokens
-        // can be burned (destroyed), so we need a separate counter.
+        require(balanceOf(to) == 0);
+
+        uint256 tokenId = composableCount + 1;
+        // require()); // implement safemath
+
+        // // We cannot just use balanceOf to create the new tokenId because tokens
+        // // can be burned (destroyed), so we need a separate counter.
         _mint(to, tokenId);
-        // indexedComposableId[tokenId] = msg.sender;
         composableCount++;
     }
 

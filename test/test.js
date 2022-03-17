@@ -17,7 +17,7 @@ contract("ERC998ERC1155TopDownPresetMinterPauser", accounts => {
   beforeEach (async () => {
     admin = accounts[0];
     erc998 = await ERC998ERC1155TopDownPresetMinterPauser.new("erc998", "ERC998", "https://ERC998.com/{id}", { from: admin });
-    erc1155 = await  .new("https://ERC1155.com/{id}", erc998.address, { from: admin });
+    erc1155 = await ERC1155TierUpgradePresetMinterPauser.new("https://ERC1155.com/{id}", erc998.address, { from: admin });
     // await erc998.mint(user1, composable1, { from: admin });
     // await erc998.mint(user2, composable2, { from: admin });
   });
@@ -31,16 +31,16 @@ contract("ERC998ERC1155TopDownPresetMinterPauser", accounts => {
     
   });
 
-  // minting 998 composables {composable 998)) FOR EACH USER}
-  beforeEach(async () => {
-    // erc998 = await ERC998ERC1155TopDownPresetMinterPauser.new("erc998", "ERC998", "https://ERC998.com/{id}", { from: admin });
+//   // minting 998 composables {composable 998)) FOR EACH USER}
+//   beforeEach(async () => {
+//     // erc998 = await ERC998ERC1155TopDownPresetMinterPauser.new("erc998", "ERC998", "https://ERC998.com/{id}", { from: admin });
 
-  })
+//   })
 
-  it ("User1 has composable1", async() => {
-    assert(await erc998.balanceOf(user1, composable1),1);
-    assert(await erc998.balanceOf(user2, composable2),1);
-  });
+//   it ("User1 has composable1", async() => {
+//     assert(await erc998.balanceOf(user1, composable1),1);
+//     assert(await erc998.balanceOf(user2, composable2),1);
+//   });
 
   // beforeEach(async () => {
   //   // erc998 = await ERC998ERC1155TopDownPresetMinterPauser.new("erc998", "ERC998", "https://ERC998.com/{id}", { from: admin });
