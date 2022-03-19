@@ -33,10 +33,6 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
 
     uint256 composableCount;
 
-    // address[] public indexedComposableId;
-    // mapping(address => uint256) public ownerToComposableId;
-    // mapping(address => uint8) ownerIsHolder; //0 for false ,1 for true
-
     /**
      * @dev Grants `DEFAULT_ADMIN_ROLE`, `MINTER_ROLE` and `PAUSER_ROLE` to the
      * account that deploys the contract.
@@ -68,15 +64,18 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
 
     /// admin would be marketplace
 
-    // require to isnt an holder of snft
+    // >one account can only mint once
+
+    /// @param to addres the SNFT is minted to
     function mint(address to) public virtual {
         require(
             hasRole(MINTER_ROLE, _msgSender()),
             "ERC721: must have minter role to mint"
         );
+
         require(balanceOf(to) == 0);
 
-        uint256 tokenId = composableCount + 1;
+        uint256 tokenId = composableCount + 1; //totalSupply()
         // require()); // implement safemath
 
         // // We cannot just use balanceOf to create the new tokenId because tokens

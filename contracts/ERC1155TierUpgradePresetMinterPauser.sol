@@ -2,7 +2,12 @@
 pragma solidity ^0.6.0;
 ///@dev handle Batch receiving function - !!!!
 
-/// @notice create tier supply and attach to composable
+/// @title ERC1155TUMP creates tier supply and attaches tier to composable
+/// @author respect-club
+/// @notice receives Engagement tokens and attaches tier to composable
+/// @dev 1155 tokenId reserved for engagement token
+
+/// @notice
 import "@openzeppelin/contracts/presets/ERC1155PresetMinterPauser.sol";
 import "@openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol";
 import "@openzeppelin/contracts/token/ERC1155/ERC1155Holder.sol";
@@ -18,7 +23,9 @@ contract ERC1155TierUpgradePresetMinterPauser is ERC1155PresetMinterPauser {
 
     ERC998ERC1155TopDownPresetMinterPauser csnftContract;
 
+    /// @notice csnft contract is deployed and linked to ERC1155TUMP
     /// @param _csnftContractAdr deployed csnft contract
+
     constructor(string memory tierUri, address _csnftContractAdr)
         public
         ERC1155PresetMinterPauser(tierUri)
@@ -33,6 +40,9 @@ contract ERC1155TierUpgradePresetMinterPauser is ERC1155PresetMinterPauser {
     //     _mint(csnftContract.address, tierId,1, data);
     // }
 
+    /// @notice upgrade user tier
+    /// @dev Explain to a developer any extra details
+
     function upgradeSNFT(
         uint256 _composableId,
         uint256 _tierId,
@@ -45,7 +55,7 @@ contract ERC1155TierUpgradePresetMinterPauser is ERC1155PresetMinterPauser {
                 0
         );
 
-        require(_tierId > 0 || balanceOf(msg.sender, _tierId - 1) == 1);
+        require(_tierId != 0 && (balanceOf(msg.sender, _tierId - 1) == 1));
         // 0 address
         // require(
         //     csnftContract != address(0),
