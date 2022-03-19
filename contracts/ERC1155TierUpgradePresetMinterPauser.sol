@@ -30,40 +30,46 @@ contract ERC1155TierUpgradePresetMinterPauser is ERC1155PresetMinterPauser {
         public
         ERC1155PresetMinterPauser(tierUri)
     {
+        require(
+            _csnftContractAdr != address(0),
+            "ERC998: transfer to the zero address"
+        );
+
         csnftContract = ERC998ERC1155TopDownPresetMinterPauser(
             _csnftContractAdr
         );
     }
 
-    // function _mintTier(CSNFTContract csnftContract, uint tierId, bytes data ) private {
-    //     uint256 amt = 1;
-    //     _mint(csnftContract.address, tierId,1, data);
-    // }
+    /// claimF engagement points
+    //function claim(){}
 
     /// @notice upgrade user tier
-    /// @dev Explain to a developer any extra details
-
+    /// @dev fetch curent tier of msg.sender
+    /// msg.value user sends
     function upgradeSNFT(
         uint256 _composableId,
-        uint256 _tierId,
+        uint256 _upgradeToTierId, // upgrade to
         bytes calldata data // web3.utils.encodePacked(composableId)
     ) external payable {
-        //add tier checks
+        //add tier checks  if tierId =1 bal(t-1) == 1
+        // at t=0 bal(0) >= _FengagementPOints
+        require(_upgradeToTierId != 0);
 
-        require(
-            csnftContract.childBalance(_composableId, address(this), _tierId) ==
-                0
-        );
+        uint256 upgradeCost = csnftContract.getTierPrice(_upgradeToTierId);
+        require(balanceOf(msg.sender, 0) >= upgradeCost); // have enough Engagment points at
+        require(balanceOf(msg.sender, _upgradeToTierId - 1) >= 1);
 
-        require(_tierId != 0 && (balanceOf(msg.sender, _tierId - 1) == 1));
-        // 0 address
-        // require(
-        //     csnftContract != address(0),
-        //     "ERC998: transfer to the zero address"
-        // );
-        // caller  of composable is owner of composable or is approved to transfer composable ,
+        // if (_tierId == 1) {
+        //     //first upgrade
+        //     require(balanceOf(msg.sender, _tierId - 1) >= 1);
+        // } else {
+        //     require(
+        //         (balanceOf(msg.sender, _tierId) >= _tierPriceArr[_tierId + 1])
+        //     ); //
+        // }
+        burn(msg.sender, 0, upgradeCost); // burn engagement tid 0
 
-        _mint(address(csnftContract), _tierId, 1, data);
+        _mint(address(csnftContract), _upgradeToTierId, 1, data);
     }
 
     // implement function to mint | claim F(creators engagement ) at tokenId 0

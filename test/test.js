@@ -13,12 +13,12 @@ contract("ERC998ERC1155TopDownPresetMinterPauser", accounts => {
   let multiTokenTier2 = 2;  //tier 2
   let user1 = accounts[1];
   let user2 = accounts[2];
-
+  let engagementPoint0 = 100;
 //deploy contracts ERC998TDMP , ERC1155TUMP
 
   beforeEach (async () => {
     admin = accounts[0];
-    erc998 = await  ERC998ERC1155TopDownPresetMinterPauser.new("erc998", "ERC998", "https://ERC998.com/{id}", { from: admin });
+    erc998 = await  ERC998ERC1155TopDownPresetMinterPauser.new("erc998", "ERC998", "https://ERC998.com/{id}",engagementPoint0, { from: admin });
     erc1155 = await ERC1155TierUpgradePresetMinterPauser.new("https://ERC1155.com/{id}", erc998.address, { from: admin });
     // await erc998.mint(user1, composable1, { from: admin });
     // await erc998.mint(user2, composable2, { from: admin });

@@ -150,7 +150,7 @@ contract ERC998ERC1155TopDown is
         uint256 amount // must be 1   a tier can only be upgrded once
     ) internal virtual {
         //  a tier can only be added once to  a composable
-        require(_balances[tokenId][childContract][tierId] == 0 && amount == 1); //
+        // require(_balances[tokenId][childContract][tierId] == 0 && amount == 1); //
         // check last tier must be <tierId
 
         // check

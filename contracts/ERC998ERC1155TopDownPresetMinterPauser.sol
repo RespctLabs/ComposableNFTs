@@ -30,7 +30,7 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
 {
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
     bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
-
+    uint256[] tierPriceArray;
     uint256 composableCount;
 
     /**
@@ -43,12 +43,20 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
     constructor(
         string memory name,
         string memory symbol,
-        string memory baseURI
+        string memory baseURI,
+        uint256 _fEngagementPoints // at 115 tierId 0
     ) public ERC998ERC1155TopDown(name, symbol, baseURI) {
         _setupRole(DEFAULT_ADMIN_ROLE, _msgSender());
         _setupRole(MINTER_ROLE, _msgSender());
         _setupRole(PAUSER_ROLE, _msgSender());
         composableCount = 0;
+        tierPriceArray.push(_fEngagementPoints);
+    }
+
+    /// return current tier and tier array price
+
+    function getTierPrice(uint256 _tierId) public returns (uint256) {
+        return tierPriceArray[_tierId];
     }
 
     /**
