@@ -30,7 +30,8 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
 {
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
     bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
-    uint256[] tierPriceArray;
+    mapping(uint256 => uint256) tierIdtoUpgradeCost; // 1,2,3 ...  cost to upgrade to tier1, tier2, tier3...
+    mapping(address => uint256) public ownerToComposableId;
     uint256 composableCount;
 
     /**
@@ -50,13 +51,35 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
         _setupRole(MINTER_ROLE, _msgSender());
         _setupRole(PAUSER_ROLE, _msgSender());
         composableCount = 0;
-        tierPriceArray.push(_fEngagementPoints);
+        tierIdtoUpgradeCost[1] = _fEngagementPoints;
     }
 
-    /// return current tier and tier array price
+    /// @notice manually add tier upgrade prices
+    function setTierUpgradeCost(uint256 _tierId, uint256 _cost) public {
+        require(
+            hasRole(MINTER_ROLE, _msgSender()),
+            "Unauthorized tier price setter"
+        );
 
-    function getTierPrice(uint256 _tierId) public returns (uint256) {
-        return tierPriceArray[_tierId];
+        tierIdtoUpgradeCost[_tierId] = _cost;
+    }
+
+    /// returns uint price of tier upgrade
+    function getTierUpgradeCost(uint256 _tierId) public view returns (uint256) {
+        uint256 cost = tierIdtoUpgradeCost[_tierId];
+        return cost;
+    }
+
+    function getComposableId(address _owner) public view returns (uint256) {
+        uint256 cid = ownerToComposableId[_owner];
+        return cid;
+    }
+
+    function isUpgradeable(uint256 cid) public returns (bool) {
+        // msg.sender is owner of the composable
+        // has enough engagement points at tierId = 0
+        // has sufficient engagement points at tid-1
+        require(balanceOf(msg.sender) == 1);
     }
 
     /**
@@ -89,7 +112,8 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
         // // We cannot just use balanceOf to create the new tokenId because tokens
         // // can be burned (destroyed), so we need a separate counter.
         _mint(to, tokenId);
-        composableCount++;
+        ownerToComposableId[to] = tokenId;
+        composableCount = tokenId;
     }
 
     /**

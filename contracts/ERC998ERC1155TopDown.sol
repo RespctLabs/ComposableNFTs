@@ -19,9 +19,9 @@ contract ERC998ERC1155TopDown is
 
     using EnumerableSet for EnumerableSet.AddressSet;
     using EnumerableSet for EnumerableSet.UintSet;
-    // composableId         address
+
     mapping(uint256 => mapping(address => mapping(uint256 => uint256)))
-        private _balances; // _ballance is current tier level for a user
+        private _balances;
 
     mapping(address => mapping(uint256 => EnumerableSet.UintSet))
         private _holdersOf;
@@ -53,7 +53,7 @@ contract ERC998ERC1155TopDown is
      */
     function childBalance(
         uint256 composableId,
-        address childContract,
+        address childContract, // ERC1155TUMP contract address
         uint256 tierId
     ) external view override returns (uint256) {
         return _balances[composableId][childContract][tierId];
@@ -149,10 +149,6 @@ contract ERC998ERC1155TopDown is
         uint256 tierId,
         uint256 amount // must be 1   a tier can only be upgrded once
     ) internal virtual {
-        //  a tier can only be added once to  a composable
-        // require(_balances[tokenId][childContract][tierId] == 0 && amount == 1); //
-        // check last tier must be <tierId
-
         // check
         if (!_childContract[tokenId].contains(childContract)) {
             _childContract[tokenId].add(childContract);

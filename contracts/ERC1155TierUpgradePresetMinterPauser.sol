@@ -42,22 +42,56 @@ contract ERC1155TierUpgradePresetMinterPauser is ERC1155PresetMinterPauser {
 
     /// claimF engagement points
     //function claim(){}
+    /// @param _to csnftContract Address
+    /// @param _amount of F engagement  points
+    /// @param _data web3.utils.encodePacked(composableId)
+    function mintEngagementPoints(
+        address _to,
+        uint256 _amount,
+        bytes memory _data
+    ) public {
+        require(
+            hasRole(MINTER_ROLE, _msgSender()),
+            "ERC1155TUMP unauthorized engagement minter"
+        );
+
+        mint(_to, 0, _amount, _data);
+    }
 
     /// @notice upgrade user tier
     /// @dev fetch curent tier of msg.sender
     /// msg.value user sends
     function upgradeSNFT(
+        address _to, //  a/c of owner of snft
         uint256 _composableId,
         uint256 _upgradeToTierId, // upgrade to
         bytes calldata data // web3.utils.encodePacked(composableId)
-    ) external payable {
+    ) external returns (bool) {
         //add tier checks  if tierId =1 bal(t-1) == 1
         // at t=0 bal(0) >= _FengagementPOints
         require(_upgradeToTierId != 0);
 
-        uint256 upgradeCost = csnftContract.getTierPrice(_upgradeToTierId);
-        require(balanceOf(msg.sender, 0) >= upgradeCost); // have enough Engagment points at
-        require(balanceOf(msg.sender, _upgradeToTierId - 1) >= 1);
+        // checks if msg.sender owns the composable
+        require(
+            csnftContract.ownerToComposableId(_to) == _composableId,
+            ">Unauthorized caller"
+        );
+        // fetch upgrading cost
+        uint256 upgradeCost = csnftContract.getTierUpgradeCost(
+            _upgradeToTierId
+        );
+
+        // check if owner has sufficient engagement points
+        require(
+            balanceOf(_to, 0) >= upgradeCost,
+            "insufficient engagement points"
+        );
+
+        // check if owner has the last tier
+        require(
+            balanceOf(_to, _upgradeToTierId - 1) >= 1,
+            ">Non-sequential tier upgrade error"
+        );
 
         // if (_tierId == 1) {
         //     //first upgrade
@@ -67,10 +101,11 @@ contract ERC1155TierUpgradePresetMinterPauser is ERC1155PresetMinterPauser {
         //         (balanceOf(msg.sender, _tierId) >= _tierPriceArr[_tierId + 1])
         //     ); //
         // }
-        burn(msg.sender, 0, upgradeCost); // burn engagement tid 0
+        burn(_to, 0, upgradeCost); // burn engagement tid 0
 
         _mint(address(csnftContract), _upgradeToTierId, 1, data);
-    }
 
+        return true;
+    }
     // implement function to mint | claim F(creators engagement ) at tokenId 0
 }
