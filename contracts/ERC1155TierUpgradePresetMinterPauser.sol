@@ -55,18 +55,9 @@ contract ERC1155TierUpgradePresetMinterPauser is ERC1155PresetMinterPauser {
         // at t=0 bal(0) >= _FengagementPOints
         require(_upgradeToTierId != 0);
 
-        uint256 upgradeCost = csnftContract.getTierPrice(_upgradeToTierId);
-        require(balanceOf(msg.sender, 0) >= upgradeCost); // have enough Engagment points at
+        uint256 upgradeCost = csnftContract.getTierPrice(_upgradeToTierId-1);
+        require(balanceOf(msg.sender, 0) >= upgradeCost, "Doesnt have enough Engagement"); // have enough Engagment points at
         require(balanceOf(msg.sender, _upgradeToTierId - 1) >= 1);
-
-        // if (_tierId == 1) {
-        //     //first upgrade
-        //     require(balanceOf(msg.sender, _tierId - 1) >= 1);
-        // } else {
-        //     require(
-        //         (balanceOf(msg.sender, _tierId) >= _tierPriceArr[_tierId + 1])
-        //     ); //
-        // }
         burn(msg.sender, 0, upgradeCost); // burn engagement tid 0
 
         _mint(address(csnftContract), _upgradeToTierId, 1, data);
