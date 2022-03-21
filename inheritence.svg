@@ -1,0 +1,403 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1986pt" height="476pt" viewBox="0.00 0.00 1986.17 476.00">
+<g id="graph0" class="graph" transform="translate(-234.60152970499576,123.35272616953347) scale(1.1859144994109467)" data-name="G">
+
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-472 1982.17,-472 1982.17,4 -4,4" style=""/>
+<!-- ERC998ERC1155TopDownPresetMinterPauser -->
+<g id="node1" class="node" pointer-events="visible" data-name="ERC998ERC1155TopDownPresetMinterPauser">
+
+<ellipse fill="none" stroke="black" cx="639.77" cy="-378" rx="197.34" ry="18" style=""/>
+<text text-anchor="middle" x="639.77" y="-373.8" font-family="Times,serif" font-size="14.00" style="">ERC998ERC1155TopDownPresetMinterPauser</text>
+</g>
+<!-- Context -->
+<g id="node2" class="node" pointer-events="visible" data-name="Context">
+
+<ellipse fill="none" stroke="black" cx="806.77" cy="-162" rx="41.73" ry="18" style=""/>
+<text text-anchor="middle" x="806.77" y="-157.8" font-family="Times,serif" font-size="14.00" style="">Context</text>
+</g>
+<!-- ERC998ERC1155TopDownPresetMinterPauser&#45;&gt;Context -->
+<g id="edge1" class="edge" data-name="ERC998ERC1155TopDownPresetMinterPauser-&gt;Context">
+
+<path fill="none" stroke="black" d="M638.94,-359.88C638.77,-341.15 640.68,-310.75 652.77,-288 679.13,-238.38 734.45,-201.23 771.1,-180.81" style=""/>
+<polygon fill="black" stroke="black" points="772.87,-183.84 779.99,-175.99 769.53,-177.68 772.87,-183.84" style=""/>
+</g>
+<!-- AccessControl -->
+<g id="node3" class="node" pointer-events="visible" data-name="AccessControl">
+
+<ellipse fill="none" stroke="black" cx="729.77" cy="-306" rx="67.77" ry="18" style=""/>
+<text text-anchor="middle" x="729.77" y="-301.8" font-family="Times,serif" font-size="14.00" style="">AccessControl</text>
+</g>
+<!-- ERC998ERC1155TopDownPresetMinterPauser&#45;&gt;AccessControl -->
+<g id="edge2" class="edge" data-name="ERC998ERC1155TopDownPresetMinterPauser-&gt;AccessControl">
+
+<path fill="none" stroke="black" d="M661.55,-360.05C673.33,-350.89 688.03,-339.46 700.77,-329.56" style=""/>
+<polygon fill="black" stroke="black" points="703.06,-332.21 708.8,-323.31 698.76,-326.68 703.06,-332.21" style=""/>
+</g>
+<!-- ERC998ERC1155TopDown -->
+<g id="node4" class="node" pointer-events="visible" data-name="ERC998ERC1155TopDown">
+
+<ellipse fill="none" stroke="black" cx="314.77" cy="-306" rx="121.6" ry="18" style=""/>
+<text text-anchor="middle" x="314.77" y="-301.8" font-family="Times,serif" font-size="14.00" style="">ERC998ERC1155TopDown</text>
+</g>
+<!-- ERC998ERC1155TopDownPresetMinterPauser&#45;&gt;ERC998ERC1155TopDown -->
+<g id="edge3" class="edge" data-name="ERC998ERC1155TopDownPresetMinterPauser-&gt;ERC998ERC1155TopDown">
+
+<path fill="none" stroke="black" d="M566.42,-361.2C514.01,-349.91 443.68,-334.77 390.69,-323.35" style=""/>
+<polygon fill="black" stroke="black" points="391.18,-319.88 380.67,-321.19 389.71,-326.72 391.18,-319.88" style=""/>
+</g>
+<!-- Pausable -->
+<g id="node5" class="node" pointer-events="visible" data-name="Pausable">
+
+<ellipse fill="none" stroke="black" cx="801.77" cy="-234" rx="45.22" ry="18" style=""/>
+<text text-anchor="middle" x="801.77" y="-229.8" font-family="Times,serif" font-size="14.00" style="">Pausable</text>
+</g>
+<!-- ERC998ERC1155TopDownPresetMinterPauser&#45;&gt;Pausable -->
+<g id="edge4" class="edge" data-name="ERC998ERC1155TopDownPresetMinterPauser-&gt;Pausable">
+
+<path fill="none" stroke="black" d="M750.67,-363.07C772.58,-355.07 793.02,-342.78 806.77,-324 819.78,-306.21 816.77,-280.68 811.53,-261.51" style=""/>
+<polygon fill="black" stroke="black" points="814.86,-260.41 808.58,-251.88 808.17,-262.47 814.86,-260.41" style=""/>
+</g>
+<!-- AccessControl&#45;&gt;Context -->
+<g id="edge10" class="edge" data-name="AccessControl-&gt;Context">
+
+<path fill="none" stroke="black" d="M730.08,-287.82C731.11,-269.03 734.86,-238.58 747.77,-216 754.9,-203.52 766.02,-192.41 776.7,-183.62" style=""/>
+<polygon fill="black" stroke="black" points="778.98,-186.28 784.71,-177.37 774.67,-180.76 778.98,-186.28" style=""/>
+</g>
+<!-- ERC1155Receiver -->
+<g id="node20" class="node" pointer-events="visible" data-name="ERC1155Receiver">
+
+<ellipse fill="none" stroke="black" cx="363.77" cy="-234" rx="83.39" ry="18" style=""/>
+<text text-anchor="middle" x="363.77" y="-229.8" font-family="Times,serif" font-size="14.00" style="">ERC1155Receiver</text>
+</g>
+<!-- ERC998ERC1155TopDown&#45;&gt;ERC1155Receiver -->
+<g id="edge27" class="edge" data-name="ERC998ERC1155TopDown-&gt;ERC1155Receiver">
+
+<path fill="none" stroke="black" d="M326.63,-288.05C332.38,-279.84 339.41,-269.79 345.8,-260.66" style=""/>
+<polygon fill="black" stroke="black" points="348.81,-262.47 351.67,-252.28 343.07,-258.46 348.81,-262.47" style=""/>
+</g>
+<!-- ERC721 -->
+<g id="node21" class="node" pointer-events="visible" data-name="ERC721">
+
+<ellipse fill="none" stroke="black" cx="521.77" cy="-234" rx="44.1" ry="18" style=""/>
+<text text-anchor="middle" x="521.77" y="-229.8" font-family="Times,serif" font-size="14.00" style="">ERC721</text>
+</g>
+<!-- ERC998ERC1155TopDown&#45;&gt;ERC721 -->
+<g id="edge26" class="edge" data-name="ERC998ERC1155TopDown-&gt;ERC721">
+
+<path fill="none" stroke="black" d="M361.22,-289.29C396.48,-277.37 444.59,-261.1 478.92,-249.49" style=""/>
+<polygon fill="black" stroke="black" points="480.31,-252.71 488.67,-246.19 478.07,-246.08 480.31,-252.71" style=""/>
+</g>
+<!-- IERC998ERC1155TopDown -->
+<g id="node22" class="node" pointer-events="visible" data-name="IERC998ERC1155TopDown">
+
+<ellipse fill="none" stroke="black" cx="124.77" cy="-234" rx="124.53" ry="18" style=""/>
+<text text-anchor="middle" x="124.77" y="-229.8" font-family="Times,serif" font-size="14.00" style="">IERC998ERC1155TopDown</text>
+</g>
+<!-- ERC998ERC1155TopDown&#45;&gt;IERC998ERC1155TopDown -->
+<g id="edge28" class="edge" data-name="ERC998ERC1155TopDown-&gt;IERC998ERC1155TopDown">
+
+<path fill="none" stroke="black" d="M271.65,-289.12C243.81,-278.86 207.4,-265.44 177.8,-254.54" style=""/>
+<polygon fill="black" stroke="black" points="178.63,-251.12 168.04,-250.94 176.21,-257.68 178.63,-251.12" style=""/>
+</g>
+<!-- Pausable&#45;&gt;Context -->
+<g id="edge22" class="edge" data-name="Pausable-&gt;Context">
+
+<path fill="none" stroke="black" d="M803,-215.7C803.55,-207.98 804.22,-198.71 804.83,-190.11" style=""/>
+<polygon fill="black" stroke="black" points="808.32,-190.33 805.54,-180.1 801.34,-189.83 808.32,-190.33" style=""/>
+</g>
+<!-- ERC1155TierUpgradePresetMinterPauser -->
+<g id="node6" class="node" pointer-events="visible" data-name="ERC1155TierUpgradePresetMinterPauser">
+
+<ellipse fill="none" stroke="black" cx="982.77" cy="-450" rx="174.16" ry="18" style=""/>
+<text text-anchor="middle" x="982.77" y="-445.8" font-family="Times,serif" font-size="14.00" style="">ERC1155TierUpgradePresetMinterPauser</text>
+</g>
+<!-- ERC1155PresetMinterPauser -->
+<g id="node7" class="node" pointer-events="visible" data-name="ERC1155PresetMinterPauser">
+
+<ellipse fill="none" stroke="black" cx="982.77" cy="-378" rx="125" ry="18" style=""/>
+<text text-anchor="middle" x="982.77" y="-373.8" font-family="Times,serif" font-size="14.00" style="">ERC1155PresetMinterPauser</text>
+</g>
+<!-- ERC1155TierUpgradePresetMinterPauser&#45;&gt;ERC1155PresetMinterPauser -->
+<g id="edge5" class="edge" data-name="ERC1155TierUpgradePresetMinterPauser-&gt;ERC1155PresetMinterPauser">
+
+<path fill="none" stroke="black" d="M982.77,-431.7C982.77,-423.98 982.77,-414.71 982.77,-406.11" style=""/>
+<polygon fill="black" stroke="black" points="986.27,-406.1 982.77,-396.1 979.27,-406.1 986.27,-406.1" style=""/>
+</g>
+<!-- ERC1155PresetMinterPauser&#45;&gt;Context -->
+<g id="edge6" class="edge" data-name="ERC1155PresetMinterPauser-&gt;Context">
+
+<path fill="none" stroke="black" d="M941.5,-360.87C924.06,-352.24 904.8,-340.03 891.77,-324 859.85,-284.74 881.52,-259.55 855.77,-216 849.35,-205.15 840.42,-194.65 831.93,-185.9" style=""/>
+<polygon fill="black" stroke="black" points="834.23,-183.25 824.67,-178.69 829.3,-188.22 834.23,-183.25" style=""/>
+</g>
+<!-- ERC1155PresetMinterPauser&#45;&gt;AccessControl -->
+<g id="edge7" class="edge" data-name="ERC1155PresetMinterPauser-&gt;AccessControl">
+
+<path fill="none" stroke="black" d="M927.87,-361.81C885.49,-350.08 827.12,-333.94 784.72,-322.21" style=""/>
+<polygon fill="black" stroke="black" points="785.42,-318.77 774.85,-319.47 783.55,-325.51 785.42,-318.77" style=""/>
+</g>
+<!-- ERC1155Burnable -->
+<g id="node8" class="node" pointer-events="visible" data-name="ERC1155Burnable">
+
+<ellipse fill="none" stroke="black" cx="1169.77" cy="-306" rx="84.56" ry="18" style=""/>
+<text text-anchor="middle" x="1169.77" y="-301.8" font-family="Times,serif" font-size="14.00" style="">ERC1155Burnable</text>
+</g>
+<!-- ERC1155PresetMinterPauser&#45;&gt;ERC1155Burnable -->
+<g id="edge8" class="edge" data-name="ERC1155PresetMinterPauser-&gt;ERC1155Burnable">
+
+<path fill="none" stroke="black" d="M1025.67,-360.94C1053.86,-350.39 1090.83,-336.55 1120.27,-325.53" style=""/>
+<polygon fill="black" stroke="black" points="1121.8,-328.69 1129.94,-321.91 1119.35,-322.14 1121.8,-328.69" style=""/>
+</g>
+<!-- ERC1155Pausable -->
+<g id="node9" class="node" pointer-events="visible" data-name="ERC1155Pausable">
+
+<ellipse fill="none" stroke="black" cx="983.77" cy="-306" rx="83.41" ry="18" style=""/>
+<text text-anchor="middle" x="983.77" y="-301.8" font-family="Times,serif" font-size="14.00" style="">ERC1155Pausable</text>
+</g>
+<!-- ERC1155PresetMinterPauser&#45;&gt;ERC1155Pausable -->
+<g id="edge9" class="edge" data-name="ERC1155PresetMinterPauser-&gt;ERC1155Pausable">
+
+<path fill="none" stroke="black" d="M983.01,-359.7C983.12,-351.98 983.26,-342.71 983.38,-334.11" style=""/>
+<polygon fill="black" stroke="black" points="986.88,-334.15 983.52,-324.1 979.88,-334.05 986.88,-334.15" style=""/>
+</g>
+<!-- ERC1155 -->
+<g id="node12" class="node" pointer-events="visible" data-name="ERC1155">
+
+<ellipse fill="none" stroke="black" cx="979.77" cy="-234" rx="49.26" ry="18" style=""/>
+<text text-anchor="middle" x="979.77" y="-229.8" font-family="Times,serif" font-size="14.00" style="">ERC1155</text>
+</g>
+<!-- ERC1155Burnable&#45;&gt;ERC1155 -->
+<g id="edge19" class="edge" data-name="ERC1155Burnable-&gt;ERC1155">
+
+<path fill="none" stroke="black" d="M1129.47,-290.15C1098.08,-278.59 1054.6,-262.57 1022.58,-250.77" style=""/>
+<polygon fill="black" stroke="black" points="1023.63,-247.43 1013.04,-247.26 1021.21,-254 1023.63,-247.43" style=""/>
+</g>
+<!-- ERC1155Pausable&#45;&gt;Pausable -->
+<g id="edge21" class="edge" data-name="ERC1155Pausable-&gt;Pausable">
+
+<path fill="none" stroke="black" d="M944.72,-289.98C914.66,-278.42 873.21,-262.48 842.69,-250.74" style=""/>
+<polygon fill="black" stroke="black" points="843.78,-247.41 833.19,-247.09 841.27,-253.94 843.78,-247.41" style=""/>
+</g>
+<!-- ERC1155Pausable&#45;&gt;ERC1155 -->
+<g id="edge20" class="edge" data-name="ERC1155Pausable-&gt;ERC1155">
+
+<path fill="none" stroke="black" d="M982.78,-287.7C982.34,-279.98 981.81,-270.71 981.32,-262.11" style=""/>
+<polygon fill="black" stroke="black" points="984.81,-261.89 980.74,-252.1 977.82,-262.29 984.81,-261.89" style=""/>
+</g>
+<!-- EnumerableSet -->
+<g id="node10" class="node" pointer-events="visible" data-name="EnumerableSet">
+
+<ellipse fill="none" stroke="black" cx="1244.77" cy="-450" rx="70.06" ry="18" style=""/>
+<text text-anchor="middle" x="1244.77" y="-445.8" font-family="Times,serif" font-size="14.00" style="">EnumerableSet</text>
+</g>
+<!-- Address -->
+<g id="node11" class="node" pointer-events="visible" data-name="Address">
+
+<ellipse fill="none" stroke="black" cx="1375.77" cy="-450" rx="42.86" ry="18" style=""/>
+<text text-anchor="middle" x="1375.77" y="-445.8" font-family="Times,serif" font-size="14.00" style="">Address</text>
+</g>
+<!-- ERC1155&#45;&gt;Context -->
+<g id="edge11" class="edge" data-name="ERC1155-&gt;Context">
+
+<path fill="none" stroke="black" d="M948.04,-220.16C919.16,-208.48 876.47,-191.2 845.57,-178.7" style=""/>
+<polygon fill="black" stroke="black" points="846.57,-175.33 835.99,-174.83 843.95,-181.82 846.57,-175.33" style=""/>
+</g>
+<!-- ERC165 -->
+<g id="node13" class="node" pointer-events="visible" data-name="ERC165">
+
+<ellipse fill="none" stroke="black" cx="702.77" cy="-162" rx="44.1" ry="18" style=""/>
+<text text-anchor="middle" x="702.77" y="-157.8" font-family="Times,serif" font-size="14.00" style="">ERC165</text>
+</g>
+<!-- ERC1155&#45;&gt;ERC165 -->
+<g id="edge12" class="edge" data-name="ERC1155-&gt;ERC165">
+
+<path fill="none" stroke="black" d="M938.23,-224.19C893.08,-214.38 818.91,-197.57 755.77,-180 752.45,-179.08 749.04,-178.08 745.61,-177.06" style=""/>
+<polygon fill="black" stroke="black" points="746.6,-173.7 736.01,-174.1 744.54,-180.39 746.6,-173.7" style=""/>
+</g>
+<!-- IERC1155 -->
+<g id="node14" class="node" pointer-events="visible" data-name="IERC1155">
+
+<ellipse fill="none" stroke="black" cx="971.77" cy="-90" rx="52.19" ry="18" style=""/>
+<text text-anchor="middle" x="971.77" y="-85.8" font-family="Times,serif" font-size="14.00" style="">IERC1155</text>
+</g>
+<!-- ERC1155&#45;&gt;IERC1155 -->
+<g id="edge13" class="edge" data-name="ERC1155-&gt;IERC1155">
+
+<path fill="none" stroke="black" d="M1020.5,-223.92C1043.96,-216.37 1071.54,-203.02 1085.77,-180 1094.18,-166.39 1094.37,-157.49 1085.77,-144 1072.41,-123.07 1048.42,-110.27 1025.88,-102.52" style=""/>
+<polygon fill="black" stroke="black" points="1026.93,-99.18 1016.34,-99.49 1024.82,-105.85 1026.93,-99.18" style=""/>
+</g>
+<!-- IERC1155MetadataURI -->
+<g id="node15" class="node" pointer-events="visible" data-name="IERC1155MetadataURI">
+
+<ellipse fill="none" stroke="black" cx="971.77" cy="-162" rx="104.8" ry="18" style=""/>
+<text text-anchor="middle" x="971.77" y="-157.8" font-family="Times,serif" font-size="14.00" style="">IERC1155MetadataURI</text>
+</g>
+<!-- ERC1155&#45;&gt;IERC1155MetadataURI -->
+<g id="edge14" class="edge" data-name="ERC1155-&gt;IERC1155MetadataURI">
+
+<path fill="none" stroke="black" d="M977.79,-215.7C976.91,-207.98 975.85,-198.71 974.86,-190.11" style=""/>
+<polygon fill="black" stroke="black" points="978.33,-189.64 973.72,-180.1 971.38,-190.44 978.33,-189.64" style=""/>
+</g>
+<!-- IERC165 -->
+<g id="node16" class="node" pointer-events="visible" data-name="IERC165">
+
+<ellipse fill="none" stroke="black" cx="526.77" cy="-18" rx="47.53" ry="18" style=""/>
+<text text-anchor="middle" x="526.77" y="-13.8" font-family="Times,serif" font-size="14.00" style="">IERC165</text>
+</g>
+<!-- ERC165&#45;&gt;IERC165 -->
+<g id="edge18" class="edge" data-name="ERC165-&gt;IERC165">
+
+<path fill="none" stroke="black" d="M683.6,-145.53C652.34,-120.31 590.27,-70.24 554.3,-41.21" style=""/>
+<polygon fill="black" stroke="black" points="556.16,-38.22 546.18,-34.66 551.77,-43.67 556.16,-38.22" style=""/>
+</g>
+<!-- IERC1155&#45;&gt;IERC165 -->
+<g id="edge15" class="edge" data-name="IERC1155-&gt;IERC165">
+
+<path fill="none" stroke="black" d="M924.98,-81.64C841.59,-68.52 667.79,-41.18 579.98,-27.37" style=""/>
+<polygon fill="black" stroke="black" points="580.39,-23.89 569.97,-25.8 579.3,-30.81 580.39,-23.89" style=""/>
+</g>
+<!-- IERC1155MetadataURI&#45;&gt;IERC1155 -->
+<g id="edge16" class="edge" data-name="IERC1155MetadataURI-&gt;IERC1155">
+
+<path fill="none" stroke="black" d="M971.77,-143.7C971.77,-135.98 971.77,-126.71 971.77,-118.11" style=""/>
+<polygon fill="black" stroke="black" points="975.27,-118.1 971.77,-108.1 968.27,-118.1 975.27,-118.1" style=""/>
+</g>
+<!-- IERC1155Receiver -->
+<g id="node17" class="node" pointer-events="visible" data-name="IERC1155Receiver">
+
+<ellipse fill="none" stroke="black" cx="124.77" cy="-162" rx="86.82" ry="18" style=""/>
+<text text-anchor="middle" x="124.77" y="-157.8" font-family="Times,serif" font-size="14.00" style="">IERC1155Receiver</text>
+</g>
+<!-- IERC1155Receiver&#45;&gt;IERC165 -->
+<g id="edge17" class="edge" data-name="IERC1155Receiver-&gt;IERC165">
+
+<path fill="none" stroke="black" d="M150.42,-144.76C182.71,-124.96 240.43,-91.72 293.77,-72 353.4,-49.95 425.14,-35.31 473.11,-27.1" style=""/>
+<polygon fill="black" stroke="black" points="473.99,-30.5 483.28,-25.4 472.84,-23.6 473.99,-30.5" style=""/>
+</g>
+<!-- SafeMath -->
+<g id="node18" class="node" pointer-events="visible" data-name="SafeMath">
+
+<ellipse fill="none" stroke="black" cx="1484.77" cy="-450" rx="48.65" ry="18" style=""/>
+<text text-anchor="middle" x="1484.77" y="-445.8" font-family="Times,serif" font-size="14.00" style="">SafeMath</text>
+</g>
+<!-- ERC1155Holder -->
+<g id="node19" class="node" pointer-events="visible" data-name="ERC1155Holder">
+
+<ellipse fill="none" stroke="black" cx="529.77" cy="-306" rx="75.89" ry="18" style=""/>
+<text text-anchor="middle" x="529.77" y="-301.8" font-family="Times,serif" font-size="14.00" style="">ERC1155Holder</text>
+</g>
+<!-- ERC1155Holder&#45;&gt;ERC1155Receiver -->
+<g id="edge23" class="edge" data-name="ERC1155Holder-&gt;ERC1155Receiver">
+
+<path fill="none" stroke="black" d="M494.16,-289.98C469.38,-279.54 436.13,-265.52 409.41,-254.25" style=""/>
+<polygon fill="black" stroke="black" points="410.47,-250.89 399.89,-250.23 407.75,-257.34 410.47,-250.89" style=""/>
+</g>
+<!-- ERC1155Receiver&#45;&gt;ERC165 -->
+<g id="edge24" class="edge" data-name="ERC1155Receiver-&gt;ERC165">
+
+<path fill="none" stroke="black" d="M427.02,-222.25C497.99,-210.01 608.57,-190.38 649.77,-180 653.15,-179.15 656.63,-178.2 660.12,-177.2" style=""/>
+<polygon fill="black" stroke="black" points="661.3,-180.49 669.88,-174.26 659.29,-173.79 661.3,-180.49" style=""/>
+</g>
+<!-- ERC1155Receiver&#45;&gt;IERC1155Receiver -->
+<g id="edge25" class="edge" data-name="ERC1155Receiver-&gt;IERC1155Receiver">
+
+<path fill="none" stroke="black" d="M316.26,-219.09C277.9,-207.85 223.77,-192 182.84,-180.01" style=""/>
+<polygon fill="black" stroke="black" points="183.58,-176.58 173,-177.13 181.61,-183.3 183.58,-176.58" style=""/>
+</g>
+<!-- ERC721&#45;&gt;Context -->
+<g id="edge29" class="edge" data-name="ERC721-&gt;Context">
+
+<path fill="none" stroke="black" d="M560.98,-225.36C607.7,-215.96 687.96,-198.93 755.77,-180 758.96,-179.11 762.24,-178.14 765.54,-177.13" style=""/>
+<polygon fill="black" stroke="black" points="766.89,-180.37 775.36,-174.01 764.77,-173.7 766.89,-180.37" style=""/>
+</g>
+<!-- ERC721&#45;&gt;ERC165 -->
+<g id="edge30" class="edge" data-name="ERC721-&gt;ERC165">
+
+<path fill="none" stroke="black" d="M552.88,-220.97C583.15,-209.26 629.28,-191.42 662.37,-178.62" style=""/>
+<polygon fill="black" stroke="black" points="663.69,-181.86 671.76,-174.99 661.17,-175.34 663.69,-181.86" style=""/>
+</g>
+<!-- IERC721 -->
+<g id="node23" class="node" pointer-events="visible" data-name="IERC721">
+
+<ellipse fill="none" stroke="black" cx="350.77" cy="-90" rx="47.53" ry="18" style=""/>
+<text text-anchor="middle" x="350.77" y="-85.8" font-family="Times,serif" font-size="14.00" style="">IERC721</text>
+</g>
+<!-- ERC721&#45;&gt;IERC721 -->
+<g id="edge31" class="edge" data-name="ERC721-&gt;IERC721">
+
+<path fill="none" stroke="black" d="M485.91,-223.27C476.17,-220.76 465.59,-218.16 455.77,-216 412.3,-206.44 287.27,-214.18 258.77,-180 248.52,-167.71 250.76,-157.85 258.77,-144 268.98,-126.33 287.56,-114.03 305.37,-105.77" style=""/>
+<polygon fill="black" stroke="black" points="306.76,-108.98 314.56,-101.8 303.99,-102.55 306.76,-108.98" style=""/>
+</g>
+<!-- IERC721Metadata -->
+<g id="node24" class="node" pointer-events="visible" data-name="IERC721Metadata">
+
+<ellipse fill="none" stroke="black" cx="350.77" cy="-162" rx="83.39" ry="18" style=""/>
+<text text-anchor="middle" x="350.77" y="-157.8" font-family="Times,serif" font-size="14.00" style="">IERC721Metadata</text>
+</g>
+<!-- ERC721&#45;&gt;IERC721Metadata -->
+<g id="edge32" class="edge" data-name="ERC721-&gt;IERC721Metadata">
+
+<path fill="none" stroke="black" d="M491.59,-220.65C465.46,-209.95 427.25,-194.31 397.23,-182.02" style=""/>
+<polygon fill="black" stroke="black" points="398.37,-178.71 387.79,-178.16 395.72,-185.18 398.37,-178.71" style=""/>
+</g>
+<!-- IERC721Enumerable -->
+<g id="node25" class="node" pointer-events="visible" data-name="IERC721Enumerable">
+
+<ellipse fill="none" stroke="black" cx="546.77" cy="-162" rx="94.34" ry="18" style=""/>
+<text text-anchor="middle" x="546.77" y="-157.8" font-family="Times,serif" font-size="14.00" style="">IERC721Enumerable</text>
+</g>
+<!-- ERC721&#45;&gt;IERC721Enumerable -->
+<g id="edge33" class="edge" data-name="ERC721-&gt;IERC721Enumerable">
+
+<path fill="none" stroke="black" d="M527.82,-216.05C530.63,-208.18 534.05,-198.62 537.2,-189.79" style=""/>
+<polygon fill="black" stroke="black" points="540.53,-190.87 540.6,-180.28 533.94,-188.52 540.53,-190.87" style=""/>
+</g>
+<!-- IERC998ERC1155TopDown&#45;&gt;IERC1155Receiver -->
+<g id="edge38" class="edge" data-name="IERC998ERC1155TopDown-&gt;IERC1155Receiver">
+
+<path fill="none" stroke="black" d="M124.77,-215.7C124.77,-207.98 124.77,-198.71 124.77,-190.11" style=""/>
+<polygon fill="black" stroke="black" points="128.27,-190.1 124.77,-180.1 121.27,-190.1 128.27,-190.1" style=""/>
+</g>
+<!-- IERC998ERC1155TopDown&#45;&gt;IERC721 -->
+<g id="edge37" class="edge" data-name="IERC998ERC1155TopDown-&gt;IERC721">
+
+<path fill="none" stroke="black" d="M74.57,-217.4C56.9,-209.22 38.93,-197.22 28.77,-180 20.63,-166.22 18.41,-156.2 28.77,-144 62.03,-104.82 209.88,-94.55 293.19,-91.9" style=""/>
+<polygon fill="black" stroke="black" points="293.37,-95.39 303.26,-91.6 293.17,-88.4 293.37,-95.39" style=""/>
+</g>
+<!-- IERC721&#45;&gt;IERC165 -->
+<g id="edge34" class="edge" data-name="IERC721-&gt;IERC165">
+
+<path fill="none" stroke="black" d="M382.23,-76.49C411.17,-64.97 454.27,-47.84 485.87,-35.27" style=""/>
+<polygon fill="black" stroke="black" points="487.28,-38.47 495.28,-31.52 484.69,-31.97 487.28,-38.47" style=""/>
+</g>
+<!-- IERC721Metadata&#45;&gt;IERC721 -->
+<g id="edge35" class="edge" data-name="IERC721Metadata-&gt;IERC721">
+
+<path fill="none" stroke="black" d="M350.77,-143.7C350.77,-135.98 350.77,-126.71 350.77,-118.11" style=""/>
+<polygon fill="black" stroke="black" points="354.27,-118.1 350.77,-108.1 347.27,-118.1 354.27,-118.1" style=""/>
+</g>
+<!-- IERC721Enumerable&#45;&gt;IERC721 -->
+<g id="edge36" class="edge" data-name="IERC721Enumerable-&gt;IERC721">
+
+<path fill="none" stroke="black" d="M504.24,-145.81C471.59,-134.15 426.69,-118.11 393.89,-106.4" style=""/>
+<polygon fill="black" stroke="black" points="394.72,-102.98 384.13,-102.91 392.37,-109.57 394.72,-102.98" style=""/>
+</g>
+<!-- IERC721Receiver -->
+<g id="node26" class="node" pointer-events="visible" data-name="IERC721Receiver">
+
+<ellipse fill="none" stroke="black" cx="1632.77" cy="-450" rx="81.66" ry="18" style=""/>
+<text text-anchor="middle" x="1632.77" y="-445.8" font-family="Times,serif" font-size="14.00" style="">IERC721Receiver</text>
+</g>
+<!-- EnumerableMap -->
+<g id="node27" class="node" pointer-events="visible" data-name="EnumerableMap">
+
+<ellipse fill="none" stroke="black" cx="1807.77" cy="-450" rx="75.28" ry="18" style=""/>
+<text text-anchor="middle" x="1807.77" y="-445.8" font-family="Times,serif" font-size="14.00" style="">EnumerableMap</text>
+</g>
+<!-- Strings -->
+<g id="node28" class="node" pointer-events="visible" data-name="Strings">
+
+<ellipse fill="none" stroke="black" cx="1939.77" cy="-450" rx="38.3" ry="18" style=""/>
+<text text-anchor="middle" x="1939.77" y="-445.8" font-family="Times,serif" font-size="14.00" style="">Strings</text>
+</g>
+</g>
+</svg>

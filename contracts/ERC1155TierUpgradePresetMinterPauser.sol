@@ -4,24 +4,22 @@ pragma solidity ^0.6.0;
 
 /// @title ERC1155TUMP creates tier supply and attaches tier to composable
 /// @author respect-club
-/// @notice receives Engagement tokens and attaches tier to composable
-/// @dev 1155 tokenId reserved for engagement token
+/// @notice receives Engagement tokens and attaches tier to composable ERC998
 
-/// @notice
 import "@openzeppelin/contracts/presets/ERC1155PresetMinterPauser.sol";
-import "@openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol";
+// import "@openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol";
 import "@openzeppelin/contracts/token/ERC1155/ERC1155Holder.sol";
 import "./ERC998ERC1155TopDownPresetMinterPauser.sol";
 
-/*
-    erc1155.mint(admin, multiTokenTier0, multiTokenMaxSuply, "0x");
-    erc1155.safeTransferFrom(admin, erc998.address, multiTokenTier0, 1, web3.utils.encodePacked(composable1));
-*/
 contract ERC1155TierUpgradePresetMinterPauser is ERC1155PresetMinterPauser {
+    using SafeMath for uint256;
     bytes4 internal constant ERC1155_ACCEPTED = 0xf23a6e61; // bytes4(keccak256("onERC1155Received(address,address,uint256,uint256,bytes)"))
     bytes4 internal constant ERC1155_BATCH_ACCEPTED = 0xbc197c81; // bytes4(keccak256("onERC1155BatchReceived(address,address,uint256[],uint256[],bytes)"))
 
     ERC998ERC1155TopDownPresetMinterPauser csnftContract;
+    mapping(address => uint256) public ownerToTierId;
+
+    mapping(address => bool) private _ownerToUpgradeInitiated;
 
     /// @notice csnft contract is deployed and linked to ERC1155TUMP
     /// @param _csnftContractAdr deployed csnft contract
@@ -40,8 +38,18 @@ contract ERC1155TierUpgradePresetMinterPauser is ERC1155PresetMinterPauser {
         );
     }
 
-    /// claimF engagement points
+    function getLatestTierId(address _to) public returns (uint256) {
+        // uint256[] s arr = childIdsForOn(_composableId, tierContract);
+        return ownerToTierId[_to];
+    }
+
+    function _incrementOwnerTierId(address _to, uint256 _latestTierId) private {
+        ownerToTierId[_to] = _latestTierId;
+    }
+
+    /// implement claimF engagement points
     //function claim(){}
+    /// @notice mints enagagement point onlyMinterRole
     /// @param _to csnftContract Address
     /// @param _amount of F engagement  points
     /// @param _data web3.utils.encodePacked(composableId)
@@ -60,51 +68,53 @@ contract ERC1155TierUpgradePresetMinterPauser is ERC1155PresetMinterPauser {
 
     /// @notice upgrade user tier
     /// @dev fetch curent tier of msg.sender
-    /// msg.value user sends
+    /// @param _to  the owner of the  snft to be upgraded
+
     function upgradeSNFT(
         address _to, //  a/c of owner of snft
         uint256 _composableId,
-        uint256 _upgradeToTierId, // upgrade to
+        uint256 _upgradeToTierId,
         bytes calldata data // web3.utils.encodePacked(composableId)
     ) external returns (bool) {
         //add tier checks  if tierId =1 bal(t-1) == 1
         // at t=0 bal(0) >= _FengagementPOints
         require(_upgradeToTierId != 0);
 
-        // checks if msg.sender owns the composable
+        // checks if _to owns the composable
         require(
             csnftContract.ownerToComposableId(_to) == _composableId,
             ">Unauthorized caller"
         );
+
         // fetch upgrading cost
         uint256 upgradeCost = csnftContract.getTierUpgradeCost(
             _upgradeToTierId
         );
-
-        // check if owner has sufficient engagement points
         require(
             balanceOf(_to, 0) >= upgradeCost,
-            "insufficient engagement points"
+            "> insufficient engagement points"
         );
 
-        // check if owner has the last tier
-        require(
-            balanceOf(_to, _upgradeToTierId - 1) >= 1,
-            ">Non-sequential tier upgrade error"
-        );
+        if (_upgradeToTierId == 1) {
+            require(
+                balanceOf(_to, _upgradeToTierId) == upgradeCost,
+                ">First Upgrade"
+            ); //handle
+        } else {
+            require(
+                balanceOf(_to, _upgradeToTierId - 1) == 1,
+                ">Non-sequential tier upgrade error"
+            );
+        }
+        require(balanceOf(_to, _upgradeToTierId) == 0, "tier already exists");
 
-        // if (_tierId == 1) {
-        //     //first upgrade
-        //     require(balanceOf(msg.sender, _tierId - 1) >= 1);
-        // } else {
-        //     require(
-        //         (balanceOf(msg.sender, _tierId) >= _tierPriceArr[_tierId + 1])
-        //     ); //
-        // }
+        // check if owner has sufficient engagement points
+
         burn(_to, 0, upgradeCost); // burn engagement tid 0
 
         _mint(address(csnftContract), _upgradeToTierId, 1, data);
 
+        // csnftContract.incrementTierId(_to, _upgradeToTierId);
         return true;
     }
     // implement function to mint | claim F(creators engagement ) at tokenId 0

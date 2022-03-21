@@ -14,9 +14,6 @@ contract ERC998ERC1155TopDown is
     ERC1155Receiver,
     IERC998ERC1155TopDown
 {
-    // RESERVING TIER  index 0 is buying price set by creator
-    //                 index 1
-
     using EnumerableSet for EnumerableSet.AddressSet;
     using EnumerableSet for EnumerableSet.UintSet;
 
@@ -31,8 +28,6 @@ contract ERC998ERC1155TopDown is
     mapping(uint256 => mapping(address => EnumerableSet.UintSet))
         private _childsForChildContract;
 
-    // map each composable to maxTier
-    /// (erc998.address , id )
     constructor(
         string memory _name,
         string memory _symbol,
@@ -86,7 +81,7 @@ contract ERC998ERC1155TopDown is
      * @dev Gives list of owned child ID on a child contract by token ID.
      */
     function childIdsForOn(uint256 composableId, address childContract)
-        external
+        public
         view
         override
         returns (uint256[] memory)

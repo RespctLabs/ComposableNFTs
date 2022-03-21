@@ -28,6 +28,7 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
     ERC998ERC1155TopDown,
     Pausable
 {
+    using SafeMath for uint256;
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
     bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
     mapping(uint256 => uint256) tierIdtoUpgradeCost; // 1,2,3 ...  cost to upgrade to tier1, tier2, tier3...
@@ -69,6 +70,10 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
         uint256 cost = tierIdtoUpgradeCost[_tierId];
         return cost;
     }
+
+    // function incrementTierId(address _to) private {
+    //     ownerToTierId[_to] = _latestTierId;
+    // }
 
     function getComposableId(address _owner) public view returns (uint256) {
         uint256 cid = ownerToComposableId[_owner];
@@ -113,6 +118,7 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
         // // can be burned (destroyed), so we need a separate counter.
         _mint(to, tokenId);
         ownerToComposableId[to] = tokenId;
+        // ownerToTierId[to] = 0; // level0
         composableCount = tokenId;
     }
 
