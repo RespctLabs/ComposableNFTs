@@ -2,37 +2,40 @@
 
 pragma solidity ^0.6.0;
 
-import "@openzeppelin/contracts/token/ERC1155/ERC1155.sol";
-import "@openzeppelin/contracts/token/ERC1155/ERC1155Receiver.sol";
-import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
-import "@openzeppelin/contracts/utils/EnumerableSet.sol";
+import "@openzeppelin/contracts-upgradeable/proxy/Initializable.sol";
+import "@openzeppelin/contracts-upgradeable/token/ERC1155/ERC1155Upgradeable.sol";
+import "@openzeppelin/contracts-upgradeable/token/ERC1155/ERC1155ReceiverUpgradeable.sol";
+import "@openzeppelin/contracts-upgradeable/token/ERC721/ERC721Upgradeable.sol";
+import "@openzeppelin/contracts-upgradeable/utils/EnumerableSetUpgradeable.sol";
+import "./IERC998ERC1155TopDownUpgradeable.sol";
 
-import "./IERC998ERC1155TopDown.sol";
-
-contract ERC998ERC1155TopDown is
-    ERC721,
-    ERC1155Receiver,
-    IERC998ERC1155TopDown
+contract ERC998ERC1155TopDownUpgradeable is
+    Initializable,
+    ERC721Upgradeable,
+    ERC1155ReceiverUpgradeable,
+    IERC998ERC1155TopDownUpgradeable
 {
-    using EnumerableSet for EnumerableSet.AddressSet;
-    using EnumerableSet for EnumerableSet.UintSet;
+    using EnumerableSetUpgradeable for EnumerableSetUpgradeable.AddressSet;
+    using EnumerableSetUpgradeable for EnumerableSetUpgradeable.UintSet;
 
     mapping(uint256 => mapping(address => mapping(uint256 => uint256)))
         private _balances;
 
-    mapping(address => mapping(uint256 => EnumerableSet.UintSet))
+    mapping(address => mapping(uint256 => EnumerableSetUpgradeable.UintSet))
         private _holdersOf;
 
-    mapping(uint256 => EnumerableSet.AddressSet) private _childContract;
+    mapping(uint256 => EnumerableSetUpgradeable.AddressSet)
+        private _childContract;
 
-    mapping(uint256 => mapping(address => EnumerableSet.UintSet))
+    mapping(uint256 => mapping(address => EnumerableSetUpgradeable.UintSet))
         private _childsForChildContract;
 
-    constructor(
+    function initialize(
         string memory _name,
         string memory _symbol,
         string memory _baseURI
-    ) public ERC721(_name, _symbol) {
+    ) public initializer {
+        __ERC721_init(_name, _symbol);
         _setBaseURI(_baseURI);
     }
 

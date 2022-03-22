@@ -1,10 +1,13 @@
 // SPDX-License-Identifier: UNLICENSED
 
 pragma solidity ^0.6.0;
-import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
-import "@openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol";
+import "@openzeppelin/contracts-upgradeable/token/ERC721/IERC721Upgradeable.sol";
+import "@openzeppelin/contracts-upgradeable/token/ERC1155/IERC1155ReceiverUpgradeable.sol";
 
-interface IERC998ERC1155TopDown is IERC721, IERC1155Receiver {
+interface IERC998ERC1155TopDownUpgradeable is
+    IERC721Upgradeable,
+    IERC1155ReceiverUpgradeable
+{
     event ReceivedChild(
         address indexed from,
         uint256 indexed toTokenId,
@@ -52,12 +55,12 @@ interface IERC998ERC1155TopDown is IERC721, IERC1155Receiver {
     //     bytes calldata data
     // ) external;
 
-    //     function safeBatchTransferChildFrom(
-    //         uint256 fromTokenId,
-    //         address to,
-    //         address childContract,
-    //         uint256[] calldata childTokenIds,
-    //         uint256[] calldata amounts,
-    //         bytes calldata data
-    //     ) external;
+    // function safeBatchTransferChildFrom(
+    //     uint256 fromTokenId,
+    //     address to,
+    //     address childContract,
+    //     uint256[] calldata childTokenIds,
+    //     uint256[] calldata amounts,
+    //     bytes calldata data
+    // ) external;
 }

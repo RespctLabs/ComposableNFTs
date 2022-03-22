@@ -6,17 +6,22 @@ pragma solidity ^0.6.0;
 /// @author respect-club
 /// @notice receives Engagement tokens and attaches tier to composable ERC998
 
-import "@openzeppelin/contracts/presets/ERC1155PresetMinterPauser.sol";
-// import "@openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol";
-import "@openzeppelin/contracts/token/ERC1155/ERC1155Holder.sol";
-import "./ERC998ERC1155TopDownPresetMinterPauser.sol";
+import "@openzeppelin/contracts-upgradeable/proxy/Initializable.sol";
 
-contract ERC1155TierUpgradePresetMinterPauser is ERC1155PresetMinterPauser {
-    using SafeMath for uint256;
+import "@openzeppelin/contracts-upgradeable/presets/ERC1155PresetMinterPauserUpgradeable.sol";
+// import "@openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol";
+// import "@openzeppelin/contracts-upgradeable/token/ERC1155/ERC1155HolderUpgradeable.sol";
+import "./ERC998ERC1155TopDownPresetMinterPauserUpgradeable.sol";
+
+contract ERC1155TierUpgradePresetMinterPauserUpgradeable is
+    Initializable,
+    ERC1155PresetMinterPauserUpgradeable
+{
+    using SafeMathUpgradeable for uint256;
     bytes4 internal constant ERC1155_ACCEPTED = 0xf23a6e61; // bytes4(keccak256("onERC1155Received(address,address,uint256,uint256,bytes)"))
     bytes4 internal constant ERC1155_BATCH_ACCEPTED = 0xbc197c81; // bytes4(keccak256("onERC1155BatchReceived(address,address,uint256[],uint256[],bytes)"))
 
-    ERC998ERC1155TopDownPresetMinterPauser csnftContract;
+    ERC998ERC1155TopDownPresetMinterPauserUpgradeable csnftContract;
     mapping(address => uint256) public ownerToTierId;
 
     mapping(address => bool) private _ownerToUpgradeInitiated;
@@ -24,16 +29,17 @@ contract ERC1155TierUpgradePresetMinterPauser is ERC1155PresetMinterPauser {
     /// @notice csnft contract is deployed and linked to ERC1155TUMP
     /// @param _csnftContractAdr deployed csnft contract
 
-    constructor(string memory tierUri, address _csnftContractAdr)
+    function initialize(string memory tierUri, address _csnftContractAdr)
         public
-        ERC1155PresetMinterPauser(tierUri)
+        initializer
     {
+        __ERC1155PresetMinterPauser_init(tierUri);
         require(
             _csnftContractAdr != address(0),
             "ERC998: transfer to the zero address"
         );
 
-        csnftContract = ERC998ERC1155TopDownPresetMinterPauser(
+        csnftContract = ERC998ERC1155TopDownPresetMinterPauserUpgradeable(
             _csnftContractAdr
         );
     }
@@ -41,10 +47,6 @@ contract ERC1155TierUpgradePresetMinterPauser is ERC1155PresetMinterPauser {
     function getLatestTierId(address _to) public returns (uint256) {
         // uint256[] s arr = childIdsForOn(_composableId, tierContract);
         return ownerToTierId[_to];
-    }
-
-    function _incrementOwnerTierId(address _to, uint256 _latestTierId) private {
-        ownerToTierId[_to] = _latestTierId;
     }
 
     /// implement claimF engagement points
