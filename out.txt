@@ -1,0 +1,153 @@
+
+Compiling your contracts...
+===========================
+> Everything is up to date, there is nothing to compile.
+
+
+
+Starting migrations...
+======================
+> Network name:    'development'
+> Network id:      5777
+> Block gas limit: 30000000 (0x1c9c380)
+
+
+1_initial_migration.js
+======================
+
+   Replacing 'Migrations'
+   ----------------------
+   > transaction hash:    0x837416b80db17fc61ee3745ac71cd45dff4a7a9c5af9fd23e44ffe10ca054c6e
+   > Blocks: 0            Seconds: 0
+   > contract address:    0xc5f19B46B41CFF7136c23D9e6eD09232De93430d
+   > block number:        140
+   > block timestamp:     1648072601
+   > account:             0xc34382798710CBb9c2864f2edD648BDE5377a2f9
+   > balance:             93.52637524
+   > gas used:            269968 (0x41e90)
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00539936 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.00539936 ETH
+
+
+02_deploy_ERC998ERC1155TopDownPresetMinterPauserUpgradeable.js
+==============================================================
+
+Error: The requested contract was not found. Make sure the source code is available for compilation
+
+Compiling your contracts...
+===========================
+> Compiling ./contracts/ERC1155TierUpgradePresetMinterPauserUpgradeable.sol
+> Compiling ./contracts/ERC998ERC1155TopDownPresetMinterPauserUpgradeable.sol
+> Compiling ./contracts/ERC998ERC1155TopDownUpgradeable.sol
+> Compiling ./contracts/IERC998ERC1155TopDownUpgradeable.sol
+> Compiling ./contracts/Migrations.sol
+> Compiling @openzeppelin/contracts-upgradeable/GSN/ContextUpgradeable.sol
+> Compiling @openzeppelin/contracts-upgradeable/access/AccessControlUpgradeable.sol
+> Compiling @openzeppelin/contracts-upgradeable/introspection/ERC165Upgradeable.sol
+> Compiling @openzeppelin/contracts-upgradeable/introspection/IERC165Upgradeable.sol
+> Compiling @openzeppelin/contracts-upgradeable/math/SafeMathUpgradeable.sol
+> Compiling @openzeppelin/contracts-upgradeable/presets/ERC1155PresetMinterPauserUpgradeable.sol
+> Compiling @openzeppelin/contracts-upgradeable/proxy/Initializable.sol
+> Compiling @openzeppelin/contracts-upgradeable/token/ERC1155/ERC1155BurnableUpgradeable.sol
+> Compiling @openzeppelin/contracts-upgradeable/token/ERC1155/ERC1155PausableUpgradeable.sol
+> Compiling @openzeppelin/contracts-upgradeable/token/ERC1155/ERC1155ReceiverUpgradeable.sol
+> Compiling @openzeppelin/contracts-upgradeable/token/ERC1155/ERC1155Upgradeable.sol
+> Compiling @openzeppelin/contracts-upgradeable/token/ERC1155/IERC1155MetadataURIUpgradeable.sol
+> Compiling @openzeppelin/contracts-upgradeable/token/ERC1155/IERC1155ReceiverUpgradeable.sol
+> Compiling @openzeppelin/contracts-upgradeable/token/ERC1155/IERC1155Upgradeable.sol
+> Compiling @openzeppelin/contracts-upgradeable/token/ERC721/ERC721Upgradeable.sol
+> Compiling @openzeppelin/contracts-upgradeable/token/ERC721/IERC721EnumerableUpgradeable.sol
+> Compiling @openzeppelin/contracts-upgradeable/token/ERC721/IERC721MetadataUpgradeable.sol
+> Compiling @openzeppelin/contracts-upgradeable/token/ERC721/IERC721ReceiverUpgradeable.sol
+> Compiling @openzeppelin/contracts-upgradeable/token/ERC721/IERC721Upgradeable.sol
+> Compiling @openzeppelin/contracts-upgradeable/utils/AddressUpgradeable.sol
+> Compiling @openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol
+> Compiling @openzeppelin/contracts-upgradeable/utils/EnumerableMapUpgradeable.sol
+> Compiling @openzeppelin/contracts-upgradeable/utils/EnumerableSetUpgradeable.sol
+> Compiling @openzeppelin/contracts-upgradeable/utils/PausableUpgradeable.sol
+> Compiling @openzeppelin/contracts-upgradeable/utils/StringsUpgradeable.sol
+> Compilation warnings encountered:
+
+    @openzeppelin/contracts-upgradeable/presets/ERC1155PresetMinterPauserUpgradeable.sol:48:57: Warning: Unused function parameter. Remove or comment out the variable name to silence this warning.
+    function __ERC1155PresetMinterPauser_init_unchained(string memory uri) internal initializer {
+                                                        ^---------------^
+,/home/waverune/respct-club/ERC998ERC1155/contracts/ERC998ERC1155TopDownPresetMinterPauserUpgradeable.sol:48:9: Warning: Unused function parameter. Remove or comment out the variable name to silence this warning.
+        string memory name,
+        ^----------------^
+,/home/waverune/respct-club/ERC998ERC1155/contracts/ERC998ERC1155TopDownPresetMinterPauserUpgradeable.sol:49:9: Warning: Unused function parameter. Remove or comment out the variable name to silence this warning.
+        string memory symbol,
+        ^------------------^
+,/home/waverune/respct-club/ERC998ERC1155/contracts/ERC998ERC1155TopDownPresetMinterPauserUpgradeable.sol:50:9: Warning: Unused function parameter. Remove or comment out the variable name to silence this warning.
+        string memory baseURI,
+        ^-------------------^
+,/home/waverune/respct-club/ERC998ERC1155/contracts/ERC1155TierUpgradePresetMinterPauserUpgradeable.sol:47:5: Warning: Function state mutability can be restricted to view
+    function getLatestTierId(address _to) public returns (uint256) {
+    ^ (Relevant source part starts here and spans across multiple lines).
+
+> Artifacts written to /home/waverune/respct-club/ERC998ERC1155/build/contracts
+> Compiled successfully using:
+   - solc: 0.6.3+commit.8dda9521.Emscripten.clang
+
+
+
+Starting migrations...
+======================
+> Network name:    'development'
+> Network id:      5777
+> Block gas limit: 30000000 (0x1c9c380)
+
+
+1_initial_migration.js
+======================
+
+   Deploying 'Migrations'
+   ----------------------
+   > transaction hash:    0x688fbca6662fc0bf412755a8357b2796e95a8069a496fc4666e76a289c8c7aeb
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x759b77D9D31dFb88DB610B6Db1304e0baC733d8B
+   > block number:        147
+   > block timestamp:     1648072746
+   > account:             0xc34382798710CBb9c2864f2edD648BDE5377a2f9
+   > balance:             93.50708836
+   > gas used:            269968 (0x41e90)
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00539936 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.00539936 ETH
+
+
+02_deploy_ERC998ERC1155TopDownPresetMinterPauserUpgradeable.js
+==============================================================
+
+Error: The requested contract was not found. Make sure the source code is available for compilation
+    at getContractNameAndRunValidation (/home/waverune/respct-club/ERC998ERC1155/node_modules/@openzeppelin/upgrades-core/src/validate/query.ts:48:11)
+    at getStorageLayout (/home/waverune/respct-club/ERC998ERC1155/node_modules/@openzeppelin/upgrades-core/src/validate/query.ts:56:41)
+    at getDeployData (/home/waverune/respct-club/ERC998ERC1155/node_modules/@openzeppelin/truffle-upgrades/src/utils/deploy-impl.ts:51:34)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at deployProxyImpl (/home/waverune/respct-club/ERC998ERC1155/node_modules/@openzeppelin/truffle-upgrades/src/utils/deploy-impl.ts:60:22)
+    at deployProxy (/home/waverune/respct-club/ERC998ERC1155/node_modules/@openzeppelin/truffle-upgrades/src/deploy-proxy.ts:42:26)
+    at module.exports (/home/waverune/respct-club/ERC998ERC1155/migrations/02_deploy_ERC998ERC1155TopDownPresetMinterPauserUpgradeable.js:14:30)
+    at Migration._deploy (/usr/local/lib/node_modules/truffle/build/webpack:/packages/migrate/Migration.js:80:1)
+    at Migration._load (/usr/local/lib/node_modules/truffle/build/webpack:/packages/migrate/Migration.js:61:1)
+    at Migration.run (/usr/local/lib/node_modules/truffle/build/webpack:/packages/migrate/Migration.js:218:1)
+    at Object.runMigrations (/usr/local/lib/node_modules/truffle/build/webpack:/packages/migrate/index.js:150:1)
+    at Object.runFrom (/usr/local/lib/node_modules/truffle/build/webpack:/packages/migrate/index.js:110:1)
+    at Object.runAll (/usr/local/lib/node_modules/truffle/build/webpack:/packages/migrate/index.js:114:1)
+    at Object.run (/usr/local/lib/node_modules/truffle/build/webpack:/packages/migrate/index.js:79:1)
+    at runMigrations (/usr/local/lib/node_modules/truffle/build/webpack:/packages/core/lib/commands/migrate.js:258:1)
+    at Object.run (/usr/local/lib/node_modules/truffle/build/webpack:/packages/core/lib/commands/migrate.js:223:1)
+    at Command.run (/usr/local/lib/node_modules/truffle/build/webpack:/packages/core/lib/command.js:147:1)
+Truffle v5.3.9 (core: 5.3.9)
+Node v14.17.0
