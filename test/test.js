@@ -23,6 +23,7 @@ contract("ERC998ERC1155TopDownPresetMinterPauser", accounts => {
     admin = accounts[0];
     erc998 = await  ERC998ERC1155TopDownPresetMinterPauser.new("erc998", "ERC998", "https://ERC998.com/{id}",tierUpgradeCost1, { from: admin });
     erc1155 = await ERC1155TierUpgradePresetMinterPauser.new("https://ERC1155.com/{id}", erc998.address, { from: admin });
+
     await erc998.mint({ from: user1, value: web3.utils.toWei('2') });
     erc998.setTierUpgradeCost(multiTokenTier2,tierUpgradeCost2);
     // await erc1155.mint(user1,100);
@@ -31,11 +32,13 @@ contract("ERC998ERC1155TopDownPresetMinterPauser", accounts => {
   });
 
   it ("Verified ERC998, ERC1155TU", async() => {
-    // admin = accounts[0];
-    // let multiTokenMaxSuply = 100;
     assert.equal(await erc998.name(),"erc998");
     console.log(erc998.address);
 
+  });
+  it ("erc998 : check state var", async() => {
+    assert.equal(await erc998.name(),"erc998");
+    console.log(erc998.address);
 
   });
 
@@ -69,8 +72,6 @@ contract("ERC998ERC1155TopDownPresetMinterPauser", accounts => {
     console.log(">>>>>>>>>>>>>>>>");
     console.log(await erc1155.balanceOf(user1,1));
 
-
-
     // console.log(await erc1155.balanceOf(user1,1));
 
     // assert(await erc998.balanceOf(user2),1);
@@ -83,7 +84,6 @@ contract("ERC998ERC1155TopDownPresetMinterPauser", accounts => {
     await erc1155.upgradeSNFT(composable1, multiTokenTier1, web3.utils.encodePacked(composable1),{from:user1});
 
     assert.equal(await erc998.childBalance(composable1, erc1155.address, multiTokenTier1), 1);
-
 
     await erc1155.mintEngagementPoints(user1,600,"0x0");
     await erc1155.upgradeSNFT(composable1, multiTokenTier2, web3.utils.encodePacked(composable1),{from:user1});

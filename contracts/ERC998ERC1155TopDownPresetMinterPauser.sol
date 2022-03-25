@@ -5,7 +5,7 @@ pragma solidity ^0.6.0;
 import "@openzeppelin/contracts/access/AccessControl.sol";
 import "@openzeppelin/contracts/GSN/Context.sol";
 import "@openzeppelin/contracts/utils/Pausable.sol";
-import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
+import "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
 
 import "./ERC998ERC1155TopDown.sol";
 
@@ -31,15 +31,19 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
     ReentrancyGuard
 {
     using SafeMath for uint256;
+
+    uint256 composableCount;
+    uint256 public maxSupply = 100;
+    uint256 public mintCost = 2 ether;
+
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
     bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
     bytes32 public constant ADMIN_ROLE = keccak256("ADMIN_ROLE");
+
     mapping(uint256 => uint256) tierIdtoUpgradeCost; // 1,2,3 ...  cost to upgrade to tier1, tier2, tier3...
     mapping(address => uint256) public ownerToComposableId;
-    uint mintCost = 2 ether;
+
     address payable owner;
-    uint256 composableCount;
-    uint256 public maxSupply = 100; 
 
     /**
      * @dev Grants `DEFAULT_ADMIN_ROLE`, `MINTER_ROLE` and `PAUSER_ROLE` to the
@@ -57,15 +61,17 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
         _setupRole(ADMIN_ROLE, _msgSender());
         _setupRole(MINTER_ROLE, _msgSender());
         _setupRole(PAUSER_ROLE, _msgSender());
+
         owner = payable(msg.sender);
         composableCount = 0;
         tierIdtoUpgradeCost[1] = _fEngagementPoints;
     }
 
-    /// @notice manually add tier upgrade prices
+    /// @notice  set tier upgrade price
+    /// @dev 1-tierPrice1 for first upgrade L0 to L1 ,2-tierPrice2
     function setTierUpgradeCost(uint256 _tierId, uint256 _cost) public {
         require(
-            hasRole(MINTER_ROLE, _msgSender()),
+            hasRole(ADMIN_ROLE, _msgSender()),
             "Unauthorized tier price setter"
         );
 
@@ -108,17 +114,20 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
     /// admin would be marketplace
 
     // >one account can only mint once
-    function mint() public virtual payable nonReentrant {
+    function mint() public payable virtual nonReentrant {
         // require(
         //     hasRole(MINTER_ROLE, _msgSender()),
         //     "ERC721: must have minter role to mint"
         // );
         require(msg.value == mintCost, "ERC721: must pay the mint cost");
-        require(balanceOf(msg.sender) == 0, "ERC721: cannot own same token twice");
+        require(
+            balanceOf(msg.sender) == 0,
+            "ERC721: cannot own same token twice"
+        );
 
         uint256 tokenId = composableCount + 1; //totalSupply()
 
-        require(tokenId <= maxSupply, 'ERC721: minting would cause overflow');
+        require(tokenId <= maxSupply, "ERC721: minting would cause overflow");
         // require()); // implement safemath
 
         // // We cannot just use balanceOf to create the new tokenId because tokens
@@ -149,7 +158,10 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
     }
 
     function changeMaxSupply(uint256 value) public {
-        require(hasRole(ADMIN_ROLE, _msgSender()), "Unauthorized total supply setter");
+        require(
+            hasRole(ADMIN_ROLE, _msgSender()),
+            "Unauthorized total supply setter"
+        );
         maxSupply = value;
     }
 
@@ -225,7 +237,6 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
             data
         );
     }
-    event NFTMinted(
-        uint256 indexed tokenId
-    );
+
+    event NFTMinted(uint256 indexed tokenId);
 }
