@@ -37,7 +37,7 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
     uint mintCost = 2 ether;
     address payable owner;
     uint256 composableCount;
-    uint256 public totalSupply = 100; 
+    uint256 public maxSupply = 100; 
 
     /**
      * @dev Grants `DEFAULT_ADMIN_ROLE`, `MINTER_ROLE` and `PAUSER_ROLE` to the
@@ -106,9 +106,7 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
     /// admin would be marketplace
 
     // >one account can only mint once
-
-    /// @param to addres the SNFT is minted to
-    function mint() public virtual {
+    function mint() public virtual payable{
         // require(
         //     hasRole(MINTER_ROLE, _msgSender()),
         //     "ERC721: must have minter role to mint"
@@ -118,7 +116,7 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
 
         uint256 tokenId = composableCount + 1; //totalSupply()
 
-        require(tokenId <= totalSupply, 'ERC721: minting would cause overflow');
+        require(tokenId <= maxSupply, 'ERC721: minting would cause overflow');
         // require()); // implement safemath
 
         // // We cannot just use balanceOf to create the new tokenId because tokens
@@ -128,6 +126,8 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
         // ownerToTierId[to] = 0; // level0
         composableCount = tokenId;
         payable(owner).transfer(msg.value);
+
+        emit NFTMinted(ownerToComposableId[msg.sender]);
     }
 
     /**
@@ -146,9 +146,9 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
         _burn(tokenId);
     }
 
-    function changeTotalSupply(uint256 value) public {
+    function changeMaxSupply(uint256 value) public {
         require(hasRole(ADMIN_ROLE, _msgSender()), "Unauthorized total supply setter");
-        totalSupply = value;
+        maxSupply = value;
     }
 
     /**
@@ -223,4 +223,7 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
             data
         );
     }
+    event NFTMinted(
+        uint256 indexed tokenId
+    );
 }

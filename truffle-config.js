@@ -42,13 +42,13 @@ module.exports = {
     // tab if you use this network and you must also set the `host`, `port` and `network_id`
     // options below to some value.
     //
-    development: {
-     host: "127.0.0.1",     // Localhost (default: none)
-     port: 8545,            // Standard Ethereum port (default: none)
-     network_id: "*"      // Any network (default: none)
-    // gas: 20000000,           // Gas sent with each transaction (default: ~6700000)
+    // development: {
+    //  host: "127.0.0.1",     // Localhost (default: none)
+    //  port: 8545,            // Standard Ethereum port (default: none)
+    //  network_id: "*"      // Any network (default: none)
+    // // gas: 20000000,           // Gas sent with each transaction (default: ~6700000)
 
-    }
+    // }
     // matic: {
     //   provider: () => new HDWalletProvider(mnemonic, `https://polygon-mumbai.infura.io/v3/b8a41ba383a841cba588df90a33f2cf3`),
     //   network_id: 80001,

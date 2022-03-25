@@ -77,7 +77,6 @@ contract ERC1155TierUpgradePresetMinterPauser is ERC1155PresetMinterPauser {
 
     /// @notice upgrade user tier
     /// @dev fetch curent tier of msg.sender
-    /// @param _to  the owner of the  snft to be upgraded
 
     function upgradeSNFT(
         uint256 _composableId,
