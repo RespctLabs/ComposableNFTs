@@ -20,14 +20,18 @@ contract ERC998ERC1155TopDown is
     using EnumerableSet for EnumerableSet.AddressSet;
     using EnumerableSet for EnumerableSet.UintSet;
     // composableId         address
+
+    // what the fuck is this mappping? 
     mapping(uint256 => mapping(address => mapping(uint256 => uint256)))
         private _balances; // _ballance is current tier level for a user
 
+    // 
     mapping(address => mapping(uint256 => EnumerableSet.UintSet))
         private _holdersOf;
 
     mapping(uint256 => EnumerableSet.AddressSet) private _childContract;
 
+// ek token ke child tokens ke contract ids ki mapping. 
     mapping(uint256 => mapping(address => EnumerableSet.UintSet))
         private _childsForChildContract;
 
