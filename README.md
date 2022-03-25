@@ -20,4 +20,4 @@ Deploying 'ERC1155TierUpgradePresetMinterPauser'
    > transaction hash:    0xfc09a489f2499cc9fb427a585719c58b4fa4870e61260db613c1734fcb1152b2
    > Blocks: 2            Seconds: 13
    > contract address:    0x5aA35F537e9e62454Bd3F6E9823BB17A6E3B16c7
-   https://mumbai.polygonscan.com/address/0x5aA35F537e9e62454Bd3F6E9823BB17A6E3B16c7#writeContract
+https://mumbai.polygonscan.com/address/0x5aA35F537e9e62454Bd3F6E9823BB17A6E3B16c7#writeContract
