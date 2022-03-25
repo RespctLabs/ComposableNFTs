@@ -1,6 +1,7 @@
 pragma solidity ^0.6.0;
-// SPDX-License-Identifier: MIT
 
+
+// SPDX-License-Identifier: MIT
 /**
  * @dev Library for managing
  * https://en.wikipedia.org/wiki/Set_(abstract_data_type)[sets] of primitive
@@ -295,7 +296,7 @@ library EnumerableSet {
     }
 }
 
-
+// SPDX-License-Identifier: MIT
 /**
  * @dev Collection of functions related to the address type
  */
@@ -482,7 +483,7 @@ library Address {
     }
 }
 
-
+// SPDX-License-Identifier: MIT
 /*
  * @dev Provides information about the current execution context, including the
  * sender of the transaction and its data. While these are generally available
@@ -504,7 +505,7 @@ abstract contract Context {
     }
 }
 
-
+// SPDX-License-Identifier: MIT
 /**
  * @dev Contract module that allows children to implement role-based access
  * control mechanisms.
@@ -715,9 +716,9 @@ abstract contract AccessControl is Context {
     }
 }
 
+// SPDX-License-Identifier: MIT
 
-
-
+// SPDX-License-Identifier: MIT
 /**
  * @dev Contract module which allows children to implement an emergency stop
  * mechanism that can be triggered by an authorized account.
@@ -803,7 +804,7 @@ abstract contract Pausable is Context {
     }
 }
 
-
+// SPDX-License-Identifier: MIT
 /**
  * @dev Interface of the ERC165 standard, as defined in the
  * https://eips.ethereum.org/EIPS/eip-165[EIP].
@@ -825,7 +826,7 @@ interface IERC165 {
     function supportsInterface(bytes4 interfaceId) external view returns (bool);
 }
 
-
+// SPDX-License-Identifier: MIT
 /**
  * @dev Required interface of an ERC1155 compliant contract, as defined in the
  * https://eips.ethereum.org/EIPS/eip-1155[EIP].
@@ -924,7 +925,7 @@ interface IERC1155 is IERC165 {
     function safeBatchTransferFrom(address from, address to, uint256[] calldata ids, uint256[] calldata amounts, bytes calldata data) external;
 }
 
-
+// SPDX-License-Identifier: MIT
 /**
  * @dev Interface of the optional ERC1155MetadataExtension interface, as defined
  * in the https://eips.ethereum.org/EIPS/eip-1155#metadata-extensions[EIP].
@@ -941,7 +942,7 @@ interface IERC1155MetadataURI is IERC1155 {
     function uri(uint256 id) external view returns (string memory);
 }
 
-
+// SPDX-License-Identifier: MIT
 /**
  * _Available since v3.1._
  */
@@ -994,7 +995,7 @@ interface IERC1155Receiver is IERC165 {
         returns(bytes4);
 }
 
-
+// SPDX-License-Identifier: MIT
 /**
  * @dev Implementation of the {IERC165} interface.
  *
@@ -1044,7 +1045,7 @@ abstract contract ERC165 is IERC165 {
     }
 }
 
-
+// SPDX-License-Identifier: MIT
 /**
  * @dev Wrappers over Solidity's arithmetic operations with added overflow
  * checks.
@@ -1256,7 +1257,7 @@ library SafeMath {
     }
 }
 
-
+// SPDX-License-Identifier: MIT
 /**
  *
  * @dev Implementation of the basic standard multi-token.
@@ -1660,7 +1661,7 @@ contract ERC1155 is Context, ERC165, IERC1155, IERC1155MetadataURI {
     }
 }
 
-
+// SPDX-License-Identifier: MIT
 /**
  * @dev _Available since v3.1._
  */
@@ -1673,7 +1674,7 @@ abstract contract ERC1155Receiver is ERC165, IERC1155Receiver {
     }
 }
 
-
+// SPDX-License-Identifier: MIT
 /**
  * @dev Required interface of an ERC721 compliant contract.
  */
@@ -1798,7 +1799,7 @@ interface IERC721 is IERC165 {
     function safeTransferFrom(address from, address to, uint256 tokenId, bytes calldata data) external;
 }
 
-
+// SPDX-License-Identifier: MIT
 /**
  * @title ERC-721 Non-Fungible Token Standard, optional metadata extension
  * @dev See https://eips.ethereum.org/EIPS/eip-721
@@ -1821,7 +1822,7 @@ interface IERC721Metadata is IERC721 {
     function tokenURI(uint256 tokenId) external view returns (string memory);
 }
 
-
+// SPDX-License-Identifier: MIT
 /**
  * @title ERC-721 Non-Fungible Token Standard, optional enumeration extension
  * @dev See https://eips.ethereum.org/EIPS/eip-721
@@ -1846,7 +1847,7 @@ interface IERC721Enumerable is IERC721 {
     function tokenByIndex(uint256 index) external view returns (uint256);
 }
 
-
+// SPDX-License-Identifier: MIT
 /**
  * @title ERC721 token receiver interface
  * @dev Interface for any contract that wants to support safeTransfers
@@ -1865,7 +1866,7 @@ interface IERC721Receiver {
     function onERC721Received(address operator, address from, uint256 tokenId, bytes calldata data) external returns (bytes4);
 }
 
-
+// SPDX-License-Identifier: MIT
 /**
  * @dev Library for managing an enumerable variant of Solidity's
  * https://solidity.readthedocs.io/en/latest/types.html#mapping-types[`mapping`]
@@ -2129,7 +2130,7 @@ library EnumerableMap {
     }
 }
 
-
+// SPDX-License-Identifier: MIT
 /**
  * @dev String operations.
  */
@@ -2161,7 +2162,7 @@ library Strings {
     }
 }
 
-
+// SPDX-License-Identifier: MIT
 /**
  * @title ERC721 Non-Fungible Token Standard basic implementation
  * @dev see https://eips.ethereum.org/EIPS/eip-721
@@ -2625,6 +2626,7 @@ contract ERC721 is Context, ERC165, IERC721, IERC721Metadata, IERC721Enumerable 
     function _beforeTokenTransfer(address from, address to, uint256 tokenId) internal virtual { }
 }
 
+// SPDX-License-Identifier: UNLICENSED
 interface IERC998ERC1155TopDown is IERC721, IERC1155Receiver {
     event ReceivedChild(
         address indexed from,
@@ -2683,11 +2685,11 @@ interface IERC998ERC1155TopDown is IERC721, IERC1155Receiver {
     //     ) external;
 }
 
+// SPDX-License-Identifier: UNLICENSED
 contract ERC998ERC1155TopDown is
     ERC721,
     ERC1155Receiver,
-    IERC998ERC1155TopDown
-{
+    IERC998ERC1155TopDown{
     using EnumerableSet for EnumerableSet.AddressSet;
     using EnumerableSet for EnumerableSet.UintSet;
 
@@ -2917,7 +2919,7 @@ contract ERC998ERC1155TopDown is
     }
 }
 
-
+// SPDX-License-Identifier: MIT
 /**
  * @dev {ERC998} token, including:
  *
@@ -2936,11 +2938,11 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
     Context,
     AccessControl,
     ERC998ERC1155TopDown,
-    Pausable
-{
+    Pausable{
     using SafeMath for uint256;
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
     bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
+    bytes32 public constant ADMIN_ROLE = keccak256("ADMIN_ROLE");
     mapping(uint256 => uint256) tierIdtoUpgradeCost; // 1,2,3 ...  cost to upgrade to tier1, tier2, tier3...
     mapping(address => uint256) public ownerToComposableId;
     uint256 composableCount;
@@ -2958,6 +2960,7 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
         string memory baseURI,
         uint256 _fEngagementPoints // at 115 tierId 0
     ) public ERC998ERC1155TopDown(name, symbol, baseURI) {
+        _setupRole(ADMIN_ROLE, _msgSender());
         _setupRole(DEFAULT_ADMIN_ROLE, _msgSender());
         _setupRole(MINTER_ROLE, _msgSender());
         _setupRole(PAUSER_ROLE, _msgSender());

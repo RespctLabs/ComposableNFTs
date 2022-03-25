@@ -34,7 +34,10 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
     bytes32 public constant ADMIN_ROLE = keccak256("ADMIN_ROLE");
     mapping(uint256 => uint256) tierIdtoUpgradeCost; // 1,2,3 ...  cost to upgrade to tier1, tier2, tier3...
     mapping(address => uint256) public ownerToComposableId;
+    uint mintCost = 2 ether;
+    address payable owner;
     uint256 composableCount;
+    uint256 public totalSupply = 100; 
 
     /**
      * @dev Grants `DEFAULT_ADMIN_ROLE`, `MINTER_ROLE` and `PAUSER_ROLE` to the
@@ -50,9 +53,9 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
         uint256 _fEngagementPoints // at 115 tierId 0
     ) public ERC998ERC1155TopDown(name, symbol, baseURI) {
         _setupRole(ADMIN_ROLE, _msgSender());
-        _setupRole(DEFAULT_ADMIN_ROLE, _msgSender());
         _setupRole(MINTER_ROLE, _msgSender());
         _setupRole(PAUSER_ROLE, _msgSender());
+        owner = payable(msg.sender);
         composableCount = 0;
         tierIdtoUpgradeCost[1] = _fEngagementPoints;
     }
@@ -105,23 +108,26 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
     // >one account can only mint once
 
     /// @param to addres the SNFT is minted to
-    function mint(address to) public virtual {
-        require(
-            hasRole(MINTER_ROLE, _msgSender()),
-            "ERC721: must have minter role to mint"
-        );
-
-        require(balanceOf(to) == 0);
+    function mint() public virtual {
+        // require(
+        //     hasRole(MINTER_ROLE, _msgSender()),
+        //     "ERC721: must have minter role to mint"
+        // );
+        require(msg.value == mintCost, "ERC721: must pay the mint cost");
+        require(balanceOf(msg.sender) == 0, "ERC721: cannot own same token twice");
 
         uint256 tokenId = composableCount + 1; //totalSupply()
+
+        require(tokenId <= totalSupply, 'ERC721: minting would cause overflow');
         // require()); // implement safemath
 
         // // We cannot just use balanceOf to create the new tokenId because tokens
         // // can be burned (destroyed), so we need a separate counter.
-        _mint(to, tokenId);
-        ownerToComposableId[to] = tokenId;
+        _mint(msg.sender, tokenId);
+        ownerToComposableId[msg.sender] = tokenId;
         // ownerToTierId[to] = 0; // level0
         composableCount = tokenId;
+        payable(owner).transfer(msg.value);
     }
 
     /**
@@ -138,6 +144,11 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
             "ERC721Burnable: caller is not owner nor approved"
         );
         _burn(tokenId);
+    }
+
+    function changeTotalSupply(uint256 value) public {
+        require(hasRole(ADMIN_ROLE, _msgSender()), "Unauthorized total supply setter");
+        totalSupply = value;
     }
 
     /**
