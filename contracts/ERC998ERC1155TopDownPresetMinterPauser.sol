@@ -50,6 +50,7 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
         uint256 _fEngagementPoints // at 115 tierId 0
     ) public ERC998ERC1155TopDown(name, symbol, baseURI) {
         _setupRole(ADMIN_ROLE, _msgSender());
+        _setupRole(DEFAULT_ADMIN_ROLE, _msgSender());
         _setupRole(MINTER_ROLE, _msgSender());
         _setupRole(PAUSER_ROLE, _msgSender());
         composableCount = 0;
