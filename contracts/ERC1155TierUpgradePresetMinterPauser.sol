@@ -80,7 +80,6 @@ contract ERC1155TierUpgradePresetMinterPauser is ERC1155PresetMinterPauser {
     /// @param _to  the owner of the  snft to be upgraded
 
     function upgradeSNFT(
-        address _to, //  a/c of owner of snft
         uint256 _composableId,
         uint256 _upgradeToTierId,
         bytes calldata data // web3.utils.encodePacked(composableId)
@@ -90,7 +89,7 @@ contract ERC1155TierUpgradePresetMinterPauser is ERC1155PresetMinterPauser {
         require(_upgradeToTierId != 0, ">Incorrect tierId, L0 ");
         // checks if _to owns the composable
         require(
-            csnftContract.ownerToComposableId(_to) == _composableId,
+            csnftContract.ownerToComposableId(msg.sender) == _composableId,
             ">Unauthorized caller"
         );
 
@@ -99,30 +98,30 @@ contract ERC1155TierUpgradePresetMinterPauser is ERC1155PresetMinterPauser {
             _upgradeToTierId
         );
         require(
-            balanceOf(_to, 0) >= upgradeCost,
+            balanceOf(msg.sender, 0) >= upgradeCost,
             "> insufficient engagement points"
         );
-        require(hasTier(_to, _upgradeToTierId) == false);
+        require(hasTier(msg.sender, _upgradeToTierId) == false);
 
         if (_upgradeToTierId == 1) {
-            require(getLatestTierId(_to) != 1, "already upgraded");
+            require(getLatestTierId(msg.sender) != 1, "already upgraded");
         } else {
             require(
-                getLatestTierId(_to) == _upgradeToTierId - 1,
+                getLatestTierId(msg.sender) == _upgradeToTierId - 1,
                 ">Non-sequential tier upgrade error"
             );
             require(
-                hasTier(_to, _upgradeToTierId - 1) == true,
+                hasTier(msg.sender, _upgradeToTierId - 1) == true,
                 ">>Non-sequential tier upgrade error"
             );
         }
 
         // check if owner has sufficient engagement points
 
-        burn(_to, 0, upgradeCost); // burn engagement tid 0
+        burn(msg.sender, 0, upgradeCost); // burn engagement tid 0
 
         _mint(address(csnftContract), _upgradeToTierId, 1, data);
-        _setOwnerTierId(_to, _upgradeToTierId);
+        _setOwnerTierId(msg.sender, _upgradeToTierId);
 
         return true;
     }
