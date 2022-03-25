@@ -31,7 +31,7 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
     using SafeMath for uint256;
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
     bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
-    bytes32 public constant DEFAULT_ADMIN_ROLE = keccak256("DEFAULT_ADMIN_ROLE");
+    bytes32 public constant ADMIN_ROLE = keccak256("ADMIN_ROLE");
     mapping(uint256 => uint256) tierIdtoUpgradeCost; // 1,2,3 ...  cost to upgrade to tier1, tier2, tier3...
     mapping(address => uint256) public ownerToComposableId;
     uint256 composableCount;
@@ -49,7 +49,7 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
         string memory baseURI,
         uint256 _fEngagementPoints // at 115 tierId 0
     ) public ERC998ERC1155TopDown(name, symbol, baseURI) {
-        _setupRole(DEFAULT_ADMIN_ROLE, _msgSender());
+        _setupRole(ADMIN_ROLE, _msgSender());
         _setupRole(MINTER_ROLE, _msgSender());
         _setupRole(PAUSER_ROLE, _msgSender());
         composableCount = 0;
