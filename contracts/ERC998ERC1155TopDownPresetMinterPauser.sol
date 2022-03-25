@@ -5,6 +5,7 @@ pragma solidity ^0.6.0;
 import "@openzeppelin/contracts/access/AccessControl.sol";
 import "@openzeppelin/contracts/GSN/Context.sol";
 import "@openzeppelin/contracts/utils/Pausable.sol";
+import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 
 import "./ERC998ERC1155TopDown.sol";
 
@@ -26,7 +27,8 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
     Context,
     AccessControl,
     ERC998ERC1155TopDown,
-    Pausable
+    Pausable,
+    ReentrancyGuard
 {
     using SafeMath for uint256;
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
@@ -106,7 +108,7 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
     /// admin would be marketplace
 
     // >one account can only mint once
-    function mint() public virtual payable{
+    function mint() public virtual payable nonReentrant {
         // require(
         //     hasRole(MINTER_ROLE, _msgSender()),
         //     "ERC721: must have minter role to mint"
