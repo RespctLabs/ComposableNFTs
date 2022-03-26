@@ -71,10 +71,6 @@ contract("ComposableParentERC721", accounts => {
     assert.equal(res,1);
     console.log(">>>>>>>>>>>>>>>>");
     console.log(await erc1155.balanceOf(user1,1));
-
-    // console.log(await erc1155.balanceOf(user1,1));
-
-    // assert(await erc998.balanceOf(user2),1);
   });
 
 //handle recursive tier1 minting case 
