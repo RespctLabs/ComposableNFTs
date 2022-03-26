@@ -30,6 +30,7 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
     Pausable,
     ReentrancyGuard
 {
+    // EVENTS
     using SafeMath for uint256;
 
     uint256 composableCount;
@@ -67,8 +68,23 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
         tierIdtoUpgradeCost[1] = _fEngagementPoints;
     }
 
-    /// @notice  set tier upgrade price
-    /// @dev 1-tierPrice1 for first upgrade L0 to L1 ,2-tierPrice2
+    // PUBLIC SETTERS ONLY_ROLE
+
+    /**
+     */
+    function changeMaxSupply(uint256 value) public {
+        require(
+            hasRole(ADMIN_ROLE, _msgSender()),
+            "Unauthorized total supply setter"
+        );
+        maxSupply = value;
+    }
+
+    /**
+     *@dev 1-tierPrice1 for first upgrade L0 to L1 ,2-tierPrice2
+     *@notice  set tier upgrade price
+     */
+
     function setTierUpgradeCost(uint256 _tierId, uint256 _cost) public {
         require(
             hasRole(ADMIN_ROLE, _msgSender()),
@@ -84,20 +100,10 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
         return cost;
     }
 
-    // function incrementTierId(address _to) private {
-    //     ownerToTierId[_to] = _latestTierId;
-    // }
-
+    //PUBLIC GETTERS
     function getComposableId(address _owner) public view returns (uint256) {
         uint256 cid = ownerToComposableId[_owner];
         return cid;
-    }
-
-    function isUpgradeable(uint256 cid) public returns (bool) {
-        // msg.sender is owner of the composable
-        // has enough engagement points at tierId = 0
-        // has sufficient engagement points at tid-1
-        require(balanceOf(msg.sender) == 1);
     }
 
     /**
@@ -111,9 +117,6 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
      * - the caller must have the `MINTER_ROLE`.
      */
 
-    /// admin would be marketplace
-
-    // >one account can only mint once
     function mint() public payable virtual nonReentrant {
         // require(
         //     hasRole(MINTER_ROLE, _msgSender()),
@@ -128,7 +131,6 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
         uint256 tokenId = composableCount + 1; //totalSupply()
 
         require(tokenId <= maxSupply, "ERC721: minting would cause overflow");
-        // require()); // implement safemath
 
         // // We cannot just use balanceOf to create the new tokenId because tokens
         // // can be burned (destroyed), so we need a separate counter.
@@ -155,14 +157,6 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
             "ERC721Burnable: caller is not owner nor approved"
         );
         _burn(tokenId);
-    }
-
-    function changeMaxSupply(uint256 value) public {
-        require(
-            hasRole(ADMIN_ROLE, _msgSender()),
-            "Unauthorized total supply setter"
-        );
-        maxSupply = value;
     }
 
     /**

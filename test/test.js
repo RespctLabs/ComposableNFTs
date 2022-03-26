@@ -43,18 +43,37 @@ contract("ERC998ERC1155TopDownPresetMinterPauser", accounts => {
   });
 
 // check if user csnft Balance
-  it ("User1 has composable1", async() => {
-    assert.equal((await erc998.balanceOf(user1)).toString() , (1).toString());
-    // assert.equal(await erc998.balanceOf(user2),1);
+  it ("BURN CHECK ", async() => {
+    await erc1155.mintEngagementPoints(user1,1000,"0x0");
+
+    console.log(await erc1155.balanceOf(user1,0));
+    await erc1155.upgradeSNFT(composable1, multiTokenTier1, web3.utils.encodePacked(composable1),{from:user1});
+    res = await erc998.childBalance(composable1, erc1155.address, multiTokenTier1);
+    // assert.equal(res,1);
+    console.log("1.>>>>>>>>>>>>>>>>");
+    console.log(await erc1155.balanceOf(user1,1));
+// BURN
+    tx_burn = await erc998.burn(composable1,{from:user1});
+
+    await erc1155.upgradeSNFT(composable1, multiTokenTier1, web3.utils.encodePacked(composable1),{from:user1});
+    res = await erc998.childBalance(composable1, erc1155.address, multiTokenTier1);
+    assert.equal(res,1);
+
+    console.log("2.>>>>>>>>>>>>>>>>");
+    console.log(await erc1155.balanceOf(user1,1));
   });
-  
+
+  // it ("", async() => {
+  //   // assert.equal(await erc998.balanceOf(user2),1);
+  // });
+
   it ("check 998 setters and getters", async() => {
     await erc998.setTierUpgradeCost(multiTokenTier1,tierUpgradeCost2);
 
     assert.equal((await erc998.getTierUpgradeCost(multiTokenTier1)).toString() , (tierUpgradeCost2).toString());
     // assert.equal(await erc998.balanceOf(user2),1);
   });
-  
+
   it ("User1 has 500 engagement points", async() => {
     await erc1155.mintEngagementPoints(user1,500,"0x0");
 
