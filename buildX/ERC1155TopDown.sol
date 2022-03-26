@@ -2328,7 +2328,7 @@ contract ERC721 is Context, ERC165, IERC721, IERC721Metadata, IERC721Enumerable 
 }
 
 // SPDX-License-Identifier: UNLICENSED
-interface IERC998ERC1155TopDown is IERC721, IERC1155Receiver {
+interface IERC1155TopDown is IERC721, IERC1155Receiver {
     event ReceivedChild(
         address indexed from,
         uint256 indexed toTokenId,
@@ -2387,10 +2387,10 @@ interface IERC998ERC1155TopDown is IERC721, IERC1155Receiver {
 }
 
 // SPDX-License-Identifier: UNLICENSED
-contract ERC998ERC1155TopDown is
+contract ERC1155TopDown is
     ERC721,
     ERC1155Receiver,
-    IERC998ERC1155TopDown{
+    IERC1155TopDown{
     using EnumerableSet for EnumerableSet.AddressSet;
     using EnumerableSet for EnumerableSet.UintSet;
 

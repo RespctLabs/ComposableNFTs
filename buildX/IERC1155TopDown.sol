@@ -202,7 +202,7 @@ interface IERC1155Receiver is IERC165 {
 }
 
 // SPDX-License-Identifier: UNLICENSED
-interface IERC998ERC1155TopDown is IERC721, IERC1155Receiver {
+interface IERC1155TopDown is IERC721, IERC1155Receiver {
     event ReceivedChild(
         address indexed from,
         uint256 indexed toTokenId,

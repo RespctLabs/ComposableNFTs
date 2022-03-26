@@ -1,8 +1,8 @@
-const ERC998ERC1155TopDownPresetMinterPauser = artifacts.require("ERC998ERC1155TopDownPresetMinterPauser");
-const ERC1155TierUpgradePresetMinterPauser = artifacts.require("ERC1155TierUpgradePresetMinterPauser");
+const ComposableParentERC721 = artifacts.require("ComposableParentERC721");
+const ComposableChildrenERC1155 = artifacts.require("ComposableChildrenERC1155");
 const web3 = require('web3');
 
-contract("ERC998ERC1155TopDownPresetMinterPauser", accounts => {
+contract("ComposableParentERC721", accounts => {
   let admin;
   let erc998;
   let erc1155;
@@ -21,8 +21,8 @@ contract("ERC998ERC1155TopDownPresetMinterPauser", accounts => {
 
   beforeEach (async () => {
     admin = accounts[0];
-    erc998 = await  ERC998ERC1155TopDownPresetMinterPauser.new("erc998", "ERC998", "https://ERC998.com/{id}",tierUpgradeCost1, { from: admin });
-    erc1155 = await ERC1155TierUpgradePresetMinterPauser.new("https://ERC1155.com/{id}", erc998.address, { from: admin });
+    erc998 = await  ComposableParentERC721.new("erc998", "ERC998", "https://ERC998.com/{id}",tierUpgradeCost1, { from: admin });
+    erc1155 = await ComposableChildrenERC1155.new("https://ERC1155.com/{id}", erc998.address, { from: admin });
 
     await erc998.mint({ from: user1, value: web3.utils.toWei('2') });
     erc998.setTierUpgradeCost(multiTokenTier2,tierUpgradeCost2);

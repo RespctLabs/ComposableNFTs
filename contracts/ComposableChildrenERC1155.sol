@@ -10,14 +10,14 @@ pragma solidity ^0.6.0;
 import "@openzeppelin/contracts/presets/ERC1155PresetMinterPauser.sol";
 // import "@openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol";
 import "@openzeppelin/contracts/token/ERC1155/ERC1155Holder.sol";
-import "./ERC998ERC1155TopDownPresetMinterPauser.sol";
+import "./ComposableParentERC721.sol";
 
-contract ERC1155TierUpgradePresetMinterPauser is ERC1155PresetMinterPauser {
+contract ComposableChildrenERC1155 is ERC1155PresetMinterPauser {
     using SafeMath for uint256;
     bytes4 internal constant ERC1155_ACCEPTED = 0xf23a6e61; // bytes4(keccak256("onERC1155Received(address,address,uint256,uint256,bytes)"))
     bytes4 internal constant ERC1155_BATCH_ACCEPTED = 0xbc197c81; // bytes4(keccak256("onERC1155BatchReceived(address,address,uint256[],uint256[],bytes)"))
 
-    ERC998ERC1155TopDownPresetMinterPauser csnftContract;
+    ComposableParentERC721 csnftContract;
 
     mapping(address => uint256) public ownerToTierId;
     // mapping (address => mapping (address => uint256)) private _allowances;
@@ -36,7 +36,7 @@ contract ERC1155TierUpgradePresetMinterPauser is ERC1155PresetMinterPauser {
             "ERC998: transfer to the zero address"
         );
 
-        csnftContract = ERC998ERC1155TopDownPresetMinterPauser(
+        csnftContract = ComposableParentERC721(
             _csnftContractAdr
         );
     }

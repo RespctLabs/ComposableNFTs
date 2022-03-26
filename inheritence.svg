@@ -3,11 +3,11 @@
 <g id="graph0" class="graph" transform="translate(-234.60152970499576,123.35272616953347) scale(1.1859144994109467)" data-name="G">
 
 <polygon fill="white" stroke="transparent" points="-4,4 -4,-472 1982.17,-472 1982.17,4 -4,4" style=""/>
-<!-- ERC998ERC1155TopDownPresetMinterPauser -->
-<g id="node1" class="node" pointer-events="visible" data-name="ERC998ERC1155TopDownPresetMinterPauser">
+<!-- ComposableParentERC721 -->
+<g id="node1" class="node" pointer-events="visible" data-name="ComposableParentERC721">
 
 <ellipse fill="none" stroke="black" cx="639.77" cy="-378" rx="197.34" ry="18" style=""/>
-<text text-anchor="middle" x="639.77" y="-373.8" font-family="Times,serif" font-size="14.00" style="">ERC998ERC1155TopDownPresetMinterPauser</text>
+<text text-anchor="middle" x="639.77" y="-373.8" font-family="Times,serif" font-size="14.00" style="">ComposableParentERC721</text>
 </g>
 <!-- Context -->
 <g id="node2" class="node" pointer-events="visible" data-name="Context">
@@ -15,8 +15,8 @@
 <ellipse fill="none" stroke="black" cx="806.77" cy="-162" rx="41.73" ry="18" style=""/>
 <text text-anchor="middle" x="806.77" y="-157.8" font-family="Times,serif" font-size="14.00" style="">Context</text>
 </g>
-<!-- ERC998ERC1155TopDownPresetMinterPauser&#45;&gt;Context -->
-<g id="edge1" class="edge" data-name="ERC998ERC1155TopDownPresetMinterPauser-&gt;Context">
+<!-- ComposableParentERC721&#45;&gt;Context -->
+<g id="edge1" class="edge" data-name="ComposableParentERC721-&gt;Context">
 
 <path fill="none" stroke="black" d="M638.94,-359.88C638.77,-341.15 640.68,-310.75 652.77,-288 679.13,-238.38 734.45,-201.23 771.1,-180.81" style=""/>
 <polygon fill="black" stroke="black" points="772.87,-183.84 779.99,-175.99 769.53,-177.68 772.87,-183.84" style=""/>
@@ -27,20 +27,20 @@
 <ellipse fill="none" stroke="black" cx="729.77" cy="-306" rx="67.77" ry="18" style=""/>
 <text text-anchor="middle" x="729.77" y="-301.8" font-family="Times,serif" font-size="14.00" style="">AccessControl</text>
 </g>
-<!-- ERC998ERC1155TopDownPresetMinterPauser&#45;&gt;AccessControl -->
-<g id="edge2" class="edge" data-name="ERC998ERC1155TopDownPresetMinterPauser-&gt;AccessControl">
+<!-- ComposableParentERC721&#45;&gt;AccessControl -->
+<g id="edge2" class="edge" data-name="ComposableParentERC721-&gt;AccessControl">
 
 <path fill="none" stroke="black" d="M661.55,-360.05C673.33,-350.89 688.03,-339.46 700.77,-329.56" style=""/>
 <polygon fill="black" stroke="black" points="703.06,-332.21 708.8,-323.31 698.76,-326.68 703.06,-332.21" style=""/>
 </g>
-<!-- ERC998ERC1155TopDown -->
-<g id="node4" class="node" pointer-events="visible" data-name="ERC998ERC1155TopDown">
+<!-- ERC1155TopDown -->
+<g id="node4" class="node" pointer-events="visible" data-name="ERC1155TopDown">
 
 <ellipse fill="none" stroke="black" cx="314.77" cy="-306" rx="121.6" ry="18" style=""/>
-<text text-anchor="middle" x="314.77" y="-301.8" font-family="Times,serif" font-size="14.00" style="">ERC998ERC1155TopDown</text>
+<text text-anchor="middle" x="314.77" y="-301.8" font-family="Times,serif" font-size="14.00" style="">ERC1155TopDown</text>
 </g>
-<!-- ERC998ERC1155TopDownPresetMinterPauser&#45;&gt;ERC998ERC1155TopDown -->
-<g id="edge3" class="edge" data-name="ERC998ERC1155TopDownPresetMinterPauser-&gt;ERC998ERC1155TopDown">
+<!-- ComposableParentERC721&#45;&gt;ERC1155TopDown -->
+<g id="edge3" class="edge" data-name="ComposableParentERC721-&gt;ERC1155TopDown">
 
 <path fill="none" stroke="black" d="M566.42,-361.2C514.01,-349.91 443.68,-334.77 390.69,-323.35" style=""/>
 <polygon fill="black" stroke="black" points="391.18,-319.88 380.67,-321.19 389.71,-326.72 391.18,-319.88" style=""/>
@@ -51,8 +51,8 @@
 <ellipse fill="none" stroke="black" cx="801.77" cy="-234" rx="45.22" ry="18" style=""/>
 <text text-anchor="middle" x="801.77" y="-229.8" font-family="Times,serif" font-size="14.00" style="">Pausable</text>
 </g>
-<!-- ERC998ERC1155TopDownPresetMinterPauser&#45;&gt;Pausable -->
-<g id="edge4" class="edge" data-name="ERC998ERC1155TopDownPresetMinterPauser-&gt;Pausable">
+<!-- ComposableParentERC721&#45;&gt;Pausable -->
+<g id="edge4" class="edge" data-name="ComposableParentERC721-&gt;Pausable">
 
 <path fill="none" stroke="black" d="M750.67,-363.07C772.58,-355.07 793.02,-342.78 806.77,-324 819.78,-306.21 816.77,-280.68 811.53,-261.51" style=""/>
 <polygon fill="black" stroke="black" points="814.86,-260.41 808.58,-251.88 808.17,-262.47 814.86,-260.41" style=""/>
@@ -69,8 +69,8 @@
 <ellipse fill="none" stroke="black" cx="363.77" cy="-234" rx="83.39" ry="18" style=""/>
 <text text-anchor="middle" x="363.77" y="-229.8" font-family="Times,serif" font-size="14.00" style="">ERC1155Receiver</text>
 </g>
-<!-- ERC998ERC1155TopDown&#45;&gt;ERC1155Receiver -->
-<g id="edge27" class="edge" data-name="ERC998ERC1155TopDown-&gt;ERC1155Receiver">
+<!-- ERC1155TopDown&#45;&gt;ERC1155Receiver -->
+<g id="edge27" class="edge" data-name="ERC1155TopDown-&gt;ERC1155Receiver">
 
 <path fill="none" stroke="black" d="M326.63,-288.05C332.38,-279.84 339.41,-269.79 345.8,-260.66" style=""/>
 <polygon fill="black" stroke="black" points="348.81,-262.47 351.67,-252.28 343.07,-258.46 348.81,-262.47" style=""/>
@@ -81,20 +81,20 @@
 <ellipse fill="none" stroke="black" cx="521.77" cy="-234" rx="44.1" ry="18" style=""/>
 <text text-anchor="middle" x="521.77" y="-229.8" font-family="Times,serif" font-size="14.00" style="">ERC721</text>
 </g>
-<!-- ERC998ERC1155TopDown&#45;&gt;ERC721 -->
-<g id="edge26" class="edge" data-name="ERC998ERC1155TopDown-&gt;ERC721">
+<!-- ERC1155TopDown&#45;&gt;ERC721 -->
+<g id="edge26" class="edge" data-name="ERC1155TopDown-&gt;ERC721">
 
 <path fill="none" stroke="black" d="M361.22,-289.29C396.48,-277.37 444.59,-261.1 478.92,-249.49" style=""/>
 <polygon fill="black" stroke="black" points="480.31,-252.71 488.67,-246.19 478.07,-246.08 480.31,-252.71" style=""/>
 </g>
-<!-- IERC998ERC1155TopDown -->
-<g id="node22" class="node" pointer-events="visible" data-name="IERC998ERC1155TopDown">
+<!-- IERC1155TopDown -->
+<g id="node22" class="node" pointer-events="visible" data-name="IERC1155TopDown">
 
 <ellipse fill="none" stroke="black" cx="124.77" cy="-234" rx="124.53" ry="18" style=""/>
-<text text-anchor="middle" x="124.77" y="-229.8" font-family="Times,serif" font-size="14.00" style="">IERC998ERC1155TopDown</text>
+<text text-anchor="middle" x="124.77" y="-229.8" font-family="Times,serif" font-size="14.00" style="">IERC1155TopDown</text>
 </g>
-<!-- ERC998ERC1155TopDown&#45;&gt;IERC998ERC1155TopDown -->
-<g id="edge28" class="edge" data-name="ERC998ERC1155TopDown-&gt;IERC998ERC1155TopDown">
+<!-- ERC1155TopDown&#45;&gt;IERC1155TopDown -->
+<g id="edge28" class="edge" data-name="ERC1155TopDown-&gt;IERC1155TopDown">
 
 <path fill="none" stroke="black" d="M271.65,-289.12C243.81,-278.86 207.4,-265.44 177.8,-254.54" style=""/>
 <polygon fill="black" stroke="black" points="178.63,-251.12 168.04,-250.94 176.21,-257.68 178.63,-251.12" style=""/>
@@ -105,11 +105,11 @@
 <path fill="none" stroke="black" d="M803,-215.7C803.55,-207.98 804.22,-198.71 804.83,-190.11" style=""/>
 <polygon fill="black" stroke="black" points="808.32,-190.33 805.54,-180.1 801.34,-189.83 808.32,-190.33" style=""/>
 </g>
-<!-- ERC1155TierUpgradePresetMinterPauser -->
-<g id="node6" class="node" pointer-events="visible" data-name="ERC1155TierUpgradePresetMinterPauser">
+<!-- ComposableChildrenERC1155 -->
+<g id="node6" class="node" pointer-events="visible" data-name="ComposableChildrenERC1155">
 
 <ellipse fill="none" stroke="black" cx="982.77" cy="-450" rx="174.16" ry="18" style=""/>
-<text text-anchor="middle" x="982.77" y="-445.8" font-family="Times,serif" font-size="14.00" style="">ERC1155TierUpgradePresetMinterPauser</text>
+<text text-anchor="middle" x="982.77" y="-445.8" font-family="Times,serif" font-size="14.00" style="">ComposableChildrenERC1155</text>
 </g>
 <!-- ERC1155PresetMinterPauser -->
 <g id="node7" class="node" pointer-events="visible" data-name="ERC1155PresetMinterPauser">
@@ -117,8 +117,8 @@
 <ellipse fill="none" stroke="black" cx="982.77" cy="-378" rx="125" ry="18" style=""/>
 <text text-anchor="middle" x="982.77" y="-373.8" font-family="Times,serif" font-size="14.00" style="">ERC1155PresetMinterPauser</text>
 </g>
-<!-- ERC1155TierUpgradePresetMinterPauser&#45;&gt;ERC1155PresetMinterPauser -->
-<g id="edge5" class="edge" data-name="ERC1155TierUpgradePresetMinterPauser-&gt;ERC1155PresetMinterPauser">
+<!-- ComposableChildrenERC1155&#45;&gt;ERC1155PresetMinterPauser -->
+<g id="edge5" class="edge" data-name="ComposableChildrenERC1155-&gt;ERC1155PresetMinterPauser">
 
 <path fill="none" stroke="black" d="M982.77,-431.7C982.77,-423.98 982.77,-414.71 982.77,-406.11" style=""/>
 <polygon fill="black" stroke="black" points="986.27,-406.1 982.77,-396.1 979.27,-406.1 986.27,-406.1" style=""/>
@@ -351,14 +351,14 @@
 <path fill="none" stroke="black" d="M527.82,-216.05C530.63,-208.18 534.05,-198.62 537.2,-189.79" style=""/>
 <polygon fill="black" stroke="black" points="540.53,-190.87 540.6,-180.28 533.94,-188.52 540.53,-190.87" style=""/>
 </g>
-<!-- IERC998ERC1155TopDown&#45;&gt;IERC1155Receiver -->
-<g id="edge38" class="edge" data-name="IERC998ERC1155TopDown-&gt;IERC1155Receiver">
+<!-- IERC1155TopDown&#45;&gt;IERC1155Receiver -->
+<g id="edge38" class="edge" data-name="IERC1155TopDown-&gt;IERC1155Receiver">
 
 <path fill="none" stroke="black" d="M124.77,-215.7C124.77,-207.98 124.77,-198.71 124.77,-190.11" style=""/>
 <polygon fill="black" stroke="black" points="128.27,-190.1 124.77,-180.1 121.27,-190.1 128.27,-190.1" style=""/>
 </g>
-<!-- IERC998ERC1155TopDown&#45;&gt;IERC721 -->
-<g id="edge37" class="edge" data-name="IERC998ERC1155TopDown-&gt;IERC721">
+<!-- IERC1155TopDown&#45;&gt;IERC721 -->
+<g id="edge37" class="edge" data-name="IERC1155TopDown-&gt;IERC721">
 
 <path fill="none" stroke="black" d="M74.57,-217.4C56.9,-209.22 38.93,-197.22 28.77,-180 20.63,-166.22 18.41,-156.2 28.77,-144 62.03,-104.82 209.88,-94.55 293.19,-91.9" style=""/>
 <polygon fill="black" stroke="black" points="293.37,-95.39 303.26,-91.6 293.17,-88.4 293.37,-95.39" style=""/>

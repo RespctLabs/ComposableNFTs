@@ -717,94 +717,6 @@ abstract contract AccessControl is Context {
 }
 
 // SPDX-License-Identifier: MIT
-
-// SPDX-License-Identifier: MIT
-/**
- * @dev Contract module which allows children to implement an emergency stop
- * mechanism that can be triggered by an authorized account.
- *
- * This module is used through inheritance. It will make available the
- * modifiers `whenNotPaused` and `whenPaused`, which can be applied to
- * the functions of your contract. Note that they will not be pausable by
- * simply including this module, only once the modifiers are put in place.
- */
-abstract contract Pausable is Context {
-    /**
-     * @dev Emitted when the pause is triggered by `account`.
-     */
-    event Paused(address account);
-
-    /**
-     * @dev Emitted when the pause is lifted by `account`.
-     */
-    event Unpaused(address account);
-
-    bool private _paused;
-
-    /**
-     * @dev Initializes the contract in unpaused state.
-     */
-    constructor () internal {
-        _paused = false;
-    }
-
-    /**
-     * @dev Returns true if the contract is paused, and false otherwise.
-     */
-    function paused() public view virtual returns (bool) {
-        return _paused;
-    }
-
-    /**
-     * @dev Modifier to make a function callable only when the contract is not paused.
-     *
-     * Requirements:
-     *
-     * - The contract must not be paused.
-     */
-    modifier whenNotPaused() {
-        require(!paused(), "Pausable: paused");
-        _;
-    }
-
-    /**
-     * @dev Modifier to make a function callable only when the contract is paused.
-     *
-     * Requirements:
-     *
-     * - The contract must be paused.
-     */
-    modifier whenPaused() {
-        require(paused(), "Pausable: not paused");
-        _;
-    }
-
-    /**
-     * @dev Triggers stopped state.
-     *
-     * Requirements:
-     *
-     * - The contract must not be paused.
-     */
-    function _pause() internal virtual whenNotPaused {
-        _paused = true;
-        emit Paused(_msgSender());
-    }
-
-    /**
-     * @dev Returns to normal state.
-     *
-     * Requirements:
-     *
-     * - The contract must be paused.
-     */
-    function _unpause() internal virtual whenPaused {
-        _paused = false;
-        emit Unpaused(_msgSender());
-    }
-}
-
-// SPDX-License-Identifier: MIT
 /**
  * @dev Interface of the ERC165 standard, as defined in the
  * https://eips.ethereum.org/EIPS/eip-165[EIP].
@@ -1663,6 +1575,251 @@ contract ERC1155 is Context, ERC165, IERC1155, IERC1155MetadataURI {
 
 // SPDX-License-Identifier: MIT
 /**
+ * @dev Extension of {ERC1155} that allows token holders to destroy both their
+ * own tokens and those that they have been approved to use.
+ *
+ * _Available since v3.1._
+ */
+abstract contract ERC1155Burnable is ERC1155 {
+    function burn(address account, uint256 id, uint256 value) public virtual {
+        require(
+            account == _msgSender() || isApprovedForAll(account, _msgSender()),
+            "ERC1155: caller is not owner nor approved"
+        );
+
+        _burn(account, id, value);
+    }
+
+    function burnBatch(address account, uint256[] memory ids, uint256[] memory values) public virtual {
+        require(
+            account == _msgSender() || isApprovedForAll(account, _msgSender()),
+            "ERC1155: caller is not owner nor approved"
+        );
+
+        _burnBatch(account, ids, values);
+    }
+}
+
+// SPDX-License-Identifier: MIT
+/**
+ * @dev Contract module which allows children to implement an emergency stop
+ * mechanism that can be triggered by an authorized account.
+ *
+ * This module is used through inheritance. It will make available the
+ * modifiers `whenNotPaused` and `whenPaused`, which can be applied to
+ * the functions of your contract. Note that they will not be pausable by
+ * simply including this module, only once the modifiers are put in place.
+ */
+abstract contract Pausable is Context {
+    /**
+     * @dev Emitted when the pause is triggered by `account`.
+     */
+    event Paused(address account);
+
+    /**
+     * @dev Emitted when the pause is lifted by `account`.
+     */
+    event Unpaused(address account);
+
+    bool private _paused;
+
+    /**
+     * @dev Initializes the contract in unpaused state.
+     */
+    constructor () internal {
+        _paused = false;
+    }
+
+    /**
+     * @dev Returns true if the contract is paused, and false otherwise.
+     */
+    function paused() public view virtual returns (bool) {
+        return _paused;
+    }
+
+    /**
+     * @dev Modifier to make a function callable only when the contract is not paused.
+     *
+     * Requirements:
+     *
+     * - The contract must not be paused.
+     */
+    modifier whenNotPaused() {
+        require(!paused(), "Pausable: paused");
+        _;
+    }
+
+    /**
+     * @dev Modifier to make a function callable only when the contract is paused.
+     *
+     * Requirements:
+     *
+     * - The contract must be paused.
+     */
+    modifier whenPaused() {
+        require(paused(), "Pausable: not paused");
+        _;
+    }
+
+    /**
+     * @dev Triggers stopped state.
+     *
+     * Requirements:
+     *
+     * - The contract must not be paused.
+     */
+    function _pause() internal virtual whenNotPaused {
+        _paused = true;
+        emit Paused(_msgSender());
+    }
+
+    /**
+     * @dev Returns to normal state.
+     *
+     * Requirements:
+     *
+     * - The contract must be paused.
+     */
+    function _unpause() internal virtual whenPaused {
+        _paused = false;
+        emit Unpaused(_msgSender());
+    }
+}
+
+// SPDX-License-Identifier: MIT
+/**
+ * @dev ERC1155 token with pausable token transfers, minting and burning.
+ *
+ * Useful for scenarios such as preventing trades until the end of an evaluation
+ * period, or having an emergency switch for freezing all token transfers in the
+ * event of a large bug.
+ *
+ * _Available since v3.1._
+ */
+abstract contract ERC1155Pausable is ERC1155, Pausable {
+    /**
+     * @dev See {ERC1155-_beforeTokenTransfer}.
+     *
+     * Requirements:
+     *
+     * - the contract must not be paused.
+     */
+    function _beforeTokenTransfer(
+        address operator,
+        address from,
+        address to,
+        uint256[] memory ids,
+        uint256[] memory amounts,
+        bytes memory data
+    )
+        internal
+        virtual
+        override
+    {
+        super._beforeTokenTransfer(operator, from, to, ids, amounts, data);
+
+        require(!paused(), "ERC1155Pausable: token transfer while paused");
+    }
+}
+
+// SPDX-License-Identifier: MIT
+/**
+ * @dev {ERC1155} token, including:
+ *
+ *  - ability for holders to burn (destroy) their tokens
+ *  - a minter role that allows for token minting (creation)
+ *  - a pauser role that allows to stop all token transfers
+ *
+ * This contract uses {AccessControl} to lock permissioned functions using the
+ * different roles - head to its documentation for details.
+ *
+ * The account that deploys the contract will be granted the minter and pauser
+ * roles, as well as the default admin role, which will let it grant both minter
+ * and pauser roles to other accounts.
+ */
+contract ERC1155PresetMinterPauser is Context, AccessControl, ERC1155Burnable, ERC1155Pausable {
+    bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
+    bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
+
+    /**
+     * @dev Grants `DEFAULT_ADMIN_ROLE`, `MINTER_ROLE`, and `PAUSER_ROLE` to the account that
+     * deploys the contract.
+     */
+    constructor(string memory uri) public ERC1155(uri) {
+        _setupRole(DEFAULT_ADMIN_ROLE, _msgSender());
+
+        _setupRole(MINTER_ROLE, _msgSender());
+        _setupRole(PAUSER_ROLE, _msgSender());
+    }
+
+    /**
+     * @dev Creates `amount` new tokens for `to`, of token type `id`.
+     *
+     * See {ERC1155-_mint}.
+     *
+     * Requirements:
+     *
+     * - the caller must have the `MINTER_ROLE`.
+     */
+    function mint(address to, uint256 id, uint256 amount, bytes memory data) public virtual {
+        require(hasRole(MINTER_ROLE, _msgSender()), "ERC1155PresetMinterPauser: must have minter role to mint");
+
+        _mint(to, id, amount, data);
+    }
+
+    /**
+     * @dev xref:ROOT:erc1155.adoc#batch-operations[Batched] variant of {mint}.
+     */
+    function mintBatch(address to, uint256[] memory ids, uint256[] memory amounts, bytes memory data) public virtual {
+        require(hasRole(MINTER_ROLE, _msgSender()), "ERC1155PresetMinterPauser: must have minter role to mint");
+
+        _mintBatch(to, ids, amounts, data);
+    }
+
+    /**
+     * @dev Pauses all token transfers.
+     *
+     * See {ERC1155Pausable} and {Pausable-_pause}.
+     *
+     * Requirements:
+     *
+     * - the caller must have the `PAUSER_ROLE`.
+     */
+    function pause() public virtual {
+        require(hasRole(PAUSER_ROLE, _msgSender()), "ERC1155PresetMinterPauser: must have pauser role to pause");
+        _pause();
+    }
+
+    /**
+     * @dev Unpauses all token transfers.
+     *
+     * See {ERC1155Pausable} and {Pausable-_unpause}.
+     *
+     * Requirements:
+     *
+     * - the caller must have the `PAUSER_ROLE`.
+     */
+    function unpause() public virtual {
+        require(hasRole(PAUSER_ROLE, _msgSender()), "ERC1155PresetMinterPauser: must have pauser role to unpause");
+        _unpause();
+    }
+
+    function _beforeTokenTransfer(
+        address operator,
+        address from,
+        address to,
+        uint256[] memory ids,
+        uint256[] memory amounts,
+        bytes memory data
+    )
+        internal virtual override(ERC1155, ERC1155Pausable)
+    {
+        super._beforeTokenTransfer(operator, from, to, ids, amounts, data);
+    }
+}
+
+// SPDX-License-Identifier: MIT
+/**
  * @dev _Available since v3.1._
  */
 abstract contract ERC1155Receiver is ERC165, IERC1155Receiver {
@@ -1671,6 +1828,82 @@ abstract contract ERC1155Receiver is ERC165, IERC1155Receiver {
             ERC1155Receiver(address(0)).onERC1155Received.selector ^
             ERC1155Receiver(address(0)).onERC1155BatchReceived.selector
         );
+    }
+}
+
+// SPDX-License-Identifier: MIT
+/**
+ * @dev _Available since v3.1._
+ */
+contract ERC1155Holder is ERC1155Receiver {
+    function onERC1155Received(address, address, uint256, uint256, bytes memory) public virtual override returns (bytes4) {
+        return this.onERC1155Received.selector;
+    }
+
+    function onERC1155BatchReceived(address, address, uint256[] memory, uint256[] memory, bytes memory) public virtual override returns (bytes4) {
+        return this.onERC1155BatchReceived.selector;
+    }
+}
+
+// SPDX-License-Identifier: MIT
+
+// SPDX-License-Identifier: MIT
+/**
+ * @dev Contract module that helps prevent reentrant calls to a function.
+ *
+ * Inheriting from `ReentrancyGuard` will make the {nonReentrant} modifier
+ * available, which can be applied to functions to make sure there are no nested
+ * (reentrant) calls to them.
+ *
+ * Note that because there is a single `nonReentrant` guard, functions marked as
+ * `nonReentrant` may not call one another. This can be worked around by making
+ * those functions `private`, and then adding `external` `nonReentrant` entry
+ * points to them.
+ *
+ * TIP: If you would like to learn more about reentrancy and alternative ways
+ * to protect against it, check out our blog post
+ * https://blog.openzeppelin.com/reentrancy-after-istanbul/[Reentrancy After Istanbul].
+ */
+abstract contract ReentrancyGuard {
+    // Booleans are more expensive than uint256 or any type that takes up a full
+    // word because each write operation emits an extra SLOAD to first read the
+    // slot's contents, replace the bits taken up by the boolean, and then write
+    // back. This is the compiler's defense against contract upgrades and
+    // pointer aliasing, and it cannot be disabled.
+
+    // The values being non-zero value makes deployment a bit more expensive,
+    // but in exchange the refund on every call to nonReentrant will be lower in
+    // amount. Since refunds are capped to a percentage of the total
+    // transaction's gas, it is best to keep them low in cases like this one, to
+    // increase the likelihood of the full refund coming into effect.
+    uint256 private constant _NOT_ENTERED = 1;
+    uint256 private constant _ENTERED = 2;
+
+    uint256 private _status;
+
+    constructor () internal {
+        _status = _NOT_ENTERED;
+    }
+
+    /**
+     * @dev Prevents a contract from calling itself, directly or indirectly.
+     * Calling a `nonReentrant` function from another `nonReentrant`
+     * function is not supported. It is possible to prevent this from happening
+     * by making the `nonReentrant` function external, and make it call a
+     * `private` function that does the actual work.
+     */
+    modifier nonReentrant() {
+        // On the first call to nonReentrant, _notEntered will be true
+        require(_status != _ENTERED, "ReentrancyGuard: reentrant call");
+
+        // Any calls to nonReentrant after this point will fail
+        _status = _ENTERED;
+
+        _;
+
+        // By storing the original value once again, a refund is triggered (see
+        // https://eips.ethereum.org/EIPS/eip-2200)
+        _status = _NOT_ENTERED;
     }
 }
 
@@ -2627,7 +2860,7 @@ contract ERC721 is Context, ERC165, IERC721, IERC721Metadata, IERC721Enumerable 
 }
 
 // SPDX-License-Identifier: UNLICENSED
-interface IERC998ERC1155TopDown is IERC721, IERC1155Receiver {
+interface IERC1155TopDown is IERC721, IERC1155Receiver {
     event ReceivedChild(
         address indexed from,
         uint256 indexed toTokenId,
@@ -2686,10 +2919,10 @@ interface IERC998ERC1155TopDown is IERC721, IERC1155Receiver {
 }
 
 // SPDX-License-Identifier: UNLICENSED
-contract ERC998ERC1155TopDown is
+contract ERC1155TopDown is
     ERC721,
     ERC1155Receiver,
-    IERC998ERC1155TopDown{
+    IERC1155TopDown{
     using EnumerableSet for EnumerableSet.AddressSet;
     using EnumerableSet for EnumerableSet.UintSet;
 
@@ -2934,18 +3167,26 @@ contract ERC998ERC1155TopDown is
  * roles, as well as the default admin role, which will let it grant both minter
  * and pauser roles to other accounts.
  */
-contract ERC998ERC1155TopDownPresetMinterPauser is
+contract ComposableParentERC721 is
     Context,
     AccessControl,
-    ERC998ERC1155TopDown,
-    Pausable{
+    ERC1155TopDown,
+    Pausable,
+    ReentrancyGuard{
     using SafeMath for uint256;
+
+    uint256 composableCount;
+    uint256 public maxSupply = 100;
+    uint256 public mintCost = 2 ether;
+
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
     bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
     bytes32 public constant ADMIN_ROLE = keccak256("ADMIN_ROLE");
+
     mapping(uint256 => uint256) tierIdtoUpgradeCost; // 1,2,3 ...  cost to upgrade to tier1, tier2, tier3...
     mapping(address => uint256) public ownerToComposableId;
-    uint256 composableCount;
+
+    address payable owner;
 
     /**
      * @dev Grants `DEFAULT_ADMIN_ROLE`, `MINTER_ROLE` and `PAUSER_ROLE` to the
@@ -2959,19 +3200,21 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
         string memory symbol,
         string memory baseURI,
         uint256 _fEngagementPoints // at 115 tierId 0
-    ) public ERC998ERC1155TopDown(name, symbol, baseURI) {
+    ) public ERC1155TopDown(name, symbol, baseURI) {
         _setupRole(ADMIN_ROLE, _msgSender());
-        _setupRole(DEFAULT_ADMIN_ROLE, _msgSender());
         _setupRole(MINTER_ROLE, _msgSender());
         _setupRole(PAUSER_ROLE, _msgSender());
+
+        owner = payable(msg.sender);
         composableCount = 0;
         tierIdtoUpgradeCost[1] = _fEngagementPoints;
     }
 
-    /// @notice manually add tier upgrade prices
+    /// @notice  set tier upgrade price
+    /// @dev 1-tierPrice1 for first upgrade L0 to L1 ,2-tierPrice2
     function setTierUpgradeCost(uint256 _tierId, uint256 _cost) public {
         require(
-            hasRole(MINTER_ROLE, _msgSender()),
+            hasRole(ADMIN_ROLE, _msgSender()),
             "Unauthorized tier price setter"
         );
 
@@ -3014,25 +3257,31 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
     /// admin would be marketplace
 
     // >one account can only mint once
-
-    /// @param to addres the SNFT is minted to
-    function mint(address to) public virtual {
+    function mint() public payable virtual nonReentrant {
+        // require(
+        //     hasRole(MINTER_ROLE, _msgSender()),
+        //     "ERC721: must have minter role to mint"
+        // );
+        require(msg.value == mintCost, "ERC721: must pay the mint cost");
         require(
-            hasRole(MINTER_ROLE, _msgSender()),
-            "ERC721: must have minter role to mint"
+            balanceOf(msg.sender) == 0,
+            "ERC721: cannot own same token twice"
         );
 
-        require(balanceOf(to) == 0);
-
         uint256 tokenId = composableCount + 1; //totalSupply()
+
+        require(tokenId <= maxSupply, "ERC721: minting would cause overflow");
         // require()); // implement safemath
 
         // // We cannot just use balanceOf to create the new tokenId because tokens
         // // can be burned (destroyed), so we need a separate counter.
-        _mint(to, tokenId);
-        ownerToComposableId[to] = tokenId;
+        _mint(msg.sender, tokenId);
+        ownerToComposableId[msg.sender] = tokenId;
         // ownerToTierId[to] = 0; // level0
         composableCount = tokenId;
+        payable(owner).transfer(msg.value);
+
+        emit NFTMinted(ownerToComposableId[msg.sender]);
     }
 
     /**
@@ -3049,6 +3298,14 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
             "ERC721Burnable: caller is not owner nor approved"
         );
         _burn(tokenId);
+    }
+
+    function changeMaxSupply(uint256 value) public {
+        require(
+            hasRole(ADMIN_ROLE, _msgSender()),
+            "Unauthorized total supply setter"
+        );
+        maxSupply = value;
     }
 
     /**
@@ -3122,5 +3379,128 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
             amounts,
             data
         );
+    }
+
+    event NFTMinted(uint256 indexed tokenId);
+}
+
+// SPDX-License-Identifier: UNLICENSED
+///@dev handle Batch receiving function - !!!!
+/// @title ERC1155TUMP creates tier supply and attaches tier to composable
+/// @author respect-club
+/// @notice receives Engagement tokens and attaches tier to composable ERC998
+/// @dev this contract maintains engagement tokens at id 0,
+// import "@openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol";
+contract ComposableChildrenERC1155 is ERC1155PresetMinterPauser {
+    using SafeMath for uint256;
+    bytes4 internal constant ERC1155_ACCEPTED = 0xf23a6e61; // bytes4(keccak256("onERC1155Received(address,address,uint256,uint256,bytes)"))
+    bytes4 internal constant ERC1155_BATCH_ACCEPTED = 0xbc197c81; // bytes4(keccak256("onERC1155BatchReceived(address,address,uint256[],uint256[],bytes)"))
+
+    ComposableParentERC721 csnftContract;
+
+    mapping(address => uint256) public ownerToTierId;
+    // mapping (address => mapping (address => uint256)) private _allowances;
+    mapping(address => mapping(uint256 => bool))
+        private _ownerToUpgradeInitiated;
+
+    /// @notice csnft contract is deployed and linked to ERC1155TUMP
+    /// @param _csnftContractAdr deployed csnft contract
+
+    constructor(string memory tierUri, address _csnftContractAdr)
+        public
+        ERC1155PresetMinterPauser(tierUri)
+    {
+        require(
+            _csnftContractAdr != address(0),
+            "ERC998: transfer to the zero address"
+        );
+
+        csnftContract = ComposableParentERC721(
+            _csnftContractAdr
+        );
+    }
+
+    function getLatestTierId(address _to) public returns (uint256) {
+        // uint256[] s arr = childIdsForOn(_composableId, tierContract);
+        return ownerToTierId[_to];
+    }
+
+    function hasTier(address _to, uint256 _tierId) public returns (bool) {
+        // uint256[] s arr = childIdsForOn(_composableId, tierContract);
+        return _ownerToUpgradeInitiated[_to][_tierId];
+    }
+
+    function _setOwnerTierId(address _to, uint256 _latestTierId) private {
+        ownerToTierId[_to] = _latestTierId;
+        _ownerToUpgradeInitiated[_to][_latestTierId] = true;
+    }
+
+    /// implement claimF engagement points
+    //function claim(){}
+    /// @notice mints enagagement point onlyMinterRole
+    /// @param _to csnftContract Address
+    /// @param _amount of F engagement  points
+    /// @param _data web3.utils.encodePacked(composableId)
+    function mintEngagementPoints(
+        address _to,
+        uint256 _amount,
+        bytes memory _data
+    ) public {
+        require(
+            hasRole(MINTER_ROLE, _msgSender()),
+            "ERC1155TUMP unauthorized engagement minter"
+        );
+
+        mint(_to, 0, _amount, _data);
+    }
+
+    /// @notice upgrade user tier
+    /// @dev fetch curent tier of msg.sender
+
+    function upgradeSNFT(
+        uint256 _composableId,
+        uint256 _upgradeToTierId,
+        bytes calldata data // web3.utils.encodePacked(composableId)
+    ) external returns (bool) {
+        //add tier checks  if tierId =1 bal(t-1) == 1
+        // at t=0 bal(0) >= _FengagementPOints
+        require(_upgradeToTierId != 0, ">Incorrect tierId, L0 ");
+        // checks if _to owns the composable
+        require(
+            csnftContract.ownerToComposableId(msg.sender) == _composableId,
+            ">Unauthorized caller"
+        );
+
+        // fetch upgrading cost
+        uint256 upgradeCost = csnftContract.getTierUpgradeCost(
+            _upgradeToTierId
+        );
+        require(
+            balanceOf(msg.sender, 0) >= upgradeCost,
+            "> insufficient engagement points"
+        );
+        require(hasTier(msg.sender, _upgradeToTierId) == false);
+
+        if (_upgradeToTierId == 1) {
+            require(getLatestTierId(msg.sender) != 1, "already upgraded");
+        } else {
+            require(
+                getLatestTierId(msg.sender) == _upgradeToTierId - 1,
+                ">Non-sequential tier upgrade error"
+            );
+            require(
+                hasTier(msg.sender, _upgradeToTierId - 1) == true,
+                ">>Non-sequential tier upgrade error"
+            );
+        }
+
+        // check if owner has sufficient engagement points
+
+        burn(msg.sender, 0, upgradeCost); // burn engagement tid 0
+
+        _mint(address(csnftContract), _upgradeToTierId, 1, data);
+        _setOwnerTierId(msg.sender, _upgradeToTierId);
+
+        return true;
     }
 }

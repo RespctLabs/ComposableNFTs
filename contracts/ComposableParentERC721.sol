@@ -7,7 +7,7 @@ import "@openzeppelin/contracts/GSN/Context.sol";
 import "@openzeppelin/contracts/utils/Pausable.sol";
 import "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
 
-import "./ERC998ERC1155TopDown.sol";
+import "./ERC1155TopDown.sol";
 
 /**
  * @dev {ERC998} token, including:
@@ -23,10 +23,10 @@ import "./ERC998ERC1155TopDown.sol";
  * roles, as well as the default admin role, which will let it grant both minter
  * and pauser roles to other accounts.
  */
-contract ERC998ERC1155TopDownPresetMinterPauser is
+contract ComposableParentERC721 is
     Context,
     AccessControl,
-    ERC998ERC1155TopDown,
+    ERC1155TopDown,
     Pausable,
     ReentrancyGuard
 {
@@ -57,7 +57,7 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
         string memory symbol,
         string memory baseURI,
         uint256 _fEngagementPoints // at 115 tierId 0
-    ) public ERC998ERC1155TopDown(name, symbol, baseURI) {
+    ) public ERC1155TopDown(name, symbol, baseURI) {
         _setupRole(ADMIN_ROLE, _msgSender());
         _setupRole(MINTER_ROLE, _msgSender());
         _setupRole(PAUSER_ROLE, _msgSender());
