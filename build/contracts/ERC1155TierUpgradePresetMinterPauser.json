@@ -8479,7 +8479,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.1",
-  "updatedAt": "2022-03-26T07:29:37.250Z",
+  "updatedAt": "2022-03-26T07:49:57.099Z",
   "devdoc": {
     "methods": {
       "balanceOf(address,uint256)": {

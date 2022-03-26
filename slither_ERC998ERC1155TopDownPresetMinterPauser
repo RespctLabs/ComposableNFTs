@@ -1,0 +1,244 @@
+ERC998ERC1155TopDown._receiveChild(uint256,address,uint256,uint256) (contracts/ERC998ERC1155TopDown.sol#141-155) ignores return value by _childContract[tokenId].add(childContract) (contracts/ERC998ERC1155TopDown.sol#149)
+ERC998ERC1155TopDown._receiveChild(uint256,address,uint256,uint256) (contracts/ERC998ERC1155TopDown.sol#141-155) ignores return value by _childsForChildContract[tierId][childContract].add(tierId) (contracts/ERC998ERC1155TopDown.sol#152)
+ERC998ERC1155TopDown._removeChild(uint256,address,uint256,uint256) (contracts/ERC998ERC1155TopDown.sol#157-175) ignores return value by _holdersOf[childContract][tierId].remove(tokenId) (contracts/ERC998ERC1155TopDown.sol#169)
+ERC998ERC1155TopDown._removeChild(uint256,address,uint256,uint256) (contracts/ERC998ERC1155TopDown.sol#157-175) ignores return value by _childsForChildContract[tokenId][childContract].remove(tierId) (contracts/ERC998ERC1155TopDown.sol#170)
+ERC998ERC1155TopDown._removeChild(uint256,address,uint256,uint256) (contracts/ERC998ERC1155TopDown.sol#157-175) ignores return value by _childContract[tokenId].remove(childContract) (contracts/ERC998ERC1155TopDown.sol#172)
+ERC1155._doSafeTransferAcceptanceCheck(address,address,address,uint256,uint256,bytes) (node_modules/@openzeppelin/contracts/token/ERC1155/ERC1155.sol#362-383) ignores return value by IERC1155Receiver(to).onERC1155Received(operator,from,id,amount,data) (node_modules/@openzeppelin/contracts/token/ERC1155/ERC1155.sol#373-381)
+ERC1155._doSafeBatchTransferAcceptanceCheck(address,address,address,uint256[],uint256[],bytes) (node_modules/@openzeppelin/contracts/token/ERC1155/ERC1155.sol#385-406) ignores return value by IERC1155Receiver(to).onERC1155BatchReceived(operator,from,ids,amounts,data) (node_modules/@openzeppelin/contracts/token/ERC1155/ERC1155.sol#396-404)
+ERC721._mint(address,uint256) (node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol#333-344) ignores return value by _holderTokens[to].add(tokenId) (node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol#339)
+ERC721._mint(address,uint256) (node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol#333-344) ignores return value by _tokenOwners.set(tokenId,to) (node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol#341)
+ERC721._burn(uint256) (node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol#356-374) ignores return value by _holderTokens[owner].remove(tokenId) (node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol#369)
+ERC721._burn(uint256) (node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol#356-374) ignores return value by _tokenOwners.remove(tokenId) (node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol#371)
+ERC721._transfer(address,address,uint256) (node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol#387-402) ignores return value by _holderTokens[from].remove(tokenId) (node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol#396)
+ERC721._transfer(address,address,uint256) (node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol#387-402) ignores return value by _holderTokens[to].add(tokenId) (node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol#397)
+ERC721._transfer(address,address,uint256) (node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol#387-402) ignores return value by _tokenOwners.set(tokenId,to) (node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol#399)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#unused-return
+
+ERC998ERC1155TopDown.constructor(string,string,string)._name (contracts/ERC998ERC1155TopDown.sol#32) shadows:
+	- ERC721._name (node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol#45) (state variable)
+ERC998ERC1155TopDown.constructor(string,string,string)._symbol (contracts/ERC998ERC1155TopDown.sol#33) shadows:
+	- ERC721._symbol (node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol#48) (state variable)
+ERC998ERC1155TopDown.constructor(string,string,string)._baseURI (contracts/ERC998ERC1155TopDown.sol#34) shadows:
+	- ERC721._baseURI (node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol#54) (state variable)
+ERC998ERC1155TopDownPresetMinterPauser.constructor(string,string,string,uint256).name (contracts/ERC998ERC1155TopDownPresetMinterPauser.sol#57) shadows:
+	- ERC721.name() (node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol#121-123) (function)
+	- IERC721Metadata.name() (node_modules/@openzeppelin/contracts/token/ERC721/IERC721Metadata.sol#16) (function)
+ERC998ERC1155TopDownPresetMinterPauser.constructor(string,string,string,uint256).symbol (contracts/ERC998ERC1155TopDownPresetMinterPauser.sol#58) shadows:
+	- ERC721.symbol() (node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol#128-130) (function)
+	- IERC721Metadata.symbol() (node_modules/@openzeppelin/contracts/token/ERC721/IERC721Metadata.sol#21) (function)
+ERC998ERC1155TopDownPresetMinterPauser.constructor(string,string,string,uint256).baseURI (contracts/ERC998ERC1155TopDownPresetMinterPauser.sol#59) shadows:
+	- ERC721.baseURI() (node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol#158-160) (function)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#local-variable-shadowing
+
+Variable 'ERC1155._doSafeTransferAcceptanceCheck(address,address,address,uint256,uint256,bytes).response (node_modules/@openzeppelin/contracts/token/ERC1155/ERC1155.sol#373)' in ERC1155._doSafeTransferAcceptanceCheck(address,address,address,uint256,uint256,bytes) (node_modules/@openzeppelin/contracts/token/ERC1155/ERC1155.sol#362-383) potentially used before declaration: response != IERC1155Receiver(to).onERC1155Received.selector (node_modules/@openzeppelin/contracts/token/ERC1155/ERC1155.sol#374)
+Variable 'ERC1155._doSafeTransferAcceptanceCheck(address,address,address,uint256,uint256,bytes).reason (node_modules/@openzeppelin/contracts/token/ERC1155/ERC1155.sol#377)' in ERC1155._doSafeTransferAcceptanceCheck(address,address,address,uint256,uint256,bytes) (node_modules/@openzeppelin/contracts/token/ERC1155/ERC1155.sol#362-383) potentially used before declaration: revert(string)(reason) (node_modules/@openzeppelin/contracts/token/ERC1155/ERC1155.sol#378)
+Variable 'ERC1155._doSafeBatchTransferAcceptanceCheck(address,address,address,uint256[],uint256[],bytes).response (node_modules/@openzeppelin/contracts/token/ERC1155/ERC1155.sol#396)' in ERC1155._doSafeBatchTransferAcceptanceCheck(address,address,address,uint256[],uint256[],bytes) (node_modules/@openzeppelin/contracts/token/ERC1155/ERC1155.sol#385-406) potentially used before declaration: response != IERC1155Receiver(to).onERC1155BatchReceived.selector (node_modules/@openzeppelin/contracts/token/ERC1155/ERC1155.sol#397)
+Variable 'ERC1155._doSafeBatchTransferAcceptanceCheck(address,address,address,uint256[],uint256[],bytes).reason (node_modules/@openzeppelin/contracts/token/ERC1155/ERC1155.sol#400)' in ERC1155._doSafeBatchTransferAcceptanceCheck(address,address,address,uint256[],uint256[],bytes) (node_modules/@openzeppelin/contracts/token/ERC1155/ERC1155.sol#385-406) potentially used before declaration: revert(string)(reason) (node_modules/@openzeppelin/contracts/token/ERC1155/ERC1155.sol#401)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#pre-declaration-usage-of-local-variables
+
+ERC998ERC1155TopDown.onERC1155Received(address,address,uint256,uint256,bytes) (contracts/ERC998ERC1155TopDown.sol#105-137) uses assembly
+	- INLINE ASM (contracts/ERC998ERC1155TopDown.sol#129-131)
+ERC998ERC1155TopDown.onERC1155BatchReceived(address,address,uint256[],uint256[],bytes) (contracts/ERC998ERC1155TopDown.sol#202-243) uses assembly
+	- INLINE ASM (contracts/ERC998ERC1155TopDown.sol#229-231)
+Address.isContract(address) (node_modules/@openzeppelin/contracts/utils/Address.sol#26-35) uses assembly
+	- INLINE ASM (node_modules/@openzeppelin/contracts/utils/Address.sol#33)
+Address._verifyCallResult(bool,bytes,string) (node_modules/@openzeppelin/contracts/utils/Address.sol#171-188) uses assembly
+	- INLINE ASM (node_modules/@openzeppelin/contracts/utils/Address.sol#180-183)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#assembly-usage
+
+Different versions of Solidity is used:
+	- Version used: ['>=0.6.0<0.8.0', '>=0.6.2<0.8.0', '^0.6.0']
+	- ^0.6.0 (contracts/ERC998ERC1155TopDown.sol#3)
+	- ^0.6.0 (contracts/ERC998ERC1155TopDownPresetMinterPauser.sol#3)
+	- ^0.6.0 (contracts/IERC998ERC1155TopDown.sol#3)
+	- >=0.6.0<0.8.0 (node_modules/@openzeppelin/contracts/GSN/Context.sol#3)
+	- >=0.6.0<0.8.0 (node_modules/@openzeppelin/contracts/access/AccessControl.sol#3)
+	- >=0.6.0<0.8.0 (node_modules/@openzeppelin/contracts/introspection/ERC165.sol#3)
+	- >=0.6.0<0.8.0 (node_modules/@openzeppelin/contracts/introspection/IERC165.sol#3)
+	- >=0.6.0<0.8.0 (node_modules/@openzeppelin/contracts/math/SafeMath.sol#3)
+	- >=0.6.0<0.8.0 (node_modules/@openzeppelin/contracts/token/ERC1155/ERC1155.sol#3)
+	- >=0.6.0<0.8.0 (node_modules/@openzeppelin/contracts/token/ERC1155/ERC1155Receiver.sol#3)
+	- >=0.6.2<0.8.0 (node_modules/@openzeppelin/contracts/token/ERC1155/IERC1155.sol#3)
+	- >=0.6.2<0.8.0 (node_modules/@openzeppelin/contracts/token/ERC1155/IERC1155MetadataURI.sol#3)
+	- >=0.6.0<0.8.0 (node_modules/@openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol#3)
+	- >=0.6.0<0.8.0 (node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol#3)
+	- >=0.6.2<0.8.0 (node_modules/@openzeppelin/contracts/token/ERC721/IERC721.sol#3)
+	- >=0.6.2<0.8.0 (node_modules/@openzeppelin/contracts/token/ERC721/IERC721Enumerable.sol#3)
+	- >=0.6.2<0.8.0 (node_modules/@openzeppelin/contracts/token/ERC721/IERC721Metadata.sol#3)
+	- >=0.6.0<0.8.0 (node_modules/@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol#3)
+	- >=0.6.2<0.8.0 (node_modules/@openzeppelin/contracts/utils/Address.sol#3)
+	- >=0.6.0<0.8.0 (node_modules/@openzeppelin/contracts/utils/Context.sol#3)
+	- >=0.6.0<0.8.0 (node_modules/@openzeppelin/contracts/utils/EnumerableMap.sol#3)
+	- >=0.6.0<0.8.0 (node_modules/@openzeppelin/contracts/utils/EnumerableSet.sol#3)
+	- >=0.6.0<0.8.0 (node_modules/@openzeppelin/contracts/utils/Pausable.sol#3)
+	- >=0.6.0<0.8.0 (node_modules/@openzeppelin/contracts/utils/ReentrancyGuard.sol#3)
+	- >=0.6.0<0.8.0 (node_modules/@openzeppelin/contracts/utils/Strings.sol#3)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#different-pragma-directives-are-used
+
+AccessControl._setRoleAdmin(bytes32,bytes32) (node_modules/@openzeppelin/contracts/access/AccessControl.sol#201-204) is never used and should be removed
+Address.functionCall(address,bytes) (node_modules/@openzeppelin/contracts/utils/Address.sol#79-81) is never used and should be removed
+Address.functionCallWithValue(address,bytes,uint256) (node_modules/@openzeppelin/contracts/utils/Address.sol#104-106) is never used and should be removed
+Address.functionDelegateCall(address,bytes) (node_modules/@openzeppelin/contracts/utils/Address.sol#153-155) is never used and should be removed
+Address.functionDelegateCall(address,bytes,string) (node_modules/@openzeppelin/contracts/utils/Address.sol#163-169) is never used and should be removed
+Address.functionStaticCall(address,bytes) (node_modules/@openzeppelin/contracts/utils/Address.sol#129-131) is never used and should be removed
+Address.functionStaticCall(address,bytes,string) (node_modules/@openzeppelin/contracts/utils/Address.sol#139-145) is never used and should be removed
+Address.sendValue(address,uint256) (node_modules/@openzeppelin/contracts/utils/Address.sol#53-59) is never used and should be removed
+Context._msgData() (node_modules/@openzeppelin/contracts/utils/Context.sol#20-23) is never used and should be removed
+ERC1155._burn(address,uint256,uint256) (node_modules/@openzeppelin/contracts/token/ERC1155/ERC1155.sol#290-303) is never used and should be removed
+ERC1155._burnBatch(address,uint256[],uint256[]) (node_modules/@openzeppelin/contracts/token/ERC1155/ERC1155.sol#312-328) is never used and should be removed
+ERC1155._mint(address,uint256,uint256,bytes) (node_modules/@openzeppelin/contracts/token/ERC1155/ERC1155.sol#243-254) is never used and should be removed
+ERC1155._mintBatch(address,uint256[],uint256[],bytes) (node_modules/@openzeppelin/contracts/token/ERC1155/ERC1155.sol#265-280) is never used and should be removed
+ERC721._safeMint(address,uint256) (node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol#308-310) is never used and should be removed
+ERC721._safeMint(address,uint256,bytes) (node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol#316-319) is never used and should be removed
+ERC721._setTokenURI(uint256,string) (node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol#411-414) is never used and should be removed
+ERC998ERC1155TopDown._removeChild(uint256,address,uint256,uint256) (contracts/ERC998ERC1155TopDown.sol#157-175) is never used and should be removed
+EnumerableMap._get(EnumerableMap.Map,bytes32) (node_modules/@openzeppelin/contracts/utils/EnumerableMap.sol#163-167) is never used and should be removed
+EnumerableMap._tryGet(EnumerableMap.Map,bytes32) (node_modules/@openzeppelin/contracts/utils/EnumerableMap.sol#150-154) is never used and should be removed
+EnumerableMap.get(EnumerableMap.UintToAddressMap,uint256) (node_modules/@openzeppelin/contracts/utils/EnumerableMap.sol#253-255) is never used and should be removed
+EnumerableMap.tryGet(EnumerableMap.UintToAddressMap,uint256) (node_modules/@openzeppelin/contracts/utils/EnumerableMap.sol#241-244) is never used and should be removed
+EnumerableSet.add(EnumerableSet.Bytes32Set,bytes32) (node_modules/@openzeppelin/contracts/utils/EnumerableSet.sol#147-149) is never used and should be removed
+EnumerableSet.at(EnumerableSet.Bytes32Set,uint256) (node_modules/@openzeppelin/contracts/utils/EnumerableSet.sol#185-187) is never used and should be removed
+EnumerableSet.contains(EnumerableSet.Bytes32Set,bytes32) (node_modules/@openzeppelin/contracts/utils/EnumerableSet.sol#164-166) is never used and should be removed
+EnumerableSet.contains(EnumerableSet.UintSet,uint256) (node_modules/@openzeppelin/contracts/utils/EnumerableSet.sol#273-275) is never used and should be removed
+EnumerableSet.length(EnumerableSet.Bytes32Set) (node_modules/@openzeppelin/contracts/utils/EnumerableSet.sol#171-173) is never used and should be removed
+EnumerableSet.remove(EnumerableSet.Bytes32Set,bytes32) (node_modules/@openzeppelin/contracts/utils/EnumerableSet.sol#157-159) is never used and should be removed
+SafeMath.div(uint256,uint256) (node_modules/@openzeppelin/contracts/math/SafeMath.sol#135-138) is never used and should be removed
+SafeMath.div(uint256,uint256,string) (node_modules/@openzeppelin/contracts/math/SafeMath.sol#190-193) is never used and should be removed
+SafeMath.mod(uint256,uint256) (node_modules/@openzeppelin/contracts/math/SafeMath.sol#152-155) is never used and should be removed
+SafeMath.mod(uint256,uint256,string) (node_modules/@openzeppelin/contracts/math/SafeMath.sol#210-213) is never used and should be removed
+SafeMath.mul(uint256,uint256) (node_modules/@openzeppelin/contracts/math/SafeMath.sol#116-121) is never used and should be removed
+SafeMath.sub(uint256,uint256) (node_modules/@openzeppelin/contracts/math/SafeMath.sol#101-104) is never used and should be removed
+SafeMath.tryAdd(uint256,uint256) (node_modules/@openzeppelin/contracts/math/SafeMath.sol#24-28) is never used and should be removed
+SafeMath.tryDiv(uint256,uint256) (node_modules/@openzeppelin/contracts/math/SafeMath.sol#60-63) is never used and should be removed
+SafeMath.tryMod(uint256,uint256) (node_modules/@openzeppelin/contracts/math/SafeMath.sol#70-73) is never used and should be removed
+SafeMath.tryMul(uint256,uint256) (node_modules/@openzeppelin/contracts/math/SafeMath.sol#45-53) is never used and should be removed
+SafeMath.trySub(uint256,uint256) (node_modules/@openzeppelin/contracts/math/SafeMath.sol#35-38) is never used and should be removed
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#dead-code
+
+Pragma version^0.6.0 (contracts/ERC998ERC1155TopDown.sol#3) allows old versions
+Pragma version^0.6.0 (contracts/ERC998ERC1155TopDownPresetMinterPauser.sol#3) allows old versions
+Pragma version^0.6.0 (contracts/IERC998ERC1155TopDown.sol#3) allows old versions
+Pragma version>=0.6.0<0.8.0 (node_modules/@openzeppelin/contracts/GSN/Context.sol#3) is too complex
+Pragma version>=0.6.0<0.8.0 (node_modules/@openzeppelin/contracts/access/AccessControl.sol#3) is too complex
+Pragma version>=0.6.0<0.8.0 (node_modules/@openzeppelin/contracts/introspection/ERC165.sol#3) is too complex
+Pragma version>=0.6.0<0.8.0 (node_modules/@openzeppelin/contracts/introspection/IERC165.sol#3) is too complex
+Pragma version>=0.6.0<0.8.0 (node_modules/@openzeppelin/contracts/math/SafeMath.sol#3) is too complex
+Pragma version>=0.6.0<0.8.0 (node_modules/@openzeppelin/contracts/token/ERC1155/ERC1155.sol#3) is too complex
+Pragma version>=0.6.0<0.8.0 (node_modules/@openzeppelin/contracts/token/ERC1155/ERC1155Receiver.sol#3) is too complex
+Pragma version>=0.6.2<0.8.0 (node_modules/@openzeppelin/contracts/token/ERC1155/IERC1155.sol#3) is too complex
+Pragma version>=0.6.2<0.8.0 (node_modules/@openzeppelin/contracts/token/ERC1155/IERC1155MetadataURI.sol#3) is too complex
+Pragma version>=0.6.0<0.8.0 (node_modules/@openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol#3) is too complex
+Pragma version>=0.6.0<0.8.0 (node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol#3) is too complex
+Pragma version>=0.6.2<0.8.0 (node_modules/@openzeppelin/contracts/token/ERC721/IERC721.sol#3) is too complex
+Pragma version>=0.6.2<0.8.0 (node_modules/@openzeppelin/contracts/token/ERC721/IERC721Enumerable.sol#3) is too complex
+Pragma version>=0.6.2<0.8.0 (node_modules/@openzeppelin/contracts/token/ERC721/IERC721Metadata.sol#3) is too complex
+Pragma version>=0.6.0<0.8.0 (node_modules/@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol#3) is too complex
+Pragma version>=0.6.2<0.8.0 (node_modules/@openzeppelin/contracts/utils/Address.sol#3) is too complex
+Pragma version>=0.6.0<0.8.0 (node_modules/@openzeppelin/contracts/utils/Context.sol#3) is too complex
+Pragma version>=0.6.0<0.8.0 (node_modules/@openzeppelin/contracts/utils/EnumerableMap.sol#3) is too complex
+Pragma version>=0.6.0<0.8.0 (node_modules/@openzeppelin/contracts/utils/EnumerableSet.sol#3) is too complex
+Pragma version>=0.6.0<0.8.0 (node_modules/@openzeppelin/contracts/utils/Pausable.sol#3) is too complex
+Pragma version>=0.6.0<0.8.0 (node_modules/@openzeppelin/contracts/utils/ReentrancyGuard.sol#3) is too complex
+Pragma version>=0.6.0<0.8.0 (node_modules/@openzeppelin/contracts/utils/Strings.sol#3) is too complex
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#incorrect-versions-of-solidity
+
+Low level call in Address.sendValue(address,uint256) (node_modules/@openzeppelin/contracts/utils/Address.sol#53-59):
+	- (success) = recipient.call{value: amount}() (node_modules/@openzeppelin/contracts/utils/Address.sol#57)
+Low level call in Address.functionCallWithValue(address,bytes,uint256,string) (node_modules/@openzeppelin/contracts/utils/Address.sol#114-121):
+	- (success,returndata) = target.call{value: value}(data) (node_modules/@openzeppelin/contracts/utils/Address.sol#119)
+Low level call in Address.functionStaticCall(address,bytes,string) (node_modules/@openzeppelin/contracts/utils/Address.sol#139-145):
+	- (success,returndata) = target.staticcall(data) (node_modules/@openzeppelin/contracts/utils/Address.sol#143)
+Low level call in Address.functionDelegateCall(address,bytes,string) (node_modules/@openzeppelin/contracts/utils/Address.sol#163-169):
+	- (success,returndata) = target.delegatecall(data) (node_modules/@openzeppelin/contracts/utils/Address.sol#167)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#low-level-calls
+
+Parameter ERC998ERC1155TopDownPresetMinterPauser.setTierUpgradeCost(uint256,uint256)._tierId (contracts/ERC998ERC1155TopDownPresetMinterPauser.sol#88) is not in mixedCase
+Parameter ERC998ERC1155TopDownPresetMinterPauser.setTierUpgradeCost(uint256,uint256)._cost (contracts/ERC998ERC1155TopDownPresetMinterPauser.sol#88) is not in mixedCase
+Parameter ERC998ERC1155TopDownPresetMinterPauser.getTierUpgradeCost(uint256)._tierId (contracts/ERC998ERC1155TopDownPresetMinterPauser.sol#98) is not in mixedCase
+Parameter ERC998ERC1155TopDownPresetMinterPauser.getComposableId(address)._owner (contracts/ERC998ERC1155TopDownPresetMinterPauser.sol#104) is not in mixedCase
+Parameter ERC721.safeTransferFrom(address,address,uint256,bytes)._data (node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol#245) is not in mixedCase
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#conformance-to-solidity-naming-conventions
+
+Redundant expression "this (node_modules/@openzeppelin/contracts/utils/Context.sol#21)" inContext (node_modules/@openzeppelin/contracts/utils/Context.sol#15-24)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#redundant-statements
+
+Reentrancy in ERC998ERC1155TopDownPresetMinterPauser.mint() (contracts/ERC998ERC1155TopDownPresetMinterPauser.sol#120-144):
+	External calls:
+	- address(owner).transfer(msg.value) (contracts/ERC998ERC1155TopDownPresetMinterPauser.sol#141)
+	Event emitted after the call(s):
+	- NFTMinted(ownerToComposableId[msg.sender]) (contracts/ERC998ERC1155TopDownPresetMinterPauser.sol#143)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#reentrancy-vulnerabilities-4
+
+Variable ERC998ERC1155TopDown._childContract (contracts/ERC998ERC1155TopDown.sol#26) is too similar to ERC998ERC1155TopDown.childContractsFor(uint256).childContracts (contracts/ERC998ERC1155TopDown.sol#69-71)
+Variable ERC998ERC1155TopDown._childContract (contracts/ERC998ERC1155TopDown.sol#26) is too similar to IERC998ERC1155TopDown.childContractsFor(uint256).childContracts (contracts/IERC998ERC1155TopDown.sol#33)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#variable-names-are-too-similar
+
+ERC998ERC1155TopDownPresetMinterPauser.mintCost (contracts/ERC998ERC1155TopDownPresetMinterPauser.sol#38) should be constant
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#state-variables-that-could-be-declared-constant
+
+childIdsForOn(uint256,address) should be declared external:
+	- ERC998ERC1155TopDown.childIdsForOn(uint256,address) (contracts/ERC998ERC1155TopDown.sol#83-103)
+onERC1155Received(address,address,uint256,uint256,bytes) should be declared external:
+	- ERC998ERC1155TopDown.onERC1155Received(address,address,uint256,uint256,bytes) (contracts/ERC998ERC1155TopDown.sol#105-137)
+onERC1155BatchReceived(address,address,uint256[],uint256[],bytes) should be declared external:
+	- ERC998ERC1155TopDown.onERC1155BatchReceived(address,address,uint256[],uint256[],bytes) (contracts/ERC998ERC1155TopDown.sol#202-243)
+changeMaxSupply(uint256) should be declared external:
+	- ERC998ERC1155TopDownPresetMinterPauser.changeMaxSupply(uint256) (contracts/ERC998ERC1155TopDownPresetMinterPauser.sol#75-81)
+setTierUpgradeCost(uint256,uint256) should be declared external:
+	- ERC998ERC1155TopDownPresetMinterPauser.setTierUpgradeCost(uint256,uint256) (contracts/ERC998ERC1155TopDownPresetMinterPauser.sol#88-95)
+getTierUpgradeCost(uint256) should be declared external:
+	- ERC998ERC1155TopDownPresetMinterPauser.getTierUpgradeCost(uint256) (contracts/ERC998ERC1155TopDownPresetMinterPauser.sol#98-101)
+getComposableId(address) should be declared external:
+	- ERC998ERC1155TopDownPresetMinterPauser.getComposableId(address) (contracts/ERC998ERC1155TopDownPresetMinterPauser.sol#104-107)
+mint() should be declared external:
+	- ERC998ERC1155TopDownPresetMinterPauser.mint() (contracts/ERC998ERC1155TopDownPresetMinterPauser.sol#120-144)
+burn(uint256) should be declared external:
+	- ERC998ERC1155TopDownPresetMinterPauser.burn(uint256) (contracts/ERC998ERC1155TopDownPresetMinterPauser.sol#153-160)
+pause() should be declared external:
+	- ERC998ERC1155TopDownPresetMinterPauser.pause() (contracts/ERC998ERC1155TopDownPresetMinterPauser.sol#171-177)
+unpause() should be declared external:
+	- ERC998ERC1155TopDownPresetMinterPauser.unpause() (contracts/ERC998ERC1155TopDownPresetMinterPauser.sol#188-194)
+getRoleMemberCount(bytes32) should be declared external:
+	- AccessControl.getRoleMemberCount(bytes32) (node_modules/@openzeppelin/contracts/access/AccessControl.sol#95-97)
+getRoleMember(bytes32,uint256) should be declared external:
+	- AccessControl.getRoleMember(bytes32,uint256) (node_modules/@openzeppelin/contracts/access/AccessControl.sol#111-113)
+getRoleAdmin(bytes32) should be declared external:
+	- AccessControl.getRoleAdmin(bytes32) (node_modules/@openzeppelin/contracts/access/AccessControl.sol#121-123)
+grantRole(bytes32,address) should be declared external:
+	- AccessControl.grantRole(bytes32,address) (node_modules/@openzeppelin/contracts/access/AccessControl.sol#135-139)
+revokeRole(bytes32,address) should be declared external:
+	- AccessControl.revokeRole(bytes32,address) (node_modules/@openzeppelin/contracts/access/AccessControl.sol#150-154)
+renounceRole(bytes32,address) should be declared external:
+	- AccessControl.renounceRole(bytes32,address) (node_modules/@openzeppelin/contracts/access/AccessControl.sol#170-174)
+supportsInterface(bytes4) should be declared external:
+	- ERC165.supportsInterface(bytes4) (node_modules/@openzeppelin/contracts/introspection/ERC165.sol#35-37)
+balanceOfBatch(address[],uint256[]) should be declared external:
+	- ERC1155.balanceOfBatch(address[],uint256[]) (node_modules/@openzeppelin/contracts/token/ERC1155/ERC1155.sol#98-117)
+setApprovalForAll(address,bool) should be declared external:
+	- ERC1155.setApprovalForAll(address,bool) (node_modules/@openzeppelin/contracts/token/ERC1155/ERC1155.sol#122-127)
+safeTransferFrom(address,address,uint256,uint256,bytes) should be declared external:
+	- ERC1155.safeTransferFrom(address,address,uint256,uint256,bytes) (node_modules/@openzeppelin/contracts/token/ERC1155/ERC1155.sol#139-166)
+safeBatchTransferFrom(address,address,uint256[],uint256[],bytes) should be declared external:
+	- ERC1155.safeBatchTransferFrom(address,address,uint256[],uint256[],bytes) (node_modules/@openzeppelin/contracts/token/ERC1155/ERC1155.sol#171-207)
+name() should be declared external:
+	- ERC721.name() (node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol#121-123)
+symbol() should be declared external:
+	- ERC721.symbol() (node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol#128-130)
+tokenURI(uint256) should be declared external:
+	- ERC721.tokenURI(uint256) (node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol#135-151)
+tokenOfOwnerByIndex(address,uint256) should be declared external:
+	- ERC721.tokenOfOwnerByIndex(address,uint256) (node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol#165-167)
+totalSupply() should be declared external:
+	- ERC721.totalSupply() (node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol#172-175)
+tokenByIndex(uint256) should be declared external:
+	- ERC721.tokenByIndex(uint256) (node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol#180-183)
+approve(address,uint256) should be declared external:
+	- ERC721.approve(address,uint256) (node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol#188-197)
+setApprovalForAll(address,bool) should be declared external:
+	- ERC721.setApprovalForAll(address,bool) (node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol#211-216)
+transferFrom(address,address,uint256) should be declared external:
+	- ERC721.transferFrom(address,address,uint256) (node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol#228-233)
+safeTransferFrom(address,address,uint256) should be declared external:
+	- ERC721.safeTransferFrom(address,address,uint256) (node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol#238-240)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#public-function-that-could-be-declared-external
+
