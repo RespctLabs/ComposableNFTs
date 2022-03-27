@@ -36,9 +36,7 @@ contract ComposableChildrenERC1155 is ERC1155PresetMinterPauser {
             "ERC998: transfer to the zero address"
         );
 
-        csnftContract = ComposableParentERC721(
-            _csnftContractAdr
-        );
+        csnftContract = ComposableParentERC721(_csnftContractAdr);
     }
 
     function getLatestTierId(address _to) public returns (uint256) {
@@ -88,7 +86,7 @@ contract ComposableChildrenERC1155 is ERC1155PresetMinterPauser {
         require(_upgradeToTierId != 0, ">Incorrect tierId, L0 ");
         // checks if _to owns the composable
         require(
-            csnftContract.ownerToComposableId(msg.sender) == _composableId,
+            csnftContract.getComposableId(msg.sender) == _composableId,
             ">Unauthorized caller"
         );
 
