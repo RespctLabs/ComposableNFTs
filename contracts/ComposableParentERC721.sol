@@ -34,9 +34,12 @@ contract ComposableParentERC721 is
     ReentrancyGuard
 {
     // EVENTS
-    event NFTMinted(address NFTowner, uint256 indexed tokenId);
+    event NFTMinted(address indexed NFTowner, uint256 indexed tokenId);
     event NFTMintPriceUpdated(uint256 indexed price);
-    event TierUpgradePriceUpdated(uint256 indexed tierId, uint256 price);
+    event TierUpgradePriceUpdated(
+        uint256 indexed tierId,
+        uint256 indexed price
+    );
     event MaxSupplyUpdated(uint256 _value);
 
     using SafeMath for uint256;
@@ -66,7 +69,7 @@ contract ComposableParentERC721 is
         string memory name,
         string memory symbol,
         string memory baseURI,
-        uint256 _fEngagementPoints // at 115 tierId 0
+        uint256 firstUpgradeEngagementPoints // at 115 tierId 0
     ) public ERC1155TopDown(name, symbol, baseURI) {
         _setupRole(ADMIN_ROLE, _msgSender());
         _setupRole(MINTER_ROLE, _msgSender());
@@ -74,7 +77,7 @@ contract ComposableParentERC721 is
 
         owner = payable(msg.sender);
         composableCount = 0;
-        tierIdtoUpgradeCost[1] = _fEngagementPoints;
+        tierIdtoUpgradeCost[1] = firstUpgradeEngagementPoints;
     }
 
     //PUBLIC GETTERS
@@ -214,6 +217,8 @@ contract ComposableParentERC721 is
      */
 
     // >one account can only mint one snft
+    // We cannot just use balanceOf to create the new tokenId because tokens
+    // can be burned (destroyed), so we need a separate counter.
     function mint() public payable virtual nonReentrant {
         require(msg.value == mintCost, "ERC721: must pay the mint cost");
 
@@ -226,11 +231,8 @@ contract ComposableParentERC721 is
 
         require(tokenId <= maxSupply, "ERC721: minting would cause overflow");
 
-        // // We cannot just use balanceOf to create the new tokenId because tokens
-        // // can be burned (destroyed), so we need a separate counter.
         _mint(msg.sender, tokenId);
         ownerToComposableId[msg.sender] = tokenId;
-        // ownerToTierId[to] = 0; // level0
         composableCount = tokenId;
         payable(owner).transfer(msg.value);
 
