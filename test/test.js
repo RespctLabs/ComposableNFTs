@@ -98,8 +98,8 @@ contract("ComposableParentERC721", (accounts) => {
     );
     assert.equal(res, 1);
     tx = await parentContract.childIdsForOn(composable1, childContract.address);
-    console.log(">>>>>>>>>>>>>>>>");
-    console.log(tx);
+    // console.log(">>>>>>>>>>>>>>>>");
+    // console.log(tx);
     // console.log(">>>>>>>>>>>>>>>>");
     // console.log(await childContract.balanceOf(user1,1));
   });
@@ -107,7 +107,10 @@ contract("ComposableParentERC721", (accounts) => {
   //handle recursive tier1 minting case
   it("Composable 1 , receive upgrade to tier1 then tier2", async () => {
     await childContract.mintEngagementPoints(user1, 500, "0x0");
-
+    assert.equal(
+      await parentContract.getLevel(composable1, childContract.address),
+      0
+    );
     await childContract.upgradeSNFT(
       composable1,
       multiTokenTier1,
