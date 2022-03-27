@@ -50,7 +50,7 @@ contract ERC1155TopDown is
         uint256 composableId,
         address childContract, // ERC1155TUMP contract address
         uint256 tierId
-    ) external view override returns (uint256) {
+    ) public view override returns (uint256) {
         return _balances[composableId][childContract][tierId];
     }
 
@@ -80,27 +80,27 @@ contract ERC1155TopDown is
     /**
      * @dev Gives list of owned child ID on a child contract by token ID.
      */
-    function childIdsForOn(uint256 composableId, address childContract)
-        public
-        view
-        override
-        returns (uint256[] memory)
-    {
-        uint256[] memory tierIds = new uint256[](
-            _childsForChildContract[composableId][childContract].length()
-        );
+    // function childIdsForOn(uint256 composableId, address childContract)
+    //     public
+    //     view
+    //     override
+    //     returns (uint256[] memory)
+    // {
+    //     uint256[] memory tierIds = new uint256[](
+    //         _childsForChildContract[composableId][childContract].length()
+    //     );
 
-        for (
-            uint256 i = 0;
-            i < _childsForChildContract[composableId][childContract].length();
-            i++
-        ) {
-            tierIds[i] = _childsForChildContract[composableId][childContract]
-                .at(i);
-        }
+    //     for (
+    //         uint256 i = 0;
+    //         i < _childsForChildContract[composableId][childContract].length();
+    //         i++
+    //     ) {
+    //         tierIds[i] = _childsForChildContract[composableId][childContract]
+    //             .at(i);
+    //     }
 
-        return tierIds;
-    }
+    //     return tierIds;
+    // }
 
     function onERC1155Received(
         address operator,

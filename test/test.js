@@ -56,7 +56,7 @@ contract("ComposableParentERC721", accounts => {
   });
   
   it ("User1 has 500 engagement points", async() => {
-    await erc1155.mintEngagementPoints(user1,500,"0x0");
+    await erc1155.mintEngagementPoints(user1,500,"0x0", {from: user1});
 
     assert.equal((await erc1155.balanceOf(user1,0)).toString() , (500).toString());
     // assert.equal(await erc998.balanceOf(user2),1);
@@ -69,8 +69,11 @@ contract("ComposableParentERC721", accounts => {
     await erc1155.upgradeSNFT(composable1, multiTokenTier1, web3.utils.encodePacked(composable1),{from:user1});
     res = await erc998.childBalance(composable1, erc1155.address, multiTokenTier1);
     assert.equal(res,1);
+    tx = await erc998.childIdsForOn(composable1, erc1155.address);
     console.log(">>>>>>>>>>>>>>>>");
-    console.log(await erc1155.balanceOf(user1,1));
+    console.log(tx);
+    // console.log(">>>>>>>>>>>>>>>>");
+    // console.log(await erc1155.balanceOf(user1,1));
   });
 
 //handle recursive tier1 minting case 
@@ -80,12 +83,14 @@ contract("ComposableParentERC721", accounts => {
     await erc1155.upgradeSNFT(composable1, multiTokenTier1, web3.utils.encodePacked(composable1),{from:user1});
 
     assert.equal(await erc998.childBalance(composable1, erc1155.address, multiTokenTier1), 1);
-
+    assert.equal(await erc998.getLevel(composable1, erc1155.address),1);
+    // console.log(">>>>>>>>>>>>>>>>");
+    // console.log(tx);
     await erc1155.mintEngagementPoints(user1,600,"0x0");
     await erc1155.upgradeSNFT(composable1, multiTokenTier2, web3.utils.encodePacked(composable1),{from:user1});
 
-    assert.equal(await erc998.childBalance(composable1, erc1155.address, multiTokenTier2),1);
-
+    // assert.equal(await erc998.childBalance(composable1, erc1155.address, multiTokenTier2),1);
+    assert.equal(await erc998.getLevel(composable1, erc1155.address),2);
   });
 
 });
