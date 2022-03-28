@@ -1,16 +1,13 @@
-// SPDX-License-Identifier: UNLICENSED
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.6.0;
-///@dev handle Batch receiving function - !!!!
 
 /**
  *
- * @title ERC1155TUMP creates tier supply and attaches tier to composable
+ * @title ComposableChildrenERC1155
  *
  * @author respect-club
  *
- * @notice receives Engagement tokens and attaches tier to composable ERC998
- *
- * @dev this contract maintains engagement tokens at id 0,
+ * @notice receives Engagement tokens and attaches tier to composableParentERC721 (csnft)
  *
  */
 import "@openzeppelin/contracts/presets/ERC1155PresetMinterPauser.sol";

@@ -10,6 +10,15 @@ import "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
 import "./ERC1155TopDown.sol";
 
 /**
+ * @title ComposableParentERC721
+ *
+ * @author respect-club
+ *
+ * @notice Level-based Social NFTs, incentivizing fans through un-lockable perks & engagement.
+ *
+ */
+
+/**
  * @dev {ERC998} token, including:
  *
  *  - ability for holders to burn (destroy) their tokens
@@ -26,6 +35,7 @@ import "./ERC1155TopDown.sol";
  * roles, as well as the default admin role, which will let it grant both minter
  * and pauser roles to other accounts.
  */
+
 contract ComposableParentERC721 is
     Context,
     AccessControl,
