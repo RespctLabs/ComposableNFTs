@@ -7,7 +7,16 @@ import "@openzeppelin/contracts/GSN/Context.sol";
 import "@openzeppelin/contracts/utils/Pausable.sol";
 import "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
 
-import "./ERC998ERC1155TopDown.sol";
+import "./ERC1155TopDown.sol";
+
+/**
+ * @title ComposableParentERC721
+ *
+ * @author respect-club
+ *
+ * @notice Level-based Social NFTs, incentivizing fans through un-lockable perks & engagement.
+ *
+ */
 
 /**
  * @dev {ERC998} token, including:
@@ -19,21 +28,37 @@ import "./ERC998ERC1155TopDown.sol";
  * This contract uses {AccessControl} to lock permissioned functions using the
  * different roles - head to its documentation for details.
  *
+ * {DEFAULT_ADMIN_ROLE , ADMIN_ROLE , MINTER_ROLE , PAUSER_ROLE}
+ *
+ *
  * The account that deploys the contract will be granted the minter and pauser
  * roles, as well as the default admin role, which will let it grant both minter
  * and pauser roles to other accounts.
  */
-contract ERC998ERC1155TopDownPresetMinterPauser is
+
+contract ComposableParentERC721 is
     Context,
     AccessControl,
-    ERC998ERC1155TopDown,
+    ERC1155TopDown,
     Pausable,
     ReentrancyGuard
 {
     // EVENTS
+<<<<<<< HEAD:contracts/ERC998ERC1155TopDownPresetMinterPauser.sol
+=======
+    event NFTMinted(address indexed NFTowner, uint256 indexed tokenId);
+    event NFTMintPriceUpdated(uint256 indexed price);
+    event TierUpgradePriceUpdated(
+        uint256 indexed tierId,
+        uint256 indexed price
+    );
+    event MaxSupplyUpdated(uint256 _value);
+
+>>>>>>> ea0d521c6bd8e373c13f03879582292fc11a2e23:contracts/ComposableParentERC721.sol
     using SafeMath for uint256;
 
     uint256 composableCount;
+
     uint256 public maxSupply = 100;
     uint256 public mintCost = 2 ether;
 
@@ -41,7 +66,7 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
     bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
     bytes32 public constant ADMIN_ROLE = keccak256("ADMIN_ROLE");
 
-    mapping(uint256 => uint256) tierIdtoUpgradeCost; // 1,2,3 ...  cost to upgrade to tier1, tier2, tier3...
+    mapping(uint256 => uint256) tierIdtoUpgradeCost;
     mapping(address => uint256) public ownerToComposableId;
 
     address payable owner;
@@ -57,32 +82,131 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
         string memory name,
         string memory symbol,
         string memory baseURI,
-        uint256 _fEngagementPoints // at 115 tierId 0
-    ) public ERC998ERC1155TopDown(name, symbol, baseURI) {
+        uint256 firstUpgradeEngagementPoints // at 115 tierId 0
+    ) public ERC1155TopDown(name, symbol, baseURI) {
         _setupRole(ADMIN_ROLE, _msgSender());
         _setupRole(MINTER_ROLE, _msgSender());
         _setupRole(PAUSER_ROLE, _msgSender());
 
         owner = payable(msg.sender);
         composableCount = 0;
-        tierIdtoUpgradeCost[1] = _fEngagementPoints;
+        tierIdtoUpgradeCost[1] = firstUpgradeEngagementPoints;
     }
 
+    //PUBLIC GETTERS
+
+    /**
+     * @notice Fetches composable Id for an owner
+     *
+     * @param _owner composable NFT owner
+     *
+     */
+    function getComposableId(address _owner) public view returns (uint256) {
+        return ownerToComposableId[_owner];
+    }
+
+    /**
+     * @notice Fetches total number of minted snft
+     *
+     *
+     * @return uint256
+     */
+    function getComposableCount() public view returns (uint256) {
+        return composableCount;
+    }
+
+    /**
+     * @notice Fetches cost of minting snft of the creator
+     *
+     * @return uint256 mintCost
+     *
+     */
+
+    function getMintCost() public view returns (uint256) {
+        return mintCost;
+    }
+
+    /**
+     * @notice Fetches amount of engagement points req to upgrade to tier(_tierId)
+     *
+     * @param _tierId tierId
+     *
+     * @return uint _cost
+     *
+     */
+    function getTierUpgradeCost(uint256 _tierId) public view returns (uint256) {
+        return tierIdtoUpgradeCost[_tierId];
+    }
+
+<<<<<<< HEAD:contracts/ERC998ERC1155TopDownPresetMinterPauser.sol
     // PUBLIC SETTERS ONLY_ROLE
 
     /**
      */
     function changeMaxSupply(uint256 value) public {
+=======
+    /**
+     * @notice Fetches current level of an snft
+     *
+     * @param _composableId composableId
+     *
+     * @param _childContract address of linked ComposableChildrenERC1155 contract
+     *
+     * @return uint cost
+     *
+     */
+    function getLevel(uint256 _composableId, address _childContract)
+        public
+        view
+        returns (uint256)
+    {
+        uint256 count = 0;
+        for (uint256 i = 1; i < maxSupply; i++) {
+            if (childBalance(_composableId, _childContract, i) == 1) {
+                count += 1;
+            } else {
+                break;
+            }
+        }
+        return count;
+    }
+
+    //PUBLIC SETTERS
+
+    /**
+     * @notice Sets Max limit of minting SNFT
+     *
+     * @dev ADMIN_ROLE
+     *
+     * @param _value new max supply value
+     *
+     *
+     */
+
+    function changeMaxSupply(uint256 _value) public {
+>>>>>>> ea0d521c6bd8e373c13f03879582292fc11a2e23:contracts/ComposableParentERC721.sol
         require(
             hasRole(ADMIN_ROLE, _msgSender()),
             "Unauthorized total supply setter"
         );
+<<<<<<< HEAD:contracts/ERC998ERC1155TopDownPresetMinterPauser.sol
         maxSupply = value;
     }
 
     /**
      *@dev 1-tierPrice1 for first upgrade L0 to L1 ,2-tierPrice2
      *@notice  set tier upgrade price
+=======
+        maxSupply = _value;
+        emit MaxSupplyUpdated(_value);
+    }
+
+    /**
+     * @notice  Sets Tier upgrade price, indexed from 1.
+     *
+     * @dev ADMIN_ROLE
+     *
+>>>>>>> ea0d521c6bd8e373c13f03879582292fc11a2e23:contracts/ComposableParentERC721.sol
      */
 
     function setTierUpgradeCost(uint256 _tierId, uint256 _cost) public {
@@ -92,19 +216,32 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
         );
 
         tierIdtoUpgradeCost[_tierId] = _cost;
+        emit TierUpgradePriceUpdated(_tierId, _cost);
     }
 
-    /// returns uint price of tier upgrade
-    function getTierUpgradeCost(uint256 _tierId) public view returns (uint256) {
-        uint256 cost = tierIdtoUpgradeCost[_tierId];
-        return cost;
+    /**
+     * @notice Set cost of minting snft.
+     *
+     * @dev ADMIN_ROLE
+     *
+     * @param _cost minting cost ether/matic
+     *
+     */
+    function setMintCost(uint256 _cost) public {
+        require(hasRole(ADMIN_ROLE, _msgSender()));
+        mintCost = _cost;
+        emit NFTMintPriceUpdated(_cost);
     }
 
+<<<<<<< HEAD:contracts/ERC998ERC1155TopDownPresetMinterPauser.sol
     //PUBLIC GETTERS
     function getComposableId(address _owner) public view returns (uint256) {
         uint256 cid = ownerToComposableId[_owner];
         return cid;
     }
+=======
+    // CORE
+>>>>>>> ea0d521c6bd8e373c13f03879582292fc11a2e23:contracts/ComposableParentERC721.sol
 
     /**
      * @dev Creates a new token for `to`. The token URI autogenerated based on
@@ -117,12 +254,15 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
      * - the caller must have the `MINTER_ROLE`.
      */
 
+<<<<<<< HEAD:contracts/ERC998ERC1155TopDownPresetMinterPauser.sol
+=======
+    // >one account can only mint one snft
+    // We cannot just use balanceOf to create the new tokenId because tokens
+    // can be burned (destroyed), so we need a separate counter.
+>>>>>>> ea0d521c6bd8e373c13f03879582292fc11a2e23:contracts/ComposableParentERC721.sol
     function mint() public payable virtual nonReentrant {
-        // require(
-        //     hasRole(MINTER_ROLE, _msgSender()),
-        //     "ERC721: must have minter role to mint"
-        // );
         require(msg.value == mintCost, "ERC721: must pay the mint cost");
+
         require(
             balanceOf(msg.sender) == 0,
             "ERC721: cannot own same token twice"
@@ -132,15 +272,12 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
 
         require(tokenId <= maxSupply, "ERC721: minting would cause overflow");
 
-        // // We cannot just use balanceOf to create the new tokenId because tokens
-        // // can be burned (destroyed), so we need a separate counter.
         _mint(msg.sender, tokenId);
         ownerToComposableId[msg.sender] = tokenId;
-        // ownerToTierId[to] = 0; // level0
         composableCount = tokenId;
         payable(owner).transfer(msg.value);
 
-        emit NFTMinted(ownerToComposableId[msg.sender]);
+        emit NFTMinted(msg.sender, tokenId);
     }
 
     /**
@@ -231,6 +368,4 @@ contract ERC998ERC1155TopDownPresetMinterPauser is
             data
         );
     }
-
-    event NFTMinted(uint256 indexed tokenId);
 }

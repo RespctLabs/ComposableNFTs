@@ -36,17 +36,17 @@ Starting migrations...
    > Total cost:          0.00539936 ETH
 
 
-02_deploy_ERC998ERC1155TopDownPresetMinterPauserUpgradeable.js
+02_deploy_ComposableParentERC721Upgradeable.js
 ==============================================================
 
 Error: The requested contract was not found. Make sure the source code is available for compilation
 
 Compiling your contracts...
 ===========================
-> Compiling ./contracts/ERC1155TierUpgradePresetMinterPauserUpgradeable.sol
-> Compiling ./contracts/ERC998ERC1155TopDownPresetMinterPauserUpgradeable.sol
-> Compiling ./contracts/ERC998ERC1155TopDownUpgradeable.sol
-> Compiling ./contracts/IERC998ERC1155TopDownUpgradeable.sol
+> Compiling ./contracts/ComposableChildrenERC1155Upgradeable.sol
+> Compiling ./contracts/ComposableParentERC721Upgradeable.sol
+> Compiling ./contracts/ERC1155TopDownUpgradeable.sol
+> Compiling ./contracts/IERC1155TopDownUpgradeable.sol
 > Compiling ./contracts/Migrations.sol
 > Compiling @openzeppelin/contracts-upgradeable/GSN/ContextUpgradeable.sol
 > Compiling @openzeppelin/contracts-upgradeable/access/AccessControlUpgradeable.sol
@@ -78,16 +78,16 @@ Compiling your contracts...
     @openzeppelin/contracts-upgradeable/presets/ERC1155PresetMinterPauserUpgradeable.sol:48:57: Warning: Unused function parameter. Remove or comment out the variable name to silence this warning.
     function __ERC1155PresetMinterPauser_init_unchained(string memory uri) internal initializer {
                                                         ^---------------^
-,/home/waverune/respct-club/ERC998ERC1155/contracts/ERC998ERC1155TopDownPresetMinterPauserUpgradeable.sol:48:9: Warning: Unused function parameter. Remove or comment out the variable name to silence this warning.
+,/home/waverune/respct-club/ERC998ERC1155/contracts/ComposableParentERC721Upgradeable.sol:48:9: Warning: Unused function parameter. Remove or comment out the variable name to silence this warning.
         string memory name,
         ^----------------^
-,/home/waverune/respct-club/ERC998ERC1155/contracts/ERC998ERC1155TopDownPresetMinterPauserUpgradeable.sol:49:9: Warning: Unused function parameter. Remove or comment out the variable name to silence this warning.
+,/home/waverune/respct-club/ERC998ERC1155/contracts/ComposableParentERC721Upgradeable.sol:49:9: Warning: Unused function parameter. Remove or comment out the variable name to silence this warning.
         string memory symbol,
         ^------------------^
-,/home/waverune/respct-club/ERC998ERC1155/contracts/ERC998ERC1155TopDownPresetMinterPauserUpgradeable.sol:50:9: Warning: Unused function parameter. Remove or comment out the variable name to silence this warning.
+,/home/waverune/respct-club/ERC998ERC1155/contracts/ComposableParentERC721Upgradeable.sol:50:9: Warning: Unused function parameter. Remove or comment out the variable name to silence this warning.
         string memory baseURI,
         ^-------------------^
-,/home/waverune/respct-club/ERC998ERC1155/contracts/ERC1155TierUpgradePresetMinterPauserUpgradeable.sol:47:5: Warning: Function state mutability can be restricted to view
+,/home/waverune/respct-club/ERC998ERC1155/contracts/ComposableChildrenERC1155Upgradeable.sol:47:5: Warning: Function state mutability can be restricted to view
     function getLatestTierId(address _to) public returns (uint256) {
     ^ (Relevant source part starts here and spans across multiple lines).
 
@@ -128,7 +128,7 @@ Starting migrations...
    > Total cost:          0.00539936 ETH
 
 
-02_deploy_ERC998ERC1155TopDownPresetMinterPauserUpgradeable.js
+02_deploy_ComposableParentERC721Upgradeable.js
 ==============================================================
 
 Error: The requested contract was not found. Make sure the source code is available for compilation
@@ -138,7 +138,7 @@ Error: The requested contract was not found. Make sure the source code is availa
     at processTicksAndRejections (internal/process/task_queues.js:95:5)
     at deployProxyImpl (/home/waverune/respct-club/ERC998ERC1155/node_modules/@openzeppelin/truffle-upgrades/src/utils/deploy-impl.ts:60:22)
     at deployProxy (/home/waverune/respct-club/ERC998ERC1155/node_modules/@openzeppelin/truffle-upgrades/src/deploy-proxy.ts:42:26)
-    at module.exports (/home/waverune/respct-club/ERC998ERC1155/migrations/02_deploy_ERC998ERC1155TopDownPresetMinterPauserUpgradeable.js:14:30)
+    at module.exports (/home/waverune/respct-club/ERC998ERC1155/migrations/02_deploy_ComposableParentERC721Upgradeable.js:14:30)
     at Migration._deploy (/usr/local/lib/node_modules/truffle/build/webpack:/packages/migrate/Migration.js:80:1)
     at Migration._load (/usr/local/lib/node_modules/truffle/build/webpack:/packages/migrate/Migration.js:61:1)
     at Migration.run (/usr/local/lib/node_modules/truffle/build/webpack:/packages/migrate/Migration.js:218:1)

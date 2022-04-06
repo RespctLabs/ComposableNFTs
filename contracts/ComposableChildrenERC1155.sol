@@ -1,32 +1,44 @@
-// SPDX-License-Identifier: UNLICENSED
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.6.0;
-///@dev handle Batch receiving function - !!!!
 
-/// @title ERC1155TUMP creates tier supply and attaches tier to composable
-/// @author respect-club
-/// @notice receives Engagement tokens and attaches tier to composable ERC998
-/// @dev this contract maintains engagement tokens at id 0,
-
+/**
+ *
+ * @title ComposableChildrenERC1155
+ *
+ * @author respect-club
+ *
+ * @notice receives Engagement tokens and attaches tier to composableParentERC721 (csnft)
+ *
+ */
 import "@openzeppelin/contracts/presets/ERC1155PresetMinterPauser.sol";
 // import "@openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol";
 import "@openzeppelin/contracts/token/ERC1155/ERC1155Holder.sol";
-import "./ERC998ERC1155TopDownPresetMinterPauser.sol";
+import "./ComposableParentERC721.sol";
 
-contract ERC1155TierUpgradePresetMinterPauser is ERC1155PresetMinterPauser {
+contract ComposableChildrenERC1155 is ERC1155PresetMinterPauser {
+    //EVENTS
+    event upgraded(address indexed _owner);
+
+    //STATE
     using SafeMath for uint256;
     bytes4 internal constant ERC1155_ACCEPTED = 0xf23a6e61; // bytes4(keccak256("onERC1155Received(address,address,uint256,uint256,bytes)"))
     bytes4 internal constant ERC1155_BATCH_ACCEPTED = 0xbc197c81; // bytes4(keccak256("onERC1155BatchReceived(address,address,uint256[],uint256[],bytes)"))
 
-    ERC998ERC1155TopDownPresetMinterPauser csnftContract;
+    ComposableParentERC721 csnftContract;
+
+    // mapping (address => mapping (address => uint256)) private _allowances;
 
     mapping(address => uint256) public ownerToTierId;
-    // mapping (address => mapping (address => uint256)) private _allowances;
+
     mapping(address => mapping(uint256 => bool))
         private _ownerToUpgradeInitiated;
 
-    /// @notice csnft contract is deployed and linked to ERC1155TUMP
-    /// @param _csnftContractAdr deployed csnft contract
-
+    /**
+     *
+     * @notice composable parent contract is deployed and linked to this
+     *
+     * @param _csnftContractAdr deployed composable parent contract address
+     */
     constructor(string memory tierUri, address _csnftContractAdr)
         public
         ERC1155PresetMinterPauser(tierUri)
@@ -36,59 +48,97 @@ contract ERC1155TierUpgradePresetMinterPauser is ERC1155PresetMinterPauser {
             "ERC998: transfer to the zero address"
         );
 
-        csnftContract = ERC998ERC1155TopDownPresetMinterPauser(
-            _csnftContractAdr
-        );
+        csnftContract = ComposableParentERC721(_csnftContractAdr);
     }
 
-    function getLatestTierId(address _to) public returns (uint256) {
+    //PUBLIC GETTERS
+    /**
+     * @notice get latest child id of owner
+     *
+     * @param _owner address
+     *
+     */
+    function getLatestTierId(address _owner) public returns (uint256) {
         // uint256[] s arr = childIdsForOn(_composableId, tierContract);
-        return ownerToTierId[_to];
+        return ownerToTierId[_owner];
     }
 
+    /**
+     * @notice checks if owner has current tier
+     *
+     * @param _to  owner
+     *
+     * @param _tierId tid
+     *
+     * @return bool
+     */
     function hasTier(address _to, uint256 _tierId) public returns (bool) {
         // uint256[] s arr = childIdsForOn(_composableId, tierContract);
         return _ownerToUpgradeInitiated[_to][_tierId];
     }
 
+    //PRIVATE SETTERs
+    /**
+     * @notice updates owners latest tier id
+     *
+     * @param _to receiving address
+     *
+     * @param _latestTierId updated tierId
+     *
+     */
     function _setOwnerTierId(address _to, uint256 _latestTierId) private {
         ownerToTierId[_to] = _latestTierId;
         _ownerToUpgradeInitiated[_to][_latestTierId] = true;
     }
 
-    /// implement claimF engagement points
-    //function claim(){}
-    /// @notice mints enagagement point onlyMinterRole
-    /// @param _to csnftContract Address
-    /// @param _amount of F engagement  points
-    /// @param _data web3.utils.encodePacked(composableId)
+    //CORE
+    /**
+     * @notice mints enagagement point onlyMinterRole
+     *
+     * @param _to csnftContract Address
+     *
+     * @param _amount of F engagement  points
+     *
+     * @param _data web3.utils.encodePacked(composableId)
+     */
     function mintEngagementPoints(
         address _to,
         uint256 _amount,
         bytes memory _data
     ) public {
-        require(
-            hasRole(MINTER_ROLE, _msgSender()),
-            "ERC1155TUMP unauthorized engagement minter"
-        );
+        // require(
+        //     hasRole(MINTER_ROLE, _msgSender()),
+        //     "ERC1155TUMP unauthorized engagement minter"
+        // );
 
-        mint(_to, 0, _amount, _data);
+        _mint(_to, 0, _amount, _data);
     }
 
-    /// @notice upgrade user tier
-    /// @dev fetch curent tier of msg.sender
-
+    /**
+     * @notice upgrade user tier
+     *
+     * @dev fetch curent tier of msg.sender
+     *
+     * @param _composableId composable id of owner
+     *
+     * @param _upgradeToTierId new tier ID
+     *
+     * @param _data  web3.encodePacked
+     *
+     * @return bool
+     *
+     */
     function upgradeSNFT(
         uint256 _composableId,
         uint256 _upgradeToTierId,
-        bytes calldata data // web3.utils.encodePacked(composableId)
+        bytes calldata _data // web3.utils.encodePacked(composableId)
     ) external returns (bool) {
         //add tier checks  if tierId =1 bal(t-1) == 1
         // at t=0 bal(0) >= _FengagementPOints
         require(_upgradeToTierId != 0, ">Incorrect tierId, L0 ");
         // checks if _to owns the composable
         require(
-            csnftContract.ownerToComposableId(msg.sender) == _composableId,
+            csnftContract.getComposableId(msg.sender) == _composableId,
             ">Unauthorized caller"
         );
 
@@ -119,7 +169,7 @@ contract ERC1155TierUpgradePresetMinterPauser is ERC1155PresetMinterPauser {
 
         burn(msg.sender, 0, upgradeCost); // burn engagement tid 0
 
-        _mint(address(csnftContract), _upgradeToTierId, 1, data);
+        _mint(address(csnftContract), _upgradeToTierId, 1, _data);
         _setOwnerTierId(msg.sender, _upgradeToTierId);
 
         return true;

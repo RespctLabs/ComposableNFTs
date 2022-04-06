@@ -7,3 +7,9 @@ node_modules
 soljson-v0.6.12+commit.27d51765.js
 
 .vscode
+<<<<<<< HEAD
+=======
+bin/contracts
+yarn.lock
+package-lock.json
+>>>>>>> ea0d521c6bd8e373c13f03879582292fc11a2e23

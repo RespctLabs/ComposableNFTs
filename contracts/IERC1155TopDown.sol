@@ -4,7 +4,7 @@ pragma solidity ^0.6.0;
 import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
 import "@openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol";
 
-interface IERC998ERC1155TopDown is IERC721, IERC1155Receiver {
+interface IERC1155TopDown is IERC721, IERC1155Receiver {
     event ReceivedChild(
         address indexed from,
         uint256 indexed toTokenId,

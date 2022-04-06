@@ -3,15 +3,15 @@
 <g id="graph0" class="graph" transform="translate(-977.2106452639014,13185.606076721957) scale(1.9139793890101406)" data-name="G">
 
 <polygon fill="#2e3e56" stroke="transparent" points="-4,4 -4,-7105.34 1759.27,-7105.34 1759.27,4 -4,4" style=""/>
-<g id="clust1" class="cluster" data-name="clusterERC998ERC1155TopDown">
+<g id="clust1" class="cluster" data-name="clusterERC1155TopDown">
 
 <path fill="#445773" stroke="#445773" d="M20,-2163.34C20,-2163.34 493.29,-2163.34 493.29,-2163.34 499.29,-2163.34 505.29,-2169.34 505.29,-2175.34 505.29,-2175.34 505.29,-2606.34 505.29,-2606.34 505.29,-2612.34 499.29,-2618.34 493.29,-2618.34 493.29,-2618.34 20,-2618.34 20,-2618.34 14,-2618.34 8,-2612.34 8,-2606.34 8,-2606.34 8,-2175.34 8,-2175.34 8,-2169.34 14,-2163.34 20,-2163.34" style=""/>
-<text text-anchor="middle" x="256.64" y="-2601.74" font-family="Times,serif" font-size="14.00" fill="#f0f0f0" style="">ERC998ERC1155TopDown</text>
+<text text-anchor="middle" x="256.64" y="-2601.74" font-family="Times,serif" font-size="14.00" fill="#f0f0f0" style="">ERC1155TopDown</text>
 </g>
-<g id="clust2" class="cluster" data-name="clusterERC998ERC1155TopDownPresetMinterPauser">
+<g id="clust2" class="cluster" data-name="clusterComposableParentERC721">
 
 <path fill="#445773" stroke="#445773" d="M308.7,-2626.34C308.7,-2626.34 736.91,-2626.34 736.91,-2626.34 742.91,-2626.34 748.91,-2632.34 748.91,-2638.34 748.91,-2638.34 748.91,-3015.34 748.91,-3015.34 748.91,-3021.34 742.91,-3027.34 736.91,-3027.34 736.91,-3027.34 308.7,-3027.34 308.7,-3027.34 302.7,-3027.34 296.7,-3021.34 296.7,-3015.34 296.7,-3015.34 296.7,-2638.34 296.7,-2638.34 296.7,-2632.34 302.7,-2626.34 308.7,-2626.34" style=""/>
-<text text-anchor="middle" x="522.81" y="-3010.74" font-family="Times,serif" font-size="14.00" fill="#f0f0f0" style="">ERC998ERC1155TopDownPresetMinterPauser</text>
+<text text-anchor="middle" x="522.81" y="-3010.74" font-family="Times,serif" font-size="14.00" fill="#f0f0f0" style="">ComposableParentERC721</text>
 </g>
 <g id="clust3" class="cluster" data-name="clusterAccessControl">
 
@@ -108,10 +108,10 @@
 <path fill="#445773" stroke="#445773" d="M102.04,-6578.34C102.04,-6578.34 178.35,-6578.34 178.35,-6578.34 184.35,-6578.34 190.35,-6584.34 190.35,-6590.34 190.35,-6590.34 190.35,-6643.34 190.35,-6643.34 190.35,-6649.34 184.35,-6655.34 178.35,-6655.34 178.35,-6655.34 102.04,-6655.34 102.04,-6655.34 96.04,-6655.34 90.04,-6649.34 90.04,-6643.34 90.04,-6643.34 90.04,-6590.34 90.04,-6590.34 90.04,-6584.34 96.04,-6578.34 102.04,-6578.34" style=""/>
 <text text-anchor="middle" x="140.2" y="-6638.74" font-family="Times,serif" font-size="14.00" fill="#f0f0f0" style="">Strings  (lib)</text>
 </g>
-<g id="clust23" class="cluster" data-name="clusterIERC998ERC1155TopDown">
+<g id="clust23" class="cluster" data-name="clusterIERC1155TopDown">
 
 <path fill="#445773" stroke="#445773" d="M20,-6663.34C20,-6663.34 260.39,-6663.34 260.39,-6663.34 266.39,-6663.34 272.39,-6669.34 272.39,-6675.34 272.39,-6675.34 272.39,-6944.34 272.39,-6944.34 272.39,-6950.34 266.39,-6956.34 260.39,-6956.34 260.39,-6956.34 20,-6956.34 20,-6956.34 14,-6956.34 8,-6950.34 8,-6944.34 8,-6944.34 8,-6675.34 8,-6675.34 8,-6669.34 14,-6663.34 20,-6663.34" style=""/>
-<text text-anchor="middle" x="140.2" y="-6939.74" font-family="Times,serif" font-size="14.00" fill="#f0f0f0" style="">IERC998ERC1155TopDown  (iface)</text>
+<text text-anchor="middle" x="140.2" y="-6939.74" font-family="Times,serif" font-size="14.00" fill="#f0f0f0" style="">IERC1155TopDown  (iface)</text>
 </g>
 <g id="clust24" class="cluster" data-name="clusterERC1155PresetMinterPauser">
 
@@ -148,278 +148,278 @@
 <polygon fill="#2e3e56" stroke="black" points="67.2,-6964.34 67.2,-7093.34 437.6,-7093.34 437.6,-6964.34 67.2,-6964.34" style=""/>
 <text text-anchor="middle" x="252.4" y="-7076.74" font-family="Times,serif" font-size="14.00" style="">Legend</text>
 </g>
-<!-- ERC998ERC1155TopDown.&lt;Constructor&gt; -->
-<g id="node1" class="node" pointer-events="visible" data-name="ERC998ERC1155TopDown.&lt;Constructor&gt;">
+<!-- ERC1155TopDown.&lt;Constructor&gt; -->
+<g id="node1" class="node" pointer-events="visible" data-name="ERC1155TopDown.&lt;Constructor&gt;">
 
 <ellipse fill="#ff9797" stroke="#ff9797" stroke-width="3" cx="140.2" cy="-2567.34" rx="67.54" ry="18" style=""/>
 <text text-anchor="middle" x="140.2" y="-2563.14" font-family="Times,serif" font-size="14.00" style="">&lt;Constructor&gt;</text>
 </g>
-<!-- ERC998ERC1155TopDown._setBaseURI -->
-<g id="node13" class="node" pointer-events="visible" data-name="ERC998ERC1155TopDown._setBaseURI">
+<!-- ERC1155TopDown._setBaseURI -->
+<g id="node13" class="node" pointer-events="visible" data-name="ERC1155TopDown._setBaseURI">
 
 <ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="402.6" cy="-2567.34" rx="61.97" ry="18" style=""/>
 <text text-anchor="middle" x="402.6" y="-2563.14" font-family="Times,serif" font-size="14.00" style="">_setBaseURI</text>
 </g>
-<!-- ERC998ERC1155TopDown.&lt;Constructor&gt;&#45;&gt;ERC998ERC1155TopDown._setBaseURI -->
-<g id="edge1" class="edge" data-name="ERC998ERC1155TopDown.&lt;Constructor&gt;-&gt;ERC998ERC1155TopDown._setBaseURI">
+<!-- ERC1155TopDown.&lt;Constructor&gt;&#45;&gt;ERC1155TopDown._setBaseURI -->
+<g id="edge1" class="edge" data-name="ERC1155TopDown.&lt;Constructor&gt;-&gt;ERC1155TopDown._setBaseURI">
 
 <path fill="none" stroke="#1bc6a6" stroke-width="2" d="M207.92,-2567.34C245.4,-2567.34 292.19,-2567.34 330.38,-2567.34" style=""/>
 <polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="330.4,-2570.84 340.4,-2567.34 330.4,-2563.84 330.4,-2570.84" style=""/>
 </g>
-<!-- ERC998ERC1155TopDown._msgSender -->
-<g id="node14" class="node" pointer-events="visible" data-name="ERC998ERC1155TopDown._msgSender">
+<!-- ERC1155TopDown._msgSender -->
+<g id="node14" class="node" pointer-events="visible" data-name="ERC1155TopDown._msgSender">
 
 <ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="402.6" cy="-2513.34" rx="58.55" ry="18" style=""/>
 <text text-anchor="middle" x="402.6" y="-2509.14" font-family="Times,serif" font-size="14.00" style="">_msgSender</text>
 </g>
-<!-- ERC998ERC1155TopDown.&lt;Constructor&gt;&#45;&gt;ERC998ERC1155TopDown._msgSender -->
-<g id="edge23" class="edge" data-name="ERC998ERC1155TopDown.&lt;Constructor&gt;-&gt;ERC998ERC1155TopDown._msgSender">
+<!-- ERC1155TopDown.&lt;Constructor&gt;&#45;&gt;ERC1155TopDown._msgSender -->
+<g id="edge23" class="edge" data-name="ERC1155TopDown.&lt;Constructor&gt;-&gt;ERC1155TopDown._msgSender">
 
 <path fill="none" stroke="#1bc6a6" stroke-width="2" d="M162.56,-2550.23C188.53,-2539.64 233.68,-2530.36 272.39,-2522.34 293.03,-2518.06 315.51,-2513.37 335.85,-2509.95" style=""/>
 <polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="336.64,-2513.37 345.96,-2508.34 335.53,-2506.46 336.64,-2513.37" style=""/>
 </g>
-<!-- ERC998ERC1155TopDown.&lt;Constructor&gt;&#45;&gt;ERC998ERC1155TopDown._msgSender -->
-<g id="edge25" class="edge" data-name="ERC998ERC1155TopDown.&lt;Constructor&gt;-&gt;ERC998ERC1155TopDown._msgSender">
+<!-- ERC1155TopDown.&lt;Constructor&gt;&#45;&gt;ERC1155TopDown._msgSender -->
+<g id="edge25" class="edge" data-name="ERC1155TopDown.&lt;Constructor&gt;-&gt;ERC1155TopDown._msgSender">
 
 <path fill="none" stroke="#1bc6a6" stroke-width="2" d="M194.19,-2556.47C218.08,-2551.56 246.66,-2545.67 272.39,-2540.34 295.74,-2535.49 321.46,-2530.13 343.76,-2525.46" style=""/>
 <polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="344.67,-2528.85 353.74,-2523.37 343.24,-2522 344.67,-2528.85" style=""/>
 </g>
-<!-- ERC998ERC1155TopDown.&lt;Constructor&gt;&#45;&gt;ERC998ERC1155TopDown._msgSender -->
-<g id="edge27" class="edge" data-name="ERC998ERC1155TopDown.&lt;Constructor&gt;-&gt;ERC998ERC1155TopDown._msgSender">
+<!-- ERC1155TopDown.&lt;Constructor&gt;&#45;&gt;ERC1155TopDown._msgSender -->
+<g id="edge27" class="edge" data-name="ERC1155TopDown.&lt;Constructor&gt;-&gt;ERC1155TopDown._msgSender">
 
 <path fill="none" stroke="#1bc6a6" stroke-width="2" d="M206.27,-2571.08C227.36,-2567.65 250.87,-2562.8 272.39,-2558.34 306.41,-2551.28 345.46,-2543.11 371.65,-2533.88" style=""/>
 <polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="372.93,-2537.14 381.01,-2530.29 370.42,-2530.6 372.93,-2537.14" style=""/>
 </g>
-<!-- ERC998ERC1155TopDownPresetMinterPauser._setupRole -->
-<g id="node22" class="node" pointer-events="visible" data-name="ERC998ERC1155TopDownPresetMinterPauser._setupRole">
+<!-- ComposableParentERC721._setupRole -->
+<g id="node22" class="node" pointer-events="visible" data-name="ComposableParentERC721._setupRole">
 
 <ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="402.6" cy="-2652.34" rx="54.47" ry="18" style=""/>
 <text text-anchor="middle" x="402.6" y="-2648.14" font-family="Times,serif" font-size="14.00" style="">_setupRole</text>
 </g>
-<!-- ERC998ERC1155TopDown.&lt;Constructor&gt;&#45;&gt;ERC998ERC1155TopDownPresetMinterPauser._setupRole -->
-<g id="edge22" class="edge" data-name="ERC998ERC1155TopDown.&lt;Constructor&gt;-&gt;ERC998ERC1155TopDownPresetMinterPauser._setupRole">
+<!-- ERC1155TopDown.&lt;Constructor&gt;&#45;&gt;ComposableParentERC721._setupRole -->
+<g id="edge22" class="edge" data-name="ERC1155TopDown.&lt;Constructor&gt;-&gt;ComposableParentERC721._setupRole">
 
 <path fill="none" stroke="#1bc6a6" stroke-width="2" d="M202.6,-2574.46C229.92,-2583.12 262.58,-2594.84 292.39,-2604.34 320.3,-2613.23 352.7,-2621.93 374.92,-2631.2" style=""/>
 <polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="373.52,-2634.4 384.07,-2635.35 376.41,-2628.03 373.52,-2634.4" style=""/>
 </g>
-<!-- ERC998ERC1155TopDown.&lt;Constructor&gt;&#45;&gt;ERC998ERC1155TopDownPresetMinterPauser._setupRole -->
-<g id="edge24" class="edge" data-name="ERC998ERC1155TopDown.&lt;Constructor&gt;-&gt;ERC998ERC1155TopDownPresetMinterPauser._setupRole">
+<!-- ERC1155TopDown.&lt;Constructor&gt;&#45;&gt;ComposableParentERC721._setupRole -->
+<g id="edge24" class="edge" data-name="ERC1155TopDown.&lt;Constructor&gt;-&gt;ComposableParentERC721._setupRole">
 
 <path fill="none" stroke="#1bc6a6" stroke-width="2" d="M179.12,-2582.1C209.52,-2593.7 253.4,-2609.91 292.39,-2622.34 310.73,-2628.18 331.01,-2633.94 349.06,-2638.83" style=""/>
 <polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="348.27,-2642.24 358.84,-2641.45 350.08,-2635.48 348.27,-2642.24" style=""/>
 </g>
-<!-- ERC998ERC1155TopDown.&lt;Constructor&gt;&#45;&gt;ERC998ERC1155TopDownPresetMinterPauser._setupRole -->
-<g id="edge26" class="edge" data-name="ERC998ERC1155TopDown.&lt;Constructor&gt;-&gt;ERC998ERC1155TopDownPresetMinterPauser._setupRole">
+<!-- ERC1155TopDown.&lt;Constructor&gt;&#45;&gt;ComposableParentERC721._setupRole -->
+<g id="edge26" class="edge" data-name="ERC1155TopDown.&lt;Constructor&gt;-&gt;ComposableParentERC721._setupRole">
 
 <path fill="none" stroke="#1bc6a6" stroke-width="2" d="M157.82,-2584.98C185.51,-2602.68 242.89,-2624.56 292.39,-2640.34 307.45,-2645.14 323.82,-2649.88 339.2,-2653.57" style=""/>
 <polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="338.6,-2657.03 349.13,-2655.84 340.16,-2650.2 338.6,-2657.03" style=""/>
 </g>
-<!-- ERC998ERC1155TopDown.childBalance -->
-<g id="node2" class="node" pointer-events="visible" data-name="ERC998ERC1155TopDown.childBalance">
+<!-- ERC1155TopDown.childBalance -->
+<g id="node2" class="node" pointer-events="visible" data-name="ERC1155TopDown.childBalance">
 
 <ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="140.2" cy="-2513.34" rx="61.39" ry="18" style=""/>
 <text text-anchor="middle" x="140.2" y="-2509.14" font-family="Times,serif" font-size="14.00" style="">childBalance</text>
 </g>
-<!-- ERC998ERC1155TopDown.childContractsFor -->
-<g id="node3" class="node" pointer-events="visible" data-name="ERC998ERC1155TopDown.childContractsFor">
+<!-- ERC1155TopDown.childContractsFor -->
+<g id="node3" class="node" pointer-events="visible" data-name="ERC1155TopDown.childContractsFor">
 
 <ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="140.2" cy="-2459.34" rx="80.54" ry="18" style=""/>
 <text text-anchor="middle" x="140.2" y="-2455.14" font-family="Times,serif" font-size="14.00" style="">childContractsFor</text>
 </g>
-<!-- ERC998ERC1155TopDown.childIdsForOn -->
-<g id="node4" class="node" pointer-events="visible" data-name="ERC998ERC1155TopDown.childIdsForOn">
+<!-- ERC1155TopDown.childIdsForOn -->
+<g id="node4" class="node" pointer-events="visible" data-name="ERC1155TopDown.childIdsForOn">
 
 <ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="140.2" cy="-2405.34" rx="67.22" ry="18" style=""/>
 <text text-anchor="middle" x="140.2" y="-2401.14" font-family="Times,serif" font-size="14.00" style="">childIdsForOn</text>
 </g>
-<!-- ERC998ERC1155TopDown.safeTransferChildFrom -->
-<g id="node5" class="node" pointer-events="visible" data-name="ERC998ERC1155TopDown.safeTransferChildFrom">
+<!-- ERC1155TopDown.safeTransferChildFrom -->
+<g id="node5" class="node" pointer-events="visible" data-name="ERC1155TopDown.safeTransferChildFrom">
 
 <ellipse fill="#ff9797" stroke="#ff9797" stroke-width="3" cx="140.2" cy="-2297.34" rx="101.84" ry="18" style=""/>
 <text text-anchor="middle" x="140.2" y="-2293.14" font-family="Times,serif" font-size="14.00" style="">safeTransferChildFrom</text>
 </g>
-<!-- ERC998ERC1155TopDown._removeChild -->
-<g id="node10" class="node" pointer-events="visible" data-name="ERC998ERC1155TopDown._removeChild">
+<!-- ERC1155TopDown._removeChild -->
+<g id="node10" class="node" pointer-events="visible" data-name="ERC1155TopDown._removeChild">
 
 <ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="402.6" cy="-2459.34" rx="66.07" ry="18" style=""/>
 <text text-anchor="middle" x="402.6" y="-2455.14" font-family="Times,serif" font-size="14.00" style="">_removeChild</text>
 </g>
-<!-- ERC998ERC1155TopDown.safeTransferChildFrom&#45;&gt;ERC998ERC1155TopDown._removeChild -->
-<g id="edge9" class="edge" data-name="ERC998ERC1155TopDown.safeTransferChildFrom-&gt;ERC998ERC1155TopDown._removeChild">
+<!-- ERC1155TopDown.safeTransferChildFrom&#45;&gt;ERC1155TopDown._removeChild -->
+<g id="edge9" class="edge" data-name="ERC1155TopDown.safeTransferChildFrom-&gt;ERC1155TopDown._removeChild">
 
 <path fill="none" stroke="#1bc6a6" stroke-width="2" d="M236.97,-2303.06C250.23,-2307.6 262.62,-2314.37 272.39,-2324.34 306.57,-2359.2 258.91,-2396.81 292.39,-2432.34 301.88,-2442.4 314.47,-2448.96 327.73,-2453.19" style=""/>
 <polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="326.89,-2456.59 337.46,-2455.87 328.75,-2449.84 326.89,-2456.59" style=""/>
 </g>
-<!-- ERC998ERC1155TopDown._beforeChildTransfer -->
-<g id="node11" class="node" pointer-events="visible" data-name="ERC998ERC1155TopDown._beforeChildTransfer">
+<!-- ERC1155TopDown._beforeChildTransfer -->
+<g id="node11" class="node" pointer-events="visible" data-name="ERC1155TopDown._beforeChildTransfer">
 
 <ellipse fill="#f2c383" stroke="#f2c383" stroke-width="3" cx="402.6" cy="-2297.34" rx="94.88" ry="18" style=""/>
 <text text-anchor="middle" x="402.6" y="-2293.14" font-family="Times,serif" font-size="14.00" style="">_beforeChildTransfer</text>
 </g>
-<!-- ERC998ERC1155TopDown.safeTransferChildFrom&#45;&gt;ERC998ERC1155TopDown._beforeChildTransfer -->
-<g id="edge6" class="edge" data-name="ERC998ERC1155TopDown.safeTransferChildFrom-&gt;ERC998ERC1155TopDown._beforeChildTransfer">
+<!-- ERC1155TopDown.safeTransferChildFrom&#45;&gt;ERC1155TopDown._beforeChildTransfer -->
+<g id="edge6" class="edge" data-name="ERC1155TopDown.safeTransferChildFrom-&gt;ERC1155TopDown._beforeChildTransfer">
 
 <path fill="none" stroke="#1bc6a6" stroke-width="2" d="M241.87,-2297.34C260.11,-2297.34 279.16,-2297.34 297.49,-2297.34" style=""/>
 <polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="297.59,-2300.84 307.59,-2297.34 297.59,-2293.84 297.59,-2300.84" style=""/>
 </g>
-<!-- ERC998ERC1155TopDown._asSingletonArray -->
-<g id="node12" class="node" pointer-events="visible" data-name="ERC998ERC1155TopDown._asSingletonArray">
+<!-- ERC1155TopDown._asSingletonArray -->
+<g id="node12" class="node" pointer-events="visible" data-name="ERC1155TopDown._asSingletonArray">
 
 <ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="402.6" cy="-2243.34" rx="83.39" ry="18" style=""/>
 <text text-anchor="middle" x="402.6" y="-2239.14" font-family="Times,serif" font-size="14.00" style="">_asSingletonArray</text>
 </g>
-<!-- ERC998ERC1155TopDown.safeTransferChildFrom&#45;&gt;ERC998ERC1155TopDown._asSingletonArray -->
-<g id="edge7" class="edge" data-name="ERC998ERC1155TopDown.safeTransferChildFrom-&gt;ERC998ERC1155TopDown._asSingletonArray">
+<!-- ERC1155TopDown.safeTransferChildFrom&#45;&gt;ERC1155TopDown._asSingletonArray -->
+<g id="edge7" class="edge" data-name="ERC1155TopDown.safeTransferChildFrom-&gt;ERC1155TopDown._asSingletonArray">
 
 <path fill="none" stroke="#1bc6a6" stroke-width="2" d="M183.15,-2280.94C208.91,-2274.45 242.56,-2267.52 272.39,-2261.34 286.43,-2258.43 301.32,-2255.32 315.82,-2252.43" style=""/>
 <polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="316.64,-2255.84 325.77,-2250.47 315.28,-2248.97 316.64,-2255.84" style=""/>
 </g>
-<!-- ERC998ERC1155TopDown.safeTransferChildFrom&#45;&gt;ERC998ERC1155TopDown._asSingletonArray -->
-<g id="edge8" class="edge" data-name="ERC998ERC1155TopDown.safeTransferChildFrom-&gt;ERC998ERC1155TopDown._asSingletonArray">
+<!-- ERC1155TopDown.safeTransferChildFrom&#45;&gt;ERC1155TopDown._asSingletonArray -->
+<g id="edge8" class="edge" data-name="ERC1155TopDown.safeTransferChildFrom-&gt;ERC1155TopDown._asSingletonArray">
 
 <path fill="none" stroke="#1bc6a6" stroke-width="2" d="M228.36,-2288.31C243.06,-2285.41 258.16,-2282.29 272.39,-2279.34 298.9,-2273.84 328.45,-2267.67 352.6,-2261.73" style=""/>
 <polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="353.76,-2265.05 362.59,-2259.2 352.04,-2258.26 353.76,-2265.05" style=""/>
 </g>
-<!-- ERC998ERC1155TopDown.safeTransferChildFrom&#45;&gt;ERC998ERC1155TopDown._msgSender -->
-<g id="edge2" class="edge" data-name="ERC998ERC1155TopDown.safeTransferChildFrom-&gt;ERC998ERC1155TopDown._msgSender">
+<!-- ERC1155TopDown.safeTransferChildFrom&#45;&gt;ERC1155TopDown._msgSender -->
+<g id="edge2" class="edge" data-name="ERC1155TopDown.safeTransferChildFrom-&gt;ERC1155TopDown._msgSender">
 
 <path fill="none" stroke="#1bc6a6" stroke-width="2" d="M237.51,-2302.55C250.69,-2307.15 262.93,-2314.08 272.39,-2324.34 321.59,-2377.65 244.25,-2432.07 292.39,-2486.34 303.12,-2498.44 318.34,-2505.53 334.02,-2509.6" style=""/>
 <polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="333.28,-2513.02 343.8,-2511.75 334.79,-2506.18 333.28,-2513.02" style=""/>
 </g>
-<!-- ERC998ERC1155TopDown.ownerOf -->
-<g id="node15" class="node" pointer-events="visible" data-name="ERC998ERC1155TopDown.ownerOf">
+<!-- ERC1155TopDown.ownerOf -->
+<g id="node15" class="node" pointer-events="visible" data-name="ERC1155TopDown.ownerOf">
 
 <ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="402.6" cy="-2351.34" rx="45.21" ry="18" style=""/>
 <text text-anchor="middle" x="402.6" y="-2347.14" font-family="Times,serif" font-size="14.00" style="">ownerOf</text>
 </g>
-<!-- ERC998ERC1155TopDown.safeTransferChildFrom&#45;&gt;ERC998ERC1155TopDown.ownerOf -->
-<g id="edge3" class="edge" data-name="ERC998ERC1155TopDown.safeTransferChildFrom-&gt;ERC998ERC1155TopDown.ownerOf">
+<!-- ERC1155TopDown.safeTransferChildFrom&#45;&gt;ERC1155TopDown.ownerOf -->
+<g id="edge3" class="edge" data-name="ERC1155TopDown.safeTransferChildFrom-&gt;ERC1155TopDown.ownerOf">
 
 <path fill="none" stroke="#1bc6a6" stroke-width="2" d="M228.36,-2306.37C243.06,-2309.27 258.16,-2312.39 272.39,-2315.34 302.5,-2321.58 336.55,-2328.7 362.13,-2335.35" style=""/>
 <polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="361.27,-2338.75 371.84,-2337.98 363.1,-2331.99 361.27,-2338.75" style=""/>
 </g>
-<!-- ERC998ERC1155TopDown.safeTransferChildFrom&#45;&gt;ERC998ERC1155TopDown.ownerOf -->
-<g id="edge5" class="edge" data-name="ERC998ERC1155TopDown.safeTransferChildFrom-&gt;ERC998ERC1155TopDown.ownerOf">
+<!-- ERC1155TopDown.safeTransferChildFrom&#45;&gt;ERC1155TopDown.ownerOf -->
+<g id="edge5" class="edge" data-name="ERC1155TopDown.safeTransferChildFrom-&gt;ERC1155TopDown.ownerOf">
 
 <path fill="none" stroke="#1bc6a6" stroke-width="2" d="M183.15,-2313.73C208.91,-2320.23 242.56,-2327.15 272.39,-2333.34 297.02,-2338.44 324.28,-2344.14 347.39,-2348.26" style=""/>
 <polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="346.9,-2351.73 357.35,-2349.98 348.1,-2344.83 346.9,-2351.73" style=""/>
 </g>
-<!-- ERC998ERC1155TopDown.isApprovedForAll -->
-<g id="node16" class="node" pointer-events="visible" data-name="ERC998ERC1155TopDown.isApprovedForAll">
+<!-- ERC1155TopDown.isApprovedForAll -->
+<g id="node16" class="node" pointer-events="visible" data-name="ERC1155TopDown.isApprovedForAll">
 
 <ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="402.6" cy="-2405.34" rx="81.68" ry="18" style=""/>
 <text text-anchor="middle" x="402.6" y="-2401.14" font-family="Times,serif" font-size="14.00" style="">isApprovedForAll</text>
 </g>
-<!-- ERC998ERC1155TopDown.safeTransferChildFrom&#45;&gt;ERC998ERC1155TopDown.isApprovedForAll -->
-<g id="edge4" class="edge" data-name="ERC998ERC1155TopDown.safeTransferChildFrom-&gt;ERC998ERC1155TopDown.isApprovedForAll">
+<!-- ERC1155TopDown.safeTransferChildFrom&#45;&gt;ERC1155TopDown.isApprovedForAll -->
+<g id="edge4" class="edge" data-name="ERC1155TopDown.safeTransferChildFrom-&gt;ERC1155TopDown.isApprovedForAll">
 
 <path fill="none" stroke="#1bc6a6" stroke-width="2" d="M234.52,-2304.28C248.33,-2308.62 261.54,-2315.02 272.39,-2324.34 291.81,-2341.01 273.31,-2361.28 292.39,-2378.34 299.98,-2385.12 309.01,-2390.26 318.57,-2394.15" style=""/>
 <polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="317.69,-2397.55 328.28,-2397.63 320.05,-2390.96 317.69,-2397.55" style=""/>
 </g>
-<!-- ERC998ERC1155TopDown.safeBatchTransferChildFrom -->
-<g id="node6" class="node" pointer-events="visible" data-name="ERC998ERC1155TopDown.safeBatchTransferChildFrom">
+<!-- ERC1155TopDown.safeBatchTransferChildFrom -->
+<g id="node6" class="node" pointer-events="visible" data-name="ERC1155TopDown.safeBatchTransferChildFrom">
 
 <ellipse fill="#ff9797" stroke="#ff9797" stroke-width="3" cx="140.2" cy="-2351.34" rx="124.39" ry="18" style=""/>
 <text text-anchor="middle" x="140.2" y="-2347.14" font-family="Times,serif" font-size="14.00" style="">safeBatchTransferChildFrom</text>
 </g>
-<!-- ERC998ERC1155TopDown.safeBatchTransferChildFrom&#45;&gt;ERC998ERC1155TopDown._removeChild -->
-<g id="edge15" class="edge" data-name="ERC998ERC1155TopDown.safeBatchTransferChildFrom-&gt;ERC998ERC1155TopDown._removeChild">
+<!-- ERC1155TopDown.safeBatchTransferChildFrom&#45;&gt;ERC1155TopDown._removeChild -->
+<g id="edge15" class="edge" data-name="ERC1155TopDown.safeBatchTransferChildFrom-&gt;ERC1155TopDown._removeChild">
 
 <path fill="none" stroke="#1bc6a6" stroke-width="2" d="M243.51,-2361.44C254.02,-2365.57 263.92,-2371.07 272.39,-2378.34 291.81,-2395.01 273.31,-2415.28 292.39,-2432.34 302.65,-2441.5 315.52,-2447.66 328.8,-2451.79" style=""/>
 <polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="327.94,-2455.18 338.51,-2454.44 329.78,-2448.43 327.94,-2455.18" style=""/>
 </g>
-<!-- ERC998ERC1155TopDown.safeBatchTransferChildFrom&#45;&gt;ERC998ERC1155TopDown._beforeChildTransfer -->
-<g id="edge14" class="edge" data-name="ERC998ERC1155TopDown.safeBatchTransferChildFrom-&gt;ERC998ERC1155TopDown._beforeChildTransfer">
+<!-- ERC1155TopDown.safeBatchTransferChildFrom&#45;&gt;ERC1155TopDown._beforeChildTransfer -->
+<g id="edge14" class="edge" data-name="ERC1155TopDown.safeBatchTransferChildFrom-&gt;ERC1155TopDown._beforeChildTransfer">
 
 <path fill="none" stroke="#1bc6a6" stroke-width="2" d="M212.7,-2336.66C232.07,-2332.68 253.04,-2328.35 272.39,-2324.34 290.47,-2320.59 309.97,-2316.52 328.21,-2312.71" style=""/>
 <polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="329.12,-2316.1 338.19,-2310.63 327.68,-2309.25 329.12,-2316.1" style=""/>
 </g>
-<!-- ERC998ERC1155TopDown.safeBatchTransferChildFrom&#45;&gt;ERC998ERC1155TopDown._msgSender -->
-<g id="edge10" class="edge" data-name="ERC998ERC1155TopDown.safeBatchTransferChildFrom-&gt;ERC998ERC1155TopDown._msgSender">
+<!-- ERC1155TopDown.safeBatchTransferChildFrom&#45;&gt;ERC1155TopDown._msgSender -->
+<g id="edge10" class="edge" data-name="ERC1155TopDown.safeBatchTransferChildFrom-&gt;ERC1155TopDown._msgSender">
 
 <path fill="none" stroke="#1bc6a6" stroke-width="2" d="M246.41,-2360.76C256.07,-2365.06 264.98,-2370.78 272.39,-2378.34 306.57,-2413.2 258.91,-2450.81 292.39,-2486.34 303.32,-2497.94 318.39,-2504.89 333.83,-2508.97" style=""/>
 <polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="333.48,-2512.48 344,-2511.26 335.02,-2505.65 333.48,-2512.48" style=""/>
 </g>
-<!-- ERC998ERC1155TopDown.safeBatchTransferChildFrom&#45;&gt;ERC998ERC1155TopDown.ownerOf -->
-<g id="edge11" class="edge" data-name="ERC998ERC1155TopDown.safeBatchTransferChildFrom-&gt;ERC998ERC1155TopDown.ownerOf">
+<!-- ERC1155TopDown.safeBatchTransferChildFrom&#45;&gt;ERC1155TopDown.ownerOf -->
+<g id="edge11" class="edge" data-name="ERC1155TopDown.safeBatchTransferChildFrom-&gt;ERC1155TopDown.ownerOf">
 
 <path fill="none" stroke="#1bc6a6" stroke-width="2" d="M255.79,-2344.63C288.19,-2344.45 321.91,-2344.83 348.74,-2345.78" style=""/>
 <polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="348.92,-2349.29 359.05,-2346.19 349.19,-2342.3 348.92,-2349.29" style=""/>
 </g>
-<!-- ERC998ERC1155TopDown.safeBatchTransferChildFrom&#45;&gt;ERC998ERC1155TopDown.ownerOf -->
-<g id="edge13" class="edge" data-name="ERC998ERC1155TopDown.safeBatchTransferChildFrom-&gt;ERC998ERC1155TopDown.ownerOf">
+<!-- ERC1155TopDown.safeBatchTransferChildFrom&#45;&gt;ERC1155TopDown.ownerOf -->
+<g id="edge13" class="edge" data-name="ERC1155TopDown.safeBatchTransferChildFrom-&gt;ERC1155TopDown.ownerOf">
 
 <path fill="none" stroke="#1bc6a6" stroke-width="2" d="M255.79,-2358.04C288.19,-2358.22 321.91,-2357.84 348.74,-2356.89" style=""/>
 <polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="349.19,-2360.38 359.05,-2356.48 348.92,-2353.38 349.19,-2360.38" style=""/>
 </g>
-<!-- ERC998ERC1155TopDown.safeBatchTransferChildFrom&#45;&gt;ERC998ERC1155TopDown.isApprovedForAll -->
-<g id="edge12" class="edge" data-name="ERC998ERC1155TopDown.safeBatchTransferChildFrom-&gt;ERC998ERC1155TopDown.isApprovedForAll">
+<!-- ERC1155TopDown.safeBatchTransferChildFrom&#45;&gt;ERC1155TopDown.isApprovedForAll -->
+<g id="edge12" class="edge" data-name="ERC1155TopDown.safeBatchTransferChildFrom-&gt;ERC1155TopDown.isApprovedForAll">
 
 <path fill="none" stroke="#1bc6a6" stroke-width="2" d="M212.7,-2366.01C232.07,-2370 253.04,-2374.32 272.39,-2378.34 291.98,-2382.4 313.23,-2386.83 332.73,-2390.91" style=""/>
 <polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="332.25,-2394.38 342.75,-2393 333.68,-2387.53 332.25,-2394.38" style=""/>
 </g>
-<!-- ERC998ERC1155TopDown.onERC1155Received -->
-<g id="node7" class="node" pointer-events="visible" data-name="ERC998ERC1155TopDown.onERC1155Received">
+<!-- ERC1155TopDown.onERC1155Received -->
+<g id="node7" class="node" pointer-events="visible" data-name="ERC1155TopDown.onERC1155Received">
 
 <ellipse fill="#ff9797" stroke="#ff9797" stroke-width="3" cx="140.2" cy="-2243.34" rx="94.93" ry="18" style=""/>
 <text text-anchor="middle" x="140.2" y="-2239.14" font-family="Times,serif" font-size="14.00" style="">onERC1155Received</text>
 </g>
-<!-- ERC998ERC1155TopDown._receiveChild -->
-<g id="node9" class="node" pointer-events="visible" data-name="ERC998ERC1155TopDown._receiveChild">
+<!-- ERC1155TopDown._receiveChild -->
+<g id="node9" class="node" pointer-events="visible" data-name="ERC1155TopDown._receiveChild">
 
 <ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="402.6" cy="-2189.34" rx="65.41" ry="18" style=""/>
 <text text-anchor="middle" x="402.6" y="-2185.14" font-family="Times,serif" font-size="14.00" style="">_receiveChild</text>
 </g>
-<!-- ERC998ERC1155TopDown.onERC1155Received&#45;&gt;ERC998ERC1155TopDown._receiveChild -->
-<g id="edge19" class="edge" data-name="ERC998ERC1155TopDown.onERC1155Received-&gt;ERC998ERC1155TopDown._receiveChild">
+<!-- ERC1155TopDown.onERC1155Received&#45;&gt;ERC1155TopDown._receiveChild -->
+<g id="edge19" class="edge" data-name="ERC1155TopDown.onERC1155Received-&gt;ERC1155TopDown._receiveChild">
 
 <path fill="none" stroke="#1bc6a6" stroke-width="2" d="M205.26,-2230.19C226.62,-2225.8 250.53,-2220.87 272.39,-2216.34 294.47,-2211.76 318.67,-2206.71 340.1,-2202.23" style=""/>
 <polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="340.98,-2205.62 350.05,-2200.15 339.54,-2198.77 340.98,-2205.62" style=""/>
 </g>
-<!-- ERC998ERC1155TopDown.onERC1155Received&#45;&gt;ERC998ERC1155TopDown._beforeChildTransfer -->
-<g id="edge16" class="edge" data-name="ERC998ERC1155TopDown.onERC1155Received-&gt;ERC998ERC1155TopDown._beforeChildTransfer">
+<!-- ERC1155TopDown.onERC1155Received&#45;&gt;ERC1155TopDown._beforeChildTransfer -->
+<g id="edge16" class="edge" data-name="ERC1155TopDown.onERC1155Received-&gt;ERC1155TopDown._beforeChildTransfer">
 
 <path fill="none" stroke="#1bc6a6" stroke-width="2" d="M205.26,-2256.48C226.62,-2260.87 250.53,-2265.8 272.39,-2270.34 290.47,-2274.09 309.97,-2278.15 328.21,-2281.96" style=""/>
 <polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="327.68,-2285.43 338.19,-2284.05 329.12,-2278.57 327.68,-2285.43" style=""/>
 </g>
-<!-- ERC998ERC1155TopDown.onERC1155Received&#45;&gt;ERC998ERC1155TopDown._asSingletonArray -->
-<g id="edge17" class="edge" data-name="ERC998ERC1155TopDown.onERC1155Received-&gt;ERC998ERC1155TopDown._asSingletonArray">
+<!-- ERC1155TopDown.onERC1155Received&#45;&gt;ERC1155TopDown._asSingletonArray -->
+<g id="edge17" class="edge" data-name="ERC1155TopDown.onERC1155Received-&gt;ERC1155TopDown._asSingletonArray">
 
 <path fill="none" stroke="#1bc6a6" stroke-width="2" d="M228.99,-2236.92C256.36,-2236.48 286.52,-2236.48 313.88,-2236.92" style=""/>
 <polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="314.16,-2240.42 324.22,-2237.11 314.28,-2233.42 314.16,-2240.42" style=""/>
 </g>
-<!-- ERC998ERC1155TopDown.onERC1155Received&#45;&gt;ERC998ERC1155TopDown._asSingletonArray -->
-<g id="edge18" class="edge" data-name="ERC998ERC1155TopDown.onERC1155Received-&gt;ERC998ERC1155TopDown._asSingletonArray">
+<!-- ERC1155TopDown.onERC1155Received&#45;&gt;ERC1155TopDown._asSingletonArray -->
+<g id="edge18" class="edge" data-name="ERC1155TopDown.onERC1155Received-&gt;ERC1155TopDown._asSingletonArray">
 
 <path fill="none" stroke="#1bc6a6" stroke-width="2" d="M228.99,-2249.76C256.36,-2250.2 286.52,-2250.2 313.88,-2249.76" style=""/>
 <polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="314.28,-2253.25 324.22,-2249.57 314.16,-2246.25 314.28,-2253.25" style=""/>
 </g>
-<!-- ERC998ERC1155TopDown.onERC1155BatchReceived -->
-<g id="node8" class="node" pointer-events="visible" data-name="ERC998ERC1155TopDown.onERC1155BatchReceived">
+<!-- ERC1155TopDown.onERC1155BatchReceived -->
+<g id="node8" class="node" pointer-events="visible" data-name="ERC1155TopDown.onERC1155BatchReceived">
 
 <ellipse fill="#ff9797" stroke="#ff9797" stroke-width="3" cx="140.2" cy="-2189.34" rx="117.48" ry="18" style=""/>
 <text text-anchor="middle" x="140.2" y="-2185.14" font-family="Times,serif" font-size="14.00" style="">onERC1155BatchReceived</text>
 </g>
-<!-- ERC998ERC1155TopDown.onERC1155BatchReceived&#45;&gt;ERC998ERC1155TopDown._receiveChild -->
-<g id="edge21" class="edge" data-name="ERC998ERC1155TopDown.onERC1155BatchReceived-&gt;ERC998ERC1155TopDown._receiveChild">
+<!-- ERC1155TopDown.onERC1155BatchReceived&#45;&gt;ERC1155TopDown._receiveChild -->
+<g id="edge21" class="edge" data-name="ERC1155TopDown.onERC1155BatchReceived-&gt;ERC1155TopDown._receiveChild">
 
 <path fill="none" stroke="#1bc6a6" stroke-width="2" d="M257.69,-2189.34C281.3,-2189.34 305.52,-2189.34 327.2,-2189.34" style=""/>
 <polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="327.3,-2192.84 337.3,-2189.34 327.3,-2185.84 327.3,-2192.84" style=""/>
 </g>
-<!-- ERC998ERC1155TopDown.onERC1155BatchReceived&#45;&gt;ERC998ERC1155TopDown._beforeChildTransfer -->
-<g id="edge20" class="edge" data-name="ERC998ERC1155TopDown.onERC1155BatchReceived-&gt;ERC998ERC1155TopDown._beforeChildTransfer">
+<!-- ERC1155TopDown.onERC1155BatchReceived&#45;&gt;ERC1155TopDown._beforeChildTransfer -->
+<g id="edge20" class="edge" data-name="ERC1155TopDown.onERC1155BatchReceived-&gt;ERC1155TopDown._beforeChildTransfer">
 
 <path fill="none" stroke="#1bc6a6" stroke-width="2" d="M241.21,-2198.56C252.57,-2202.78 263.31,-2208.53 272.39,-2216.34 291.81,-2233.01 273.31,-2253.28 292.39,-2270.34 298.43,-2275.74 305.38,-2280.09 312.79,-2283.61" style=""/>
 <polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="311.81,-2286.99 322.38,-2287.62 314.51,-2280.53 311.81,-2286.99" style=""/>
 </g>
-<!-- ERC998ERC1155TopDownPresetMinterPauser.paused -->
-<g id="node29" class="node" pointer-events="visible" data-name="ERC998ERC1155TopDownPresetMinterPauser.paused">
+<!-- ComposableParentERC721.paused -->
+<g id="node29" class="node" pointer-events="visible" data-name="ComposableParentERC721.paused">
 
 <ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="643.54" cy="-2652.34" rx="37.7" ry="18" style=""/>
 <text text-anchor="middle" x="643.54" y="-2648.14" font-family="Times,serif" font-size="14.00" style="">paused</text>
 </g>
-<!-- ERC998ERC1155TopDown._beforeChildTransfer&#45;&gt;ERC998ERC1155TopDownPresetMinterPauser.paused -->
-<g id="edge42" class="edge" data-name="ERC998ERC1155TopDown._beforeChildTransfer-&gt;ERC998ERC1155TopDownPresetMinterPauser.paused">
+<!-- ERC1155TopDown._beforeChildTransfer&#45;&gt;ComposableParentERC721.paused -->
+<g id="edge42" class="edge" data-name="ERC1155TopDown._beforeChildTransfer-&gt;ComposableParentERC721.paused">
 
 <path fill="none" stroke="#1bc6a6" stroke-width="2" d="M482.22,-2307.4C491.01,-2311.46 499.03,-2316.95 505.29,-2324.34 547.68,-2374.43 491.45,-2567.39 532.8,-2618.34 547.96,-2637 573.17,-2645.63 595.6,-2649.53" style=""/>
 <polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="595.27,-2653.02 605.67,-2651.01 596.29,-2646.09 595.27,-2653.02" style=""/>
@@ -430,152 +430,152 @@
 <ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="643.54" cy="-2267.34" rx="94.88" ry="18" style=""/>
 <text text-anchor="middle" x="643.54" y="-2263.14" font-family="Times,serif" font-size="14.00" style="">_beforeChildTransfer</text>
 </g>
-<!-- ERC998ERC1155TopDown._beforeChildTransfer&#45;&gt;Pausable._beforeChildTransfer -->
-<g id="edge43" class="edge" data-name="ERC998ERC1155TopDown._beforeChildTransfer-&gt;Pausable._beforeChildTransfer">
+<!-- ERC1155TopDown._beforeChildTransfer&#45;&gt;Pausable._beforeChildTransfer -->
+<g id="edge43" class="edge" data-name="ERC1155TopDown._beforeChildTransfer-&gt;Pausable._beforeChildTransfer">
 
 <path fill="none" stroke="white" stroke-width="2" d="M482.17,-2287.47C505.14,-2284.59 530.4,-2281.42 553.95,-2278.46" style=""/>
 <polygon fill="white" stroke="white" stroke-width="2" points="554.43,-2281.93 563.92,-2277.21 553.56,-2274.98 554.43,-2281.93" style=""/>
 </g>
-<!-- ERC998ERC1155TopDownPresetMinterPauser.mint -->
-<g id="node17" class="node" pointer-events="visible" data-name="ERC998ERC1155TopDownPresetMinterPauser.mint">
+<!-- ComposableParentERC721.mint -->
+<g id="node17" class="node" pointer-events="visible" data-name="ComposableParentERC721.mint">
 
 <ellipse fill="#ff9797" stroke="#ff9797" stroke-width="3" cx="402.6" cy="-2868.34" rx="28.99" ry="18" style=""/>
 <text text-anchor="middle" x="402.6" y="-2864.14" font-family="Times,serif" font-size="14.00" style="">mint</text>
 </g>
-<!-- ERC998ERC1155TopDownPresetMinterPauser.mint&#45;&gt;ERC998ERC1155TopDown._msgSender -->
-<g id="edge29" class="edge" data-name="ERC998ERC1155TopDownPresetMinterPauser.mint-&gt;ERC998ERC1155TopDown._msgSender">
+<!-- ComposableParentERC721.mint&#45;&gt;ERC1155TopDown._msgSender -->
+<g id="edge29" class="edge" data-name="ComposableParentERC721.mint-&gt;ERC1155TopDown._msgSender">
 
 <path fill="none" stroke="#1bc6a6" stroke-width="2" d="M373.93,-2870.37C343.28,-2870.7 297.1,-2865.37 282.39,-2832.34 269.6,-2803.61 269.6,-2578.06 282.39,-2549.34 291.35,-2529.23 311.95,-2519.39 333.62,-2514.84" style=""/>
 <polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="334.36,-2518.26 343.61,-2513.1 333.16,-2511.37 334.36,-2518.26" style=""/>
 </g>
-<!-- ERC998ERC1155TopDownPresetMinterPauser.hasRole -->
-<g id="node23" class="node" pointer-events="visible" data-name="ERC998ERC1155TopDownPresetMinterPauser.hasRole">
+<!-- ComposableParentERC721.hasRole -->
+<g id="node23" class="node" pointer-events="visible" data-name="ComposableParentERC721.hasRole">
 
 <ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="643.54" cy="-2760.34" rx="42.29" ry="18" style=""/>
 <text text-anchor="middle" x="643.54" y="-2756.14" font-family="Times,serif" font-size="14.00" style="">hasRole</text>
 </g>
-<!-- ERC998ERC1155TopDownPresetMinterPauser.mint&#45;&gt;ERC998ERC1155TopDownPresetMinterPauser.hasRole -->
-<g id="edge28" class="edge" data-name="ERC998ERC1155TopDownPresetMinterPauser.mint-&gt;ERC998ERC1155TopDownPresetMinterPauser.hasRole">
+<!-- ComposableParentERC721.mint&#45;&gt;ComposableParentERC721.hasRole -->
+<g id="edge28" class="edge" data-name="ComposableParentERC721.mint-&gt;ComposableParentERC721.hasRole">
 
 <path fill="none" stroke="#1bc6a6" stroke-width="2" d="M431.4,-2867.05C453.56,-2864.7 484.26,-2858.33 505.29,-2841.34 526.24,-2824.41 511.7,-2804.07 532.8,-2787.34 549.37,-2774.2 571.44,-2767.34 591.45,-2763.8" style=""/>
 <polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="592.02,-2767.25 601.37,-2762.27 590.95,-2760.33 592.02,-2767.25" style=""/>
 </g>
-<!-- ERC998ERC1155TopDownPresetMinterPauser._mint -->
-<g id="node24" class="node" pointer-events="visible" data-name="ERC998ERC1155TopDownPresetMinterPauser._mint">
+<!-- ComposableParentERC721._mint -->
+<g id="node24" class="node" pointer-events="visible" data-name="ComposableParentERC721._mint">
 
 <ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="643.54" cy="-2868.34" rx="33.65" ry="18" style=""/>
 <text text-anchor="middle" x="643.54" y="-2864.14" font-family="Times,serif" font-size="14.00" style="">_mint</text>
 </g>
-<!-- ERC998ERC1155TopDownPresetMinterPauser.mint&#45;&gt;ERC998ERC1155TopDownPresetMinterPauser._mint -->
-<g id="edge30" class="edge" data-name="ERC998ERC1155TopDownPresetMinterPauser.mint-&gt;ERC998ERC1155TopDownPresetMinterPauser._mint">
+<!-- ComposableParentERC721.mint&#45;&gt;ComposableParentERC721._mint -->
+<g id="edge30" class="edge" data-name="ComposableParentERC721.mint-&gt;ComposableParentERC721._mint">
 
 <path fill="none" stroke="#1bc6a6" stroke-width="2" d="M431.47,-2868.34C472.88,-2868.34 550.96,-2868.34 599.67,-2868.34" style=""/>
 <polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="599.89,-2871.84 609.89,-2868.34 599.89,-2864.84 599.89,-2871.84" style=""/>
 </g>
-<!-- ERC998ERC1155TopDownPresetMinterPauser.burn -->
-<g id="node18" class="node" pointer-events="visible" data-name="ERC998ERC1155TopDownPresetMinterPauser.burn">
+<!-- ComposableParentERC721.burn -->
+<g id="node18" class="node" pointer-events="visible" data-name="ComposableParentERC721.burn">
 
 <ellipse fill="#ff9797" stroke="#ff9797" stroke-width="3" cx="402.6" cy="-2922.34" rx="28.98" ry="18" style=""/>
 <text text-anchor="middle" x="402.6" y="-2918.14" font-family="Times,serif" font-size="14.00" style="">burn</text>
 </g>
-<!-- ERC998ERC1155TopDownPresetMinterPauser.burn&#45;&gt;ERC998ERC1155TopDown._msgSender -->
-<g id="edge32" class="edge" data-name="ERC998ERC1155TopDownPresetMinterPauser.burn-&gt;ERC998ERC1155TopDown._msgSender">
+<!-- ComposableParentERC721.burn&#45;&gt;ERC1155TopDown._msgSender -->
+<g id="edge32" class="edge" data-name="ComposableParentERC721.burn-&gt;ERC1155TopDown._msgSender">
 
 <path fill="none" stroke="#1bc6a6" stroke-width="2" d="M373.93,-2924.37C343.28,-2924.7 297.1,-2919.37 282.39,-2886.34 274.77,-2869.23 274.77,-2566.44 282.39,-2549.34 291.35,-2529.23 311.95,-2519.39 333.62,-2514.84" style=""/>
 <polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="334.36,-2518.26 343.61,-2513.1 333.16,-2511.37 334.36,-2518.26" style=""/>
 </g>
-<!-- ERC998ERC1155TopDownPresetMinterPauser._isApprovedOrOwner -->
-<g id="node25" class="node" pointer-events="visible" data-name="ERC998ERC1155TopDownPresetMinterPauser._isApprovedOrOwner">
+<!-- ComposableParentERC721._isApprovedOrOwner -->
+<g id="node25" class="node" pointer-events="visible" data-name="ComposableParentERC721._isApprovedOrOwner">
 
 <ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="643.54" cy="-2976.34" rx="97.26" ry="18" style=""/>
 <text text-anchor="middle" x="643.54" y="-2972.14" font-family="Times,serif" font-size="14.00" style="">_isApprovedOrOwner</text>
 </g>
-<!-- ERC998ERC1155TopDownPresetMinterPauser.burn&#45;&gt;ERC998ERC1155TopDownPresetMinterPauser._isApprovedOrOwner -->
-<g id="edge31" class="edge" data-name="ERC998ERC1155TopDownPresetMinterPauser.burn-&gt;ERC998ERC1155TopDownPresetMinterPauser._isApprovedOrOwner">
+<!-- ComposableParentERC721.burn&#45;&gt;ComposableParentERC721._isApprovedOrOwner -->
+<g id="edge31" class="edge" data-name="ComposableParentERC721.burn-&gt;ComposableParentERC721._isApprovedOrOwner">
 
 <path fill="none" stroke="#1bc6a6" stroke-width="2" d="M430.08,-2928.32C463.89,-2935.96 523.68,-2949.48 571.24,-2960.22" style=""/>
 <polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="570.67,-2963.68 581.19,-2962.47 572.21,-2956.85 570.67,-2963.68" style=""/>
 </g>
-<!-- ERC998ERC1155TopDownPresetMinterPauser._burn -->
-<g id="node26" class="node" pointer-events="visible" data-name="ERC998ERC1155TopDownPresetMinterPauser._burn">
+<!-- ComposableParentERC721._burn -->
+<g id="node26" class="node" pointer-events="visible" data-name="ComposableParentERC721._burn">
 
 <ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="643.54" cy="-2922.34" rx="33.63" ry="18" style=""/>
 <text text-anchor="middle" x="643.54" y="-2918.14" font-family="Times,serif" font-size="14.00" style="">_burn</text>
 </g>
-<!-- ERC998ERC1155TopDownPresetMinterPauser.burn&#45;&gt;ERC998ERC1155TopDownPresetMinterPauser._burn -->
-<g id="edge33" class="edge" data-name="ERC998ERC1155TopDownPresetMinterPauser.burn-&gt;ERC998ERC1155TopDownPresetMinterPauser._burn">
+<!-- ComposableParentERC721.burn&#45;&gt;ComposableParentERC721._burn -->
+<g id="edge33" class="edge" data-name="ComposableParentERC721.burn-&gt;ComposableParentERC721._burn">
 
 <path fill="none" stroke="#1bc6a6" stroke-width="2" d="M431.47,-2922.34C472.88,-2922.34 550.96,-2922.34 599.67,-2922.34" style=""/>
 <polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="599.89,-2925.84 609.89,-2922.34 599.89,-2918.84 599.89,-2925.84" style=""/>
 </g>
-<!-- ERC998ERC1155TopDownPresetMinterPauser.pause -->
-<g id="node19" class="node" pointer-events="visible" data-name="ERC998ERC1155TopDownPresetMinterPauser.pause">
+<!-- ComposableParentERC721.pause -->
+<g id="node19" class="node" pointer-events="visible" data-name="ComposableParentERC721.pause">
 
 <ellipse fill="#ff9797" stroke="#ff9797" stroke-width="3" cx="402.6" cy="-2814.34" rx="33.04" ry="18" style=""/>
 <text text-anchor="middle" x="402.6" y="-2810.14" font-family="Times,serif" font-size="14.00" style="">pause</text>
 </g>
-<!-- ERC998ERC1155TopDownPresetMinterPauser.pause&#45;&gt;ERC998ERC1155TopDown._msgSender -->
-<g id="edge35" class="edge" data-name="ERC998ERC1155TopDownPresetMinterPauser.pause-&gt;ERC998ERC1155TopDown._msgSender">
+<!-- ComposableParentERC721.pause&#45;&gt;ERC1155TopDown._msgSender -->
+<g id="edge35" class="edge" data-name="ComposableParentERC721.pause-&gt;ERC1155TopDown._msgSender">
 
 <path fill="none" stroke="#1bc6a6" stroke-width="2" d="M369.68,-2816.37C339.17,-2816.16 296.44,-2809.88 282.39,-2778.34 272.04,-2755.09 272.04,-2572.58 282.39,-2549.34 291.35,-2529.23 311.95,-2519.39 333.62,-2514.84" style=""/>
 <polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="334.36,-2518.26 343.61,-2513.1 333.16,-2511.37 334.36,-2518.26" style=""/>
 </g>
-<!-- ERC998ERC1155TopDownPresetMinterPauser.pause&#45;&gt;ERC998ERC1155TopDownPresetMinterPauser.hasRole -->
-<g id="edge34" class="edge" data-name="ERC998ERC1155TopDownPresetMinterPauser.pause-&gt;ERC998ERC1155TopDownPresetMinterPauser.hasRole">
+<!-- ComposableParentERC721.pause&#45;&gt;ComposableParentERC721.hasRole -->
+<g id="edge34" class="edge" data-name="ComposableParentERC721.pause-&gt;ComposableParentERC721.hasRole">
 
 <path fill="none" stroke="#1bc6a6" stroke-width="2" d="M433.38,-2807.61C474.14,-2798.4 547.72,-2781.76 595.85,-2770.89" style=""/>
 <polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="596.73,-2774.28 605.71,-2768.66 595.19,-2767.45 596.73,-2774.28" style=""/>
 </g>
-<!-- ERC998ERC1155TopDownPresetMinterPauser._pause -->
-<g id="node27" class="node" pointer-events="visible" data-name="ERC998ERC1155TopDownPresetMinterPauser._pause">
+<!-- ComposableParentERC721._pause -->
+<g id="node27" class="node" pointer-events="visible" data-name="ComposableParentERC721._pause">
 
 <ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="643.54" cy="-2814.34" rx="37.7" ry="18" style=""/>
 <text text-anchor="middle" x="643.54" y="-2810.14" font-family="Times,serif" font-size="14.00" style="">_pause</text>
 </g>
-<!-- ERC998ERC1155TopDownPresetMinterPauser.pause&#45;&gt;ERC998ERC1155TopDownPresetMinterPauser._pause -->
-<g id="edge36" class="edge" data-name="ERC998ERC1155TopDownPresetMinterPauser.pause-&gt;ERC998ERC1155TopDownPresetMinterPauser._pause">
+<!-- ComposableParentERC721.pause&#45;&gt;ComposableParentERC721._pause -->
+<g id="edge36" class="edge" data-name="ComposableParentERC721.pause-&gt;ComposableParentERC721._pause">
 
 <path fill="none" stroke="#1bc6a6" stroke-width="2" d="M435.82,-2814.34C476.8,-2814.34 547.88,-2814.34 595.06,-2814.34" style=""/>
 <polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="595.34,-2817.84 605.34,-2814.34 595.34,-2810.84 595.34,-2817.84" style=""/>
 </g>
-<!-- ERC998ERC1155TopDownPresetMinterPauser.unpause -->
-<g id="node20" class="node" pointer-events="visible" data-name="ERC998ERC1155TopDownPresetMinterPauser.unpause">
+<!-- ComposableParentERC721.unpause -->
+<g id="node20" class="node" pointer-events="visible" data-name="ComposableParentERC721.unpause">
 
 <ellipse fill="#ff9797" stroke="#ff9797" stroke-width="3" cx="402.6" cy="-2760.34" rx="42.86" ry="18" style=""/>
 <text text-anchor="middle" x="402.6" y="-2756.14" font-family="Times,serif" font-size="14.00" style="">unpause</text>
 </g>
-<!-- ERC998ERC1155TopDownPresetMinterPauser.unpause&#45;&gt;ERC998ERC1155TopDown._msgSender -->
-<g id="edge38" class="edge" data-name="ERC998ERC1155TopDownPresetMinterPauser.unpause-&gt;ERC998ERC1155TopDown._msgSender">
+<!-- ComposableParentERC721.unpause&#45;&gt;ERC1155TopDown._msgSender -->
+<g id="edge38" class="edge" data-name="ComposableParentERC721.unpause-&gt;ERC1155TopDown._msgSender">
 
 <path fill="none" stroke="#1bc6a6" stroke-width="2" d="M360.11,-2762.11C330.84,-2760.64 295.02,-2752.7 282.39,-2724.34 274.48,-2706.57 274.48,-2567.1 282.39,-2549.34 291.35,-2529.23 311.95,-2519.39 333.62,-2514.84" style=""/>
 <polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="334.36,-2518.26 343.61,-2513.1 333.16,-2511.37 334.36,-2518.26" style=""/>
 </g>
-<!-- ERC998ERC1155TopDownPresetMinterPauser.unpause&#45;&gt;ERC998ERC1155TopDownPresetMinterPauser.hasRole -->
-<g id="edge37" class="edge" data-name="ERC998ERC1155TopDownPresetMinterPauser.unpause-&gt;ERC998ERC1155TopDownPresetMinterPauser.hasRole">
+<!-- ComposableParentERC721.unpause&#45;&gt;ComposableParentERC721.hasRole -->
+<g id="edge37" class="edge" data-name="ComposableParentERC721.unpause-&gt;ComposableParentERC721.hasRole">
 
 <path fill="none" stroke="#1bc6a6" stroke-width="2" d="M445.49,-2760.34C486.01,-2760.34 547.5,-2760.34 591,-2760.34" style=""/>
 <polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="591.09,-2763.84 601.09,-2760.34 591.09,-2756.84 591.09,-2763.84" style=""/>
 </g>
-<!-- ERC998ERC1155TopDownPresetMinterPauser._unpause -->
-<g id="node28" class="node" pointer-events="visible" data-name="ERC998ERC1155TopDownPresetMinterPauser._unpause">
+<!-- ComposableParentERC721._unpause -->
+<g id="node28" class="node" pointer-events="visible" data-name="ComposableParentERC721._unpause">
 
 <ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="643.54" cy="-2706.34" rx="47.52" ry="18" style=""/>
 <text text-anchor="middle" x="643.54" y="-2702.14" font-family="Times,serif" font-size="14.00" style="">_unpause</text>
 </g>
-<!-- ERC998ERC1155TopDownPresetMinterPauser.unpause&#45;&gt;ERC998ERC1155TopDownPresetMinterPauser._unpause -->
-<g id="edge39" class="edge" data-name="ERC998ERC1155TopDownPresetMinterPauser.unpause-&gt;ERC998ERC1155TopDownPresetMinterPauser._unpause">
+<!-- ComposableParentERC721.unpause&#45;&gt;ComposableParentERC721._unpause -->
+<g id="edge39" class="edge" data-name="ComposableParentERC721.unpause-&gt;ComposableParentERC721._unpause">
 
 <path fill="none" stroke="#1bc6a6" stroke-width="2" d="M440.67,-2751.96C481.37,-2742.76 546.95,-2727.94 592.27,-2717.7" style=""/>
 <polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="593.2,-2721.08 602.18,-2715.46 591.65,-2714.25 593.2,-2721.08" style=""/>
 </g>
-<!-- ERC998ERC1155TopDownPresetMinterPauser._beforeTokenTransfer -->
-<g id="node21" class="node" pointer-events="visible" data-name="ERC998ERC1155TopDownPresetMinterPauser._beforeTokenTransfer">
+<!-- ComposableParentERC721._beforeTokenTransfer -->
+<g id="node21" class="node" pointer-events="visible" data-name="ComposableParentERC721._beforeTokenTransfer">
 
 <ellipse fill="#f2c383" stroke="#f2c383" stroke-width="3" cx="402.6" cy="-2706.34" rx="97.8" ry="18" style=""/>
 <text text-anchor="middle" x="402.6" y="-2702.14" font-family="Times,serif" font-size="14.00" style="">_beforeTokenTransfer</text>
 </g>
-<!-- ERC998ERC1155TopDownPresetMinterPauser._beforeTokenTransfer&#45;&gt;ERC998ERC1155TopDownPresetMinterPauser.paused -->
-<g id="edge40" class="edge" data-name="ERC998ERC1155TopDownPresetMinterPauser._beforeTokenTransfer-&gt;ERC998ERC1155TopDownPresetMinterPauser.paused">
+<!-- ComposableParentERC721._beforeTokenTransfer&#45;&gt;ComposableParentERC721.paused -->
+<g id="edge40" class="edge" data-name="ComposableParentERC721._beforeTokenTransfer-&gt;ComposableParentERC721.paused">
 
 <path fill="none" stroke="#1bc6a6" stroke-width="2" d="M465.13,-2692.43C506.97,-2682.98 561.31,-2670.69 598.76,-2662.23" style=""/>
 <polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="599.88,-2665.57 608.86,-2659.95 598.33,-2658.74 599.88,-2665.57" style=""/>
@@ -586,8 +586,8 @@
 <ellipse fill="#f2c383" stroke="#f2c383" stroke-width="3" cx="643.54" cy="-2321.34" rx="97.8" ry="18" style=""/>
 <text text-anchor="middle" x="643.54" y="-2317.14" font-family="Times,serif" font-size="14.00" style="">_beforeTokenTransfer</text>
 </g>
-<!-- ERC998ERC1155TopDownPresetMinterPauser._beforeTokenTransfer&#45;&gt;Pausable._beforeTokenTransfer -->
-<g id="edge41" class="edge" data-name="ERC998ERC1155TopDownPresetMinterPauser._beforeTokenTransfer-&gt;Pausable._beforeTokenTransfer">
+<!-- ComposableParentERC721._beforeTokenTransfer&#45;&gt;Pausable._beforeTokenTransfer -->
+<g id="edge41" class="edge" data-name="ComposableParentERC721._beforeTokenTransfer-&gt;Pausable._beforeTokenTransfer">
 
 <path fill="none" stroke="white" stroke-width="2" d="M483.21,-2695.81C491.62,-2691.8 499.27,-2686.45 505.29,-2679.34 547.81,-2629.07 497.2,-2439.72 532.8,-2384.34 545.17,-2365.11 565.61,-2351.1 585.52,-2341.25" style=""/>
 <polygon fill="white" stroke="white" stroke-width="2" points="587.02,-2344.41 594.6,-2337.01 584.06,-2338.07 587.02,-2344.41" style=""/>
@@ -2394,32 +2394,32 @@
 <ellipse fill="#f2c383" stroke="#f2c383" stroke-width="3" cx="140.2" cy="-6604.34" rx="42.31" ry="18" style=""/>
 <text text-anchor="middle" x="140.2" y="-6600.14" font-family="Times,serif" font-size="14.00" style="">toString</text>
 </g>
-<!-- IERC998ERC1155TopDown.childContractsFor -->
-<g id="node170" class="node" pointer-events="visible" data-name="IERC998ERC1155TopDown.childContractsFor">
+<!-- IERC1155TopDown.childContractsFor -->
+<g id="node170" class="node" pointer-events="visible" data-name="IERC1155TopDown.childContractsFor">
 
 <ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="140.2" cy="-6905.34" rx="80.54" ry="18" style=""/>
 <text text-anchor="middle" x="140.2" y="-6901.14" font-family="Times,serif" font-size="14.00" style="">childContractsFor</text>
 </g>
-<!-- IERC998ERC1155TopDown.childIdsForOn -->
-<g id="node171" class="node" pointer-events="visible" data-name="IERC998ERC1155TopDown.childIdsForOn">
+<!-- IERC1155TopDown.childIdsForOn -->
+<g id="node171" class="node" pointer-events="visible" data-name="IERC1155TopDown.childIdsForOn">
 
 <ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="140.2" cy="-6851.34" rx="67.22" ry="18" style=""/>
 <text text-anchor="middle" x="140.2" y="-6847.14" font-family="Times,serif" font-size="14.00" style="">childIdsForOn</text>
 </g>
-<!-- IERC998ERC1155TopDown.childBalance -->
-<g id="node172" class="node" pointer-events="visible" data-name="IERC998ERC1155TopDown.childBalance">
+<!-- IERC1155TopDown.childBalance -->
+<g id="node172" class="node" pointer-events="visible" data-name="IERC1155TopDown.childBalance">
 
 <ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="140.2" cy="-6797.34" rx="61.39" ry="18" style=""/>
 <text text-anchor="middle" x="140.2" y="-6793.14" font-family="Times,serif" font-size="14.00" style="">childBalance</text>
 </g>
-<!-- IERC998ERC1155TopDown.safeTransferChildFrom -->
-<g id="node173" class="node" pointer-events="visible" data-name="IERC998ERC1155TopDown.safeTransferChildFrom">
+<!-- IERC1155TopDown.safeTransferChildFrom -->
+<g id="node173" class="node" pointer-events="visible" data-name="IERC1155TopDown.safeTransferChildFrom">
 
 <ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="140.2" cy="-6743.34" rx="101.84" ry="18" style=""/>
 <text text-anchor="middle" x="140.2" y="-6739.14" font-family="Times,serif" font-size="14.00" style="">safeTransferChildFrom</text>
 </g>
-<!-- IERC998ERC1155TopDown.safeBatchTransferChildFrom -->
-<g id="node174" class="node" pointer-events="visible" data-name="IERC998ERC1155TopDown.safeBatchTransferChildFrom">
+<!-- IERC1155TopDown.safeBatchTransferChildFrom -->
+<g id="node174" class="node" pointer-events="visible" data-name="IERC1155TopDown.safeBatchTransferChildFrom">
 
 <ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="140.2" cy="-6689.34" rx="124.39" ry="18" style=""/>
 <text text-anchor="middle" x="140.2" y="-6685.14" font-family="Times,serif" font-size="14.00" style="">safeBatchTransferChildFrom</text>

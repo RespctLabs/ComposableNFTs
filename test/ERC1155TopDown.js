@@ -1,8 +1,8 @@
-// const ERC998ERC1155TopDownPresetMinterPauser = artifacts.require("ERC998ERC1155TopDownPresetMinterPauser");
+// const ComposableParentERC721 = artifacts.require("ComposableParentERC721");
 // const ERC1155PresetMinterPauser = artifacts.require("ERC1155PresetMinterPauser");
 // const web3 = require('web3');
 
-// contract("ERC998ERC1155TopDownPresetMinterPauser", accounts => {
+// contract("ComposableParentERC721", accounts => {
 //   let admin;
 //   let erc998;
 //   let erc1155;
@@ -27,7 +27,7 @@
 
 //   // minting 998 composables {composable 998)) FOR EACH USER}
 //   beforeEach(async () => {
-//     erc998 = await ERC998ERC1155TopDownPresetMinterPauser.new("erc998", "ERC998", "https://ERC998.com/{id}", { from: admin });
+//     erc998 = await ComposableParentERC721.new("erc998", "ERC998", "https://ERC998.com/{id}", { from: admin });
 //     await erc998.mint(user1, composable1, { from: admin });
 //     await erc998.mint(user2, composable2, { from: admin });
 //   })
