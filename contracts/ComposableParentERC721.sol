@@ -1,12 +1,10 @@
 // SPDX-License-Identifier: MIT
 
 pragma solidity ^0.6.0;
-
 import "@openzeppelin/contracts/access/AccessControl.sol";
 import "@openzeppelin/contracts/GSN/Context.sol";
 import "@openzeppelin/contracts/utils/Pausable.sol";
 import "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
-
 import "./ERC1155TopDown.sol";
 
 /**
@@ -44,7 +42,6 @@ contract ComposableParentERC721 is
     ReentrancyGuard
 {
     // EVENTS
-=======
     event NFTMinted(address indexed NFTowner, uint256 indexed tokenId);
     event NFTMintPriceUpdated(uint256 indexed price);
     event TierUpgradePriceUpdated(
@@ -136,7 +133,6 @@ contract ComposableParentERC721 is
         return tierIdtoUpgradeCost[_tierId];
     }
 
-
     /**
      * @notice Fetches current level of an snft
      *
@@ -180,7 +176,7 @@ contract ComposableParentERC721 is
             hasRole(ADMIN_ROLE, _msgSender()),
             "Unauthorized total supply setter"
         );
-        maxSupply = value;
+        maxSupply = _value;
     }
 
     /**
@@ -222,7 +218,6 @@ contract ComposableParentERC721 is
         emit NFTMintPriceUpdated(_cost);
     }
 
-    }
     // CORE
 
     /**
@@ -239,6 +234,7 @@ contract ComposableParentERC721 is
     // >one account can only mint one snft
     // We cannot just use balanceOf to create the new tokenId because tokens
     // can be burned (destroyed), so we need a separate counter.
+
     function mint() public payable virtual nonReentrant {
         require(msg.value == mintCost, "ERC721: must pay the mint cost");
 

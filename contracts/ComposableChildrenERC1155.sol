@@ -22,12 +22,16 @@ contract ComposableChildrenERC1155 is
 {
     //EVENTS
     event upgraded(address indexed _owner);
+    event RequestEngagementStatusFulfilled(
+        bytes32 indexed requestId,
+        uint256 indexed status
+    );
 
     //STATE
     using SafeMath for uint256;
     using Chainlink for Chainlink.Request;
 
-    uint256 public requesStatus; //jersey
+    uint256 public requestStatus; //jersey
 
     address private oracle;
     bytes32 private jobId;
@@ -62,9 +66,9 @@ contract ComposableChildrenERC1155 is
 
         csnftContract = ComposableParentERC721(_csnftContractAdr);
         setPublicChainlinkToken();
-        oracle = ;  //add addr
-        jobId = ""; //add 
-        fee = 0.1 * 10 ** 18; // (Varies by network and job)
+        oracle = 0x778E59137Af4C3272A060296cb01b4d0D7455Ca2; //add addr
+        jobId = ""; //add
+        fee = 0.1 * 10**18; // (Varies by network and job)
     }
 
     //PUBLIC GETTERS
@@ -189,5 +193,66 @@ contract ComposableChildrenERC1155 is
         _setOwnerTierId(msg.sender, _upgradeToTierId);
 
         return true;
+    }
+
+    //chainlink requests
+
+    function requestEngagementStatus(
+        address _oracle,
+        string memory _jobId,
+        string memory _url,
+        uint256 _composableId
+    ) public {
+        // ccheck if msg.senderr owns composable721
+        uint256 cid = csnftContract.getComposableId(msg.sender);
+        require(
+            csnftContract.getComposableId(msg.sender) == _composableId,
+            ">Unauthorized caller"
+        );
+
+        Chainlink.Request memory req = buildChainlinkRequest(
+            stringToBytes32(_jobId),
+            address(this),
+            this.fulfillEngagementStatus.selector
+        );
+        // req.add("caller", msg.sender);
+
+        req.add(
+            "get",
+            "https://respctbot.herokuapp.com/address/0xb35a91f1C23c1B36257Fa89fDA70113be57962Cd"
+        );
+        req.add("path", "status");
+
+        sendChainlinkRequestTo(_oracle, req, fee);
+    }
+
+    // {"message":"success","status":200,"value":false}
+    function fulfillEngagementStatus(bytes32 _requestId, uint256 _requestStatus)
+        public
+        recordChainlinkFulfillment(_requestId)
+    {
+        requestStatus = _requestStatus;
+        if (_requestStatus == 400) {
+            //return false
+        } else if (_requestStatus == 200) {
+            // _mint(_to, 0, _amt, "0x0");
+        }
+        emit RequestEngagementStatusFulfilled(_requestId, _requestStatus);
+    }
+
+    function stringToBytes32(string memory source)
+        private
+        pure
+        returns (bytes32 result)
+    {
+        bytes memory tempEmptyStringTest = bytes(source);
+        if (tempEmptyStringTest.length == 0) {
+            return 0x0;
+        }
+
+        assembly {
+            // solhint-disable-line no-inline-assembly
+            result := mload(add(source, 32))
+        }
     }
 }
