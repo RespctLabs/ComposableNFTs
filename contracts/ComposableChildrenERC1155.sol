@@ -1,6 +1,12 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.6.0;
 
+import "@openzeppelin/contracts/presets/ERC1155PresetMinterPauser.sol";
+// import "@openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol";
+import "@openzeppelin/contracts/token/ERC1155/ERC1155Holder.sol";
+import "@chainlink/contracts/src/v0.6/ChainlinkClient.sol";
+import "./ComposableParentERC721.sol";
+
 /**
  *
  * @title ComposableChildrenERC1155
@@ -10,17 +16,23 @@ pragma solidity ^0.6.0;
  * @notice receives Engagement tokens and attaches tier to composableParentERC721 (csnft)
  *
  */
-import "@openzeppelin/contracts/presets/ERC1155PresetMinterPauser.sol";
-// import "@openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol";
-import "@openzeppelin/contracts/token/ERC1155/ERC1155Holder.sol";
-import "./ComposableParentERC721.sol";
-
-contract ComposableChildrenERC1155 is ERC1155PresetMinterPauser {
+contract ComposableChildrenERC1155 is
+    ERC1155PresetMinterPauser,
+    ChainlinkClient
+{
     //EVENTS
     event upgraded(address indexed _owner);
 
     //STATE
     using SafeMath for uint256;
+    using Chainlink for Chainlink.Request;
+
+    uint256 public requesStatus; //jersey
+
+    address private oracle;
+    bytes32 private jobId;
+    uint256 private fee;
+
     bytes4 internal constant ERC1155_ACCEPTED = 0xf23a6e61; // bytes4(keccak256("onERC1155Received(address,address,uint256,uint256,bytes)"))
     bytes4 internal constant ERC1155_BATCH_ACCEPTED = 0xbc197c81; // bytes4(keccak256("onERC1155BatchReceived(address,address,uint256[],uint256[],bytes)"))
 
@@ -49,6 +61,10 @@ contract ComposableChildrenERC1155 is ERC1155PresetMinterPauser {
         );
 
         csnftContract = ComposableParentERC721(_csnftContractAdr);
+        setPublicChainlinkToken();
+        oracle = ;  //add addr
+        jobId = ""; //add 
+        fee = 0.1 * 10 ** 18; // (Varies by network and job)
     }
 
     //PUBLIC GETTERS
