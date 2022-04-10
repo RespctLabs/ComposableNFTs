@@ -1,4 +1,4 @@
 {
   "solidity.defaultCompiler": "localFile",
-  "solidity.compileUsingRemoteVersion": "v0.6.11+commit.5ef660b1"
+  "solidity.compileUsingRemoteVersion": "v0.6.1+commit.e6f7d5a4"
 }

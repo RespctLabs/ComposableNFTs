@@ -325,14 +325,14 @@
     "absolutePath": "@openzeppelin/contracts/token/ERC1155/IERC1155MetadataURI.sol",
     "exportedSymbols": {
       "IERC1155MetadataURI": [
-        3249
+        2236
       ]
     },
-    "id": 3250,
+    "id": 2237,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 3236,
+        "id": 2223,
         "literals": [
           "solidity",
           ">=",
@@ -343,16 +343,16 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "33:31:17"
+        "src": "33:31:12"
       },
       {
         "absolutePath": "@openzeppelin/contracts/token/ERC1155/IERC1155.sol",
         "file": "./IERC1155.sol",
-        "id": 3237,
+        "id": 2224,
         "nodeType": "ImportDirective",
-        "scope": 3250,
-        "sourceUnit": 3235,
-        "src": "66:24:17",
+        "scope": 2237,
+        "sourceUnit": 2222,
+        "src": "66:24:12",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -363,38 +363,38 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 3239,
+              "id": 2226,
               "name": "IERC1155",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 3234,
-              "src": "320:8:17",
+              "referencedDeclaration": 2221,
+              "src": "320:8:12",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_IERC1155_$3234",
+                "typeIdentifier": "t_contract$_IERC1155_$2221",
                 "typeString": "contract IERC1155"
               }
             },
-            "id": 3240,
+            "id": 2227,
             "nodeType": "InheritanceSpecifier",
-            "src": "320:8:17"
+            "src": "320:8:12"
           }
         ],
         "contractDependencies": [
-          1366,
-          3234
+          353,
+          2221
         ],
         "contractKind": "interface",
         "documentation": {
-          "id": 3238,
+          "id": 2225,
           "nodeType": "StructuredDocumentation",
-          "src": "92:194:17",
+          "src": "92:194:12",
           "text": "@dev Interface of the optional ERC1155MetadataExtension interface, as defined\nin the https://eips.ethereum.org/EIPS/eip-1155#metadata-extensions[EIP].\n * _Available since v3.1._"
         },
         "fullyImplemented": false,
-        "id": 3249,
+        "id": 2236,
         "linearizedBaseContracts": [
-          3249,
-          3234,
-          1366
+          2236,
+          2221,
+          353
         ],
         "name": "IERC1155MetadataURI",
         "nodeType": "ContractDefinition",
@@ -402,13 +402,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 3241,
+              "id": 2228,
               "nodeType": "StructuredDocumentation",
-              "src": "335:192:17",
+              "src": "335:192:12",
               "text": "@dev Returns the URI for token type `id`.\n     * If the `\\{id\\}` substring is present in the URI, it must be replaced by\nclients with the actual token type ID."
             },
             "functionSelector": "0e89341c",
-            "id": 3248,
+            "id": 2235,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -416,17 +416,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 3244,
+              "id": 2231,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3243,
+                  "id": 2230,
                   "name": "id",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 3248,
-                  "src": "545:10:17",
+                  "scope": 2235,
+                  "src": "545:10:12",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -434,10 +434,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 3242,
+                    "id": 2229,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "545:7:17",
+                    "src": "545:7:12",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -447,20 +447,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "544:12:17"
+              "src": "544:12:12"
             },
             "returnParameters": {
-              "id": 3247,
+              "id": 2234,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3246,
+                  "id": 2233,
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 3248,
-                  "src": "580:13:17",
+                  "scope": 2235,
+                  "src": "580:13:12",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -468,10 +468,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 3245,
+                    "id": 2232,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "580:6:17",
+                    "src": "580:6:12",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -481,27 +481,27 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "579:15:17"
+              "src": "579:15:12"
             },
-            "scope": 3249,
-            "src": "532:63:17",
+            "scope": 2236,
+            "src": "532:63:12",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 3250,
-        "src": "287:310:17"
+        "scope": 2237,
+        "src": "287:310:12"
       }
     ],
-    "src": "33:565:17"
+    "src": "33:565:12"
   },
   "legacyAST": {
     "attributes": {
       "absolutePath": "@openzeppelin/contracts/token/ERC1155/IERC1155MetadataURI.sol",
       "exportedSymbols": {
         "IERC1155MetadataURI": [
-          3249
+          2236
         ]
       }
     },
@@ -518,50 +518,50 @@
             ".0"
           ]
         },
-        "id": 3236,
+        "id": 2223,
         "name": "PragmaDirective",
-        "src": "33:31:17"
+        "src": "33:31:12"
       },
       {
         "attributes": {
-          "SourceUnit": 3235,
+          "SourceUnit": 2222,
           "absolutePath": "@openzeppelin/contracts/token/ERC1155/IERC1155.sol",
           "file": "./IERC1155.sol",
-          "scope": 3250,
+          "scope": 2237,
           "symbolAliases": [
             null
           ],
           "unitAlias": ""
         },
-        "id": 3237,
+        "id": 2224,
         "name": "ImportDirective",
-        "src": "66:24:17"
+        "src": "66:24:12"
       },
       {
         "attributes": {
           "abstract": false,
           "contractDependencies": [
-            1366,
-            3234
+            353,
+            2221
           ],
           "contractKind": "interface",
           "fullyImplemented": false,
           "linearizedBaseContracts": [
-            3249,
-            3234,
-            1366
+            2236,
+            2221,
+            353
           ],
           "name": "IERC1155MetadataURI",
-          "scope": 3250
+          "scope": 2237
         },
         "children": [
           {
             "attributes": {
               "text": "@dev Interface of the optional ERC1155MetadataExtension interface, as defined\nin the https://eips.ethereum.org/EIPS/eip-1155#metadata-extensions[EIP].\n * _Available since v3.1._"
             },
-            "id": 3238,
+            "id": 2225,
             "name": "StructuredDocumentation",
-            "src": "92:194:17"
+            "src": "92:194:12"
           },
           {
             "attributes": {
@@ -572,17 +572,17 @@
                 "attributes": {
                   "contractScope": null,
                   "name": "IERC1155",
-                  "referencedDeclaration": 3234,
+                  "referencedDeclaration": 2221,
                   "type": "contract IERC1155"
                 },
-                "id": 3239,
+                "id": 2226,
                 "name": "UserDefinedTypeName",
-                "src": "320:8:17"
+                "src": "320:8:12"
               }
             ],
-            "id": 3240,
+            "id": 2227,
             "name": "InheritanceSpecifier",
-            "src": "320:8:17"
+            "src": "320:8:12"
           },
           {
             "attributes": {
@@ -596,7 +596,7 @@
               ],
               "name": "uri",
               "overrides": null,
-              "scope": 3249,
+              "scope": 2236,
               "stateMutability": "view",
               "virtual": false,
               "visibility": "external"
@@ -606,9 +606,9 @@
                 "attributes": {
                   "text": "@dev Returns the URI for token type `id`.\n     * If the `\\{id\\}` substring is present in the URI, it must be replaced by\nclients with the actual token type ID."
                 },
-                "id": 3241,
+                "id": 2228,
                 "name": "StructuredDocumentation",
-                "src": "335:192:17"
+                "src": "335:192:12"
               },
               {
                 "children": [
@@ -617,7 +617,7 @@
                       "constant": false,
                       "name": "id",
                       "overrides": null,
-                      "scope": 3248,
+                      "scope": 2235,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -630,19 +630,19 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 3242,
+                        "id": 2229,
                         "name": "ElementaryTypeName",
-                        "src": "545:7:17"
+                        "src": "545:7:12"
                       }
                     ],
-                    "id": 3243,
+                    "id": 2230,
                     "name": "VariableDeclaration",
-                    "src": "545:10:17"
+                    "src": "545:10:12"
                   }
                 ],
-                "id": 3244,
+                "id": 2231,
                 "name": "ParameterList",
-                "src": "544:12:17"
+                "src": "544:12:12"
               },
               {
                 "children": [
@@ -651,7 +651,7 @@
                       "constant": false,
                       "name": "",
                       "overrides": null,
-                      "scope": 3248,
+                      "scope": 2235,
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "type": "string",
@@ -664,42 +664,42 @@
                           "name": "string",
                           "type": "string"
                         },
-                        "id": 3245,
+                        "id": 2232,
                         "name": "ElementaryTypeName",
-                        "src": "580:6:17"
+                        "src": "580:6:12"
                       }
                     ],
-                    "id": 3246,
+                    "id": 2233,
                     "name": "VariableDeclaration",
-                    "src": "580:13:17"
+                    "src": "580:13:12"
                   }
                 ],
-                "id": 3247,
+                "id": 2234,
                 "name": "ParameterList",
-                "src": "579:15:17"
+                "src": "579:15:12"
               }
             ],
-            "id": 3248,
+            "id": 2235,
             "name": "FunctionDefinition",
-            "src": "532:63:17"
+            "src": "532:63:12"
           }
         ],
-        "id": 3249,
+        "id": 2236,
         "name": "ContractDefinition",
-        "src": "287:310:17"
+        "src": "287:310:12"
       }
     ],
-    "id": 3250,
+    "id": 2237,
     "name": "SourceUnit",
-    "src": "33:565:17"
+    "src": "33:565:12"
   },
   "compiler": {
     "name": "solc",
     "version": "0.6.3+commit.8dda9521.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.4.1",
-  "updatedAt": "2022-03-17T08:18:27.750Z",
+  "schemaVersion": "3.4.7",
+  "updatedAt": "2022-04-10T09:51:49.030Z",
   "devdoc": {
     "details": "Interface of the optional ERC1155MetadataExtension interface, as defined in the https://eips.ethereum.org/EIPS/eip-1155#metadata-extensions[EIP]. * _Available since v3.1._",
     "methods": {
