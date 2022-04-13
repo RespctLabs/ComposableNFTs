@@ -10,9 +10,9 @@ Oracle contract : off chain requests to APIconsumer contract via external adapte
 
 
 ### FLOW
-   * Chainlink State:-
-    - ChainLink token address :  
-    - ChainLink reques Job id :
+    Chainlink State:-
+    * ChainLink token address :  
+    * ChainLink reques Job id :
 Make sure the contract addresses are on the same network
    Deploy Contracts
    -npx hardhat run --network <network> scripts/deploy.js
