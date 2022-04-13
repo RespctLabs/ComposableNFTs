@@ -9,10 +9,10 @@ ComposableChildrenERC1155 : Tier Upgrade Minter Pauser
 Oracle contract : off chain requests to APIconsumer contract via external adapter
 
 
-## FLOW
-   Chainlink State:-
-   ChainLink token address :  
-   ChainLink reques Job id :
+### FLOW
+   * Chainlink State:-
+    - ChainLink token address :  
+    - ChainLink reques Job id :
 Make sure the contract addresses are on the same network
    Deploy Contracts
    -npx hardhat run --network <network> scripts/deploy.js
