@@ -11,8 +11,8 @@ An ERC721 (non fungible-token) that owns ERC1155 (multi-token) from other contra
 
 ### FLOW
    Chainlink State:-
-    * ChainLink token address :  
-    * ChainLink reques Job id :
+   - ChainLink token address :  
+   - ChainLink request Job id :
 Make sure the contract addresses are on the same network
    * Deploy Contracts
     npx hardhat run --network <network> scripts/deploy.js
