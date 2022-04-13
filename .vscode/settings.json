@@ -1,4 +1,5 @@
 {
   "solidity.defaultCompiler": "localFile",
-  "solidity.compileUsingRemoteVersion": "v0.6.11+commit.5ef660b1"
+  "solidity.compileUsingRemoteVersion": "v0.6.11+commit.5ef660b1",
+  "solidity.compileUsingLocalVersion": "/home/waverune/respct-club/ERC998ERC1155/soljson-v0.6.6+commit.6c089d02.js"
 }
