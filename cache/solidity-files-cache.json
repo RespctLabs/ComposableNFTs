@@ -1,0 +1,1711 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/home/waverune/respct-club/ERC998ERC1155/contracts/ComposableChildrenERC1155.sol": {
+      "lastModificationDate": 1649855607961,
+      "contentHash": "a07b5168e6d8c4704ec55f647203acf6",
+      "sourceName": "contracts/ComposableChildrenERC1155.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/presets/ERC1155PresetMinterPauser.sol",
+        "@openzeppelin/contracts/token/ERC1155/ERC1155Holder.sol",
+        "@chainlink/contracts/src/v0.6/ChainlinkClient.sol",
+        "./ComposableParentERC721.sol"
+      ],
+      "versionPragmas": [
+        "^0.6.0"
+      ],
+      "artifacts": [
+        "ComposableChildrenERC1155"
+      ]
+    },
+    "/home/waverune/respct-club/ERC998ERC1155/node_modules/@openzeppelin/contracts/presets/ERC1155PresetMinterPauser.sol": {
+      "lastModificationDate": 1648368329535,
+      "contentHash": "54d61f91fded9161db409d5b49a1cb06",
+      "sourceName": "@openzeppelin/contracts/presets/ERC1155PresetMinterPauser.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../access/AccessControl.sol",
+        "../GSN/Context.sol",
+        "../token/ERC1155/ERC1155.sol",
+        "../token/ERC1155/ERC1155Burnable.sol",
+        "../token/ERC1155/ERC1155Pausable.sol"
+      ],
+      "versionPragmas": [
+        "^0.6.0"
+      ],
+      "artifacts": [
+        "ERC1155PresetMinterPauser"
+      ]
+    },
+    "/home/waverune/respct-club/ERC998ERC1155/node_modules/@openzeppelin/contracts/token/ERC1155/ERC1155Holder.sol": {
+      "lastModificationDate": 1648368330043,
+      "contentHash": "fe126d8ec9855e5561f8364a736917b5",
+      "sourceName": "@openzeppelin/contracts/token/ERC1155/ERC1155Holder.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./ERC1155Receiver.sol"
+      ],
+      "versionPragmas": [
+        "^0.6.0"
+      ],
+      "artifacts": [
+        "ERC1155Holder"
+      ]
+    },
+    "/home/waverune/respct-club/ERC998ERC1155/node_modules/@chainlink/contracts/src/v0.6/ChainlinkClient.sol": {
+      "lastModificationDate": 1649320020770,
+      "contentHash": "d101d1c7b811fb524cfe3cdfa5341293",
+      "sourceName": "@chainlink/contracts/src/v0.6/ChainlinkClient.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Chainlink.sol",
+        "./interfaces/ENSInterface.sol",
+        "./interfaces/LinkTokenInterface.sol",
+        "./interfaces/ChainlinkRequestInterface.sol",
+        "./interfaces/PointerInterface.sol",
+        "./vendor/ENSResolver.sol"
+      ],
+      "versionPragmas": [
+        "^0.6.0"
+      ],
+      "artifacts": [
+        "ChainlinkClient"
+      ]
+    },
+    "/home/waverune/respct-club/ERC998ERC1155/contracts/ComposableParentERC721.sol": {
+      "lastModificationDate": 1649859487705,
+      "contentHash": "53d56f9b8161df78a5fe3bda59dc7d46",
+      "sourceName": "contracts/ComposableParentERC721.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/access/AccessControl.sol",
+        "@openzeppelin/contracts/GSN/Context.sol",
+        "@openzeppelin/contracts/utils/Pausable.sol",
+        "@openzeppelin/contracts/utils/ReentrancyGuard.sol",
+        "./ERC1155TopDown.sol"
+      ],
+      "versionPragmas": [
+        "^0.6.0"
+      ],
+      "artifacts": [
+        "ComposableParentERC721"
+      ]
+    },
+    "/home/waverune/respct-club/ERC998ERC1155/node_modules/@openzeppelin/contracts/access/AccessControl.sol": {
+      "lastModificationDate": 1648368329531,
+      "contentHash": "f60e3ddea9dc23bc52984afdb18d59ec",
+      "sourceName": "@openzeppelin/contracts/access/AccessControl.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../utils/EnumerableSet.sol",
+        "../utils/Address.sol",
+        "../GSN/Context.sol"
+      ],
+      "versionPragmas": [
+        "^0.6.0"
+      ],
+      "artifacts": [
+        "AccessControl"
+      ]
+    },
+    "/home/waverune/respct-club/ERC998ERC1155/node_modules/@openzeppelin/contracts/GSN/Context.sol": {
+      "lastModificationDate": 1648368329535,
+      "contentHash": "af1b36323856d0d1550abc7f878a8208",
+      "sourceName": "@openzeppelin/contracts/GSN/Context.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.6.0"
+      ],
+      "artifacts": [
+        "Context"
+      ]
+    },
+    "/home/waverune/respct-club/ERC998ERC1155/node_modules/@openzeppelin/contracts/token/ERC1155/ERC1155.sol": {
+      "lastModificationDate": 1648368330043,
+      "contentHash": "331b0f6914ee3daba93f560cfd33d8ea",
+      "sourceName": "@openzeppelin/contracts/token/ERC1155/ERC1155.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC1155.sol",
+        "./IERC1155MetadataURI.sol",
+        "./IERC1155Receiver.sol",
+        "../../GSN/Context.sol",
+        "../../introspection/ERC165.sol",
+        "../../math/SafeMath.sol",
+        "../../utils/Address.sol"
+      ],
+      "versionPragmas": [
+        "^0.6.0"
+      ],
+      "artifacts": [
+        "ERC1155"
+      ]
+    },
+    "/home/waverune/respct-club/ERC998ERC1155/node_modules/@openzeppelin/contracts/token/ERC1155/ERC1155Burnable.sol": {
+      "lastModificationDate": 1648368330043,
+      "contentHash": "86d8146585fb1c15692c605d76dc60a3",
+      "sourceName": "@openzeppelin/contracts/token/ERC1155/ERC1155Burnable.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./ERC1155.sol"
+      ],
+      "versionPragmas": [
+        "^0.6.0"
+      ],
+      "artifacts": [
+        "ERC1155Burnable"
+      ]
+    },
+    "/home/waverune/respct-club/ERC998ERC1155/node_modules/@openzeppelin/contracts/token/ERC1155/ERC1155Pausable.sol": {
+      "lastModificationDate": 1648368330043,
+      "contentHash": "1bbfd8a9cf81ff8d9fdc7d6090d30188",
+      "sourceName": "@openzeppelin/contracts/token/ERC1155/ERC1155Pausable.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./ERC1155.sol",
+        "../../utils/Pausable.sol"
+      ],
+      "versionPragmas": [
+        "^0.6.0"
+      ],
+      "artifacts": [
+        "ERC1155Pausable"
+      ]
+    },
+    "/home/waverune/respct-club/ERC998ERC1155/node_modules/@openzeppelin/contracts/utils/EnumerableSet.sol": {
+      "lastModificationDate": 1648368329535,
+      "contentHash": "335c4591d8f63429138e843e91156f03",
+      "sourceName": "@openzeppelin/contracts/utils/EnumerableSet.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.6.0"
+      ],
+      "artifacts": [
+        "EnumerableSet"
+      ]
+    },
+    "/home/waverune/respct-club/ERC998ERC1155/node_modules/@openzeppelin/contracts/utils/Address.sol": {
+      "lastModificationDate": 1648368329535,
+      "contentHash": "6b0498e1feb1d70edaf0ee5546e07a46",
+      "sourceName": "@openzeppelin/contracts/utils/Address.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.6.2"
+      ],
+      "artifacts": [
+        "Address"
+      ]
+    },
+    "/home/waverune/respct-club/ERC998ERC1155/node_modules/@openzeppelin/contracts/token/ERC1155/IERC1155.sol": {
+      "lastModificationDate": 1648368330043,
+      "contentHash": "2fc493d03688df1c7a879f90c2220178",
+      "sourceName": "@openzeppelin/contracts/token/ERC1155/IERC1155.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../introspection/IERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.6.2"
+      ],
+      "artifacts": [
+        "IERC1155"
+      ]
+    },
+    "/home/waverune/respct-club/ERC998ERC1155/node_modules/@openzeppelin/contracts/token/ERC1155/IERC1155MetadataURI.sol": {
+      "lastModificationDate": 1648368330043,
+      "contentHash": "561146e5a317176f08a42178416506b3",
+      "sourceName": "@openzeppelin/contracts/token/ERC1155/IERC1155MetadataURI.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC1155.sol"
+      ],
+      "versionPragmas": [
+        "^0.6.2"
+      ],
+      "artifacts": [
+        "IERC1155MetadataURI"
+      ]
+    },
+    "/home/waverune/respct-club/ERC998ERC1155/node_modules/@openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol": {
+      "lastModificationDate": 1648368330043,
+      "contentHash": "837aa60d99e32635f3b72bd8eecd910c",
+      "sourceName": "@openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../introspection/IERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.6.0"
+      ],
+      "artifacts": [
+        "IERC1155Receiver"
+      ]
+    },
+    "/home/waverune/respct-club/ERC998ERC1155/node_modules/@openzeppelin/contracts/introspection/ERC165.sol": {
+      "lastModificationDate": 1648368329535,
+      "contentHash": "cd8a4a4c1e298943d96dd5ed09ad27f3",
+      "sourceName": "@openzeppelin/contracts/introspection/ERC165.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.6.0"
+      ],
+      "artifacts": [
+        "ERC165"
+      ]
+    },
+    "/home/waverune/respct-club/ERC998ERC1155/node_modules/@openzeppelin/contracts/math/SafeMath.sol": {
+      "lastModificationDate": 1648368329531,
+      "contentHash": "168f50d923a8f64094d8e761ca2e5fe6",
+      "sourceName": "@openzeppelin/contracts/math/SafeMath.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.6.0"
+      ],
+      "artifacts": [
+        "SafeMath"
+      ]
+    },
+    "/home/waverune/respct-club/ERC998ERC1155/node_modules/@openzeppelin/contracts/introspection/IERC165.sol": {
+      "lastModificationDate": 1648368329535,
+      "contentHash": "39dfa4b6cbda90995ba59378dd6d9969",
+      "sourceName": "@openzeppelin/contracts/introspection/IERC165.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.6.0"
+      ],
+      "artifacts": [
+        "IERC165"
+      ]
+    },
+    "/home/waverune/respct-club/ERC998ERC1155/node_modules/@openzeppelin/contracts/utils/Pausable.sol": {
+      "lastModificationDate": 1648368329535,
+      "contentHash": "60a059f8750f0a453332f9a06a2cc3e1",
+      "sourceName": "@openzeppelin/contracts/utils/Pausable.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../GSN/Context.sol"
+      ],
+      "versionPragmas": [
+        "^0.6.0"
+      ],
+      "artifacts": [
+        "Pausable"
+      ]
+    },
+    "/home/waverune/respct-club/ERC998ERC1155/node_modules/@openzeppelin/contracts/token/ERC1155/ERC1155Receiver.sol": {
+      "lastModificationDate": 1648368330043,
+      "contentHash": "590a5e8f1db978fd811a9998e70c38e2",
+      "sourceName": "@openzeppelin/contracts/token/ERC1155/ERC1155Receiver.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC1155Receiver.sol",
+        "../../introspection/ERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.6.0"
+      ],
+      "artifacts": [
+        "ERC1155Receiver"
+      ]
+    },
+    "/home/waverune/respct-club/ERC998ERC1155/node_modules/@chainlink/contracts/src/v0.6/Chainlink.sol": {
+      "lastModificationDate": 1649320020770,
+      "contentHash": "19f2afa148b959930dcdaf4a9706060c",
+      "sourceName": "@chainlink/contracts/src/v0.6/Chainlink.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./vendor/CBORChainlink.sol",
+        "./vendor/BufferChainlink.sol"
+      ],
+      "versionPragmas": [
+        "^0.6.0"
+      ],
+      "artifacts": [
+        "Chainlink"
+      ]
+    },
+    "/home/waverune/respct-club/ERC998ERC1155/node_modules/@chainlink/contracts/src/v0.6/interfaces/ENSInterface.sol": {
+      "lastModificationDate": 1649320020794,
+      "contentHash": "233f84b1bd76fe6b3fcd801c77b241fc",
+      "sourceName": "@chainlink/contracts/src/v0.6/interfaces/ENSInterface.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.6.0"
+      ],
+      "artifacts": [
+        "ENSInterface"
+      ]
+    },
+    "/home/waverune/respct-club/ERC998ERC1155/node_modules/@chainlink/contracts/src/v0.6/interfaces/LinkTokenInterface.sol": {
+      "lastModificationDate": 1649320020794,
+      "contentHash": "bb291d0e43a81edd96f781b2760d9553",
+      "sourceName": "@chainlink/contracts/src/v0.6/interfaces/LinkTokenInterface.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.6.0"
+      ],
+      "artifacts": [
+        "LinkTokenInterface"
+      ]
+    },
+    "/home/waverune/respct-club/ERC998ERC1155/node_modules/@chainlink/contracts/src/v0.6/interfaces/ChainlinkRequestInterface.sol": {
+      "lastModificationDate": 1649320020794,
+      "contentHash": "60c362a87469b7c5bdc116bf5f5ffa8a",
+      "sourceName": "@chainlink/contracts/src/v0.6/interfaces/ChainlinkRequestInterface.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.6.0"
+      ],
+      "artifacts": [
+        "ChainlinkRequestInterface"
+      ]
+    },
+    "/home/waverune/respct-club/ERC998ERC1155/node_modules/@chainlink/contracts/src/v0.6/interfaces/PointerInterface.sol": {
+      "lastModificationDate": 1649320020794,
+      "contentHash": "c421cb51492f1da099f214c528aabb10",
+      "sourceName": "@chainlink/contracts/src/v0.6/interfaces/PointerInterface.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.6.0"
+      ],
+      "artifacts": [
+        "PointerInterface"
+      ]
+    },
+    "/home/waverune/respct-club/ERC998ERC1155/node_modules/@chainlink/contracts/src/v0.6/vendor/ENSResolver.sol": {
+      "lastModificationDate": 1649320020794,
+      "contentHash": "04075b47d69dbdc064ce01680dce8ab6",
+      "sourceName": "@chainlink/contracts/src/v0.6/vendor/ENSResolver.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.6.0"
+      ],
+      "artifacts": [
+        "ENSResolver"
+      ]
+    },
+    "/home/waverune/respct-club/ERC998ERC1155/node_modules/@chainlink/contracts/src/v0.6/vendor/CBORChainlink.sol": {
+      "lastModificationDate": 1649320020794,
+      "contentHash": "178bbf9f6c1219921ad61098fba721e5",
+      "sourceName": "@chainlink/contracts/src/v0.6/vendor/CBORChainlink.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./BufferChainlink.sol"
+      ],
+      "versionPragmas": [
+        ">=0.4.19"
+      ],
+      "artifacts": [
+        "CBORChainlink"
+      ]
+    },
+    "/home/waverune/respct-club/ERC998ERC1155/node_modules/@chainlink/contracts/src/v0.6/vendor/BufferChainlink.sol": {
+      "lastModificationDate": 1649320020794,
+      "contentHash": "3f1ade0d3c04c6c6df1e53517ad0fdf5",
+      "sourceName": "@chainlink/contracts/src/v0.6/vendor/BufferChainlink.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.6.0"
+      ],
+      "artifacts": [
+        "BufferChainlink"
+      ]
+    },
+    "/home/waverune/respct-club/ERC998ERC1155/node_modules/@openzeppelin/contracts/utils/ReentrancyGuard.sol": {
+      "lastModificationDate": 1648368329535,
+      "contentHash": "d7295fcfe1e67e8b5e0099bdba192e19",
+      "sourceName": "@openzeppelin/contracts/utils/ReentrancyGuard.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.6.0"
+      ],
+      "artifacts": [
+        "ReentrancyGuard"
+      ]
+    },
+    "/home/waverune/respct-club/ERC998ERC1155/contracts/ERC1155TopDown.sol": {
+      "lastModificationDate": 1649254458775,
+      "contentHash": "27f52687e086175f9e2f36989487405d",
+      "sourceName": "contracts/ERC1155TopDown.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC1155/ERC1155.sol",
+        "@openzeppelin/contracts/token/ERC1155/ERC1155Receiver.sol",
+        "@openzeppelin/contracts/token/ERC721/ERC721.sol",
+        "@openzeppelin/contracts/utils/EnumerableSet.sol",
+        "./IERC1155TopDown.sol"
+      ],
+      "versionPragmas": [
+        "^0.6.0"
+      ],
+      "artifacts": [
+        "ERC1155TopDown"
+      ]
+    },
+    "/home/waverune/respct-club/ERC998ERC1155/node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol": {
+      "lastModificationDate": 1648368330043,
+      "contentHash": "613f953894828a7f476e811c89c59179",
+      "sourceName": "@openzeppelin/contracts/token/ERC721/ERC721.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../GSN/Context.sol",
+        "./IERC721.sol",
+        "./IERC721Metadata.sol",
+        "./IERC721Enumerable.sol",
+        "./IERC721Receiver.sol",
+        "../../introspection/ERC165.sol",
+        "../../math/SafeMath.sol",
+        "../../utils/Address.sol",
+        "../../utils/EnumerableSet.sol",
+        "../../utils/EnumerableMap.sol",
+        "../../utils/Strings.sol"
+      ],
+      "versionPragmas": [
+        "^0.6.0"
+      ],
+      "artifacts": [
+        "ERC721"
+      ]
+    },
+    "/home/waverune/respct-club/ERC998ERC1155/contracts/IERC1155TopDown.sol": {
+      "lastModificationDate": 1649254458775,
+      "contentHash": "f9397235dd398cb910b1194fbde4bac4",
+      "sourceName": "contracts/IERC1155TopDown.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC721/IERC721.sol",
+        "@openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol"
+      ],
+      "versionPragmas": [
+        "^0.6.0"
+      ],
+      "artifacts": [
+        "IERC1155TopDown"
+      ]
+    },
+    "/home/waverune/respct-club/ERC998ERC1155/node_modules/@openzeppelin/contracts/token/ERC721/IERC721.sol": {
+      "lastModificationDate": 1648368330043,
+      "contentHash": "471702709d00ad3e1827825c4f7ea434",
+      "sourceName": "@openzeppelin/contracts/token/ERC721/IERC721.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../introspection/IERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.6.2"
+      ],
+      "artifacts": [
+        "IERC721"
+      ]
+    },
+    "/home/waverune/respct-club/ERC998ERC1155/node_modules/@openzeppelin/contracts/token/ERC721/IERC721Metadata.sol": {
+      "lastModificationDate": 1648368330043,
+      "contentHash": "c747635b7aafc7aaef8ff5783ed25e6b",
+      "sourceName": "@openzeppelin/contracts/token/ERC721/IERC721Metadata.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC721.sol"
+      ],
+      "versionPragmas": [
+        "^0.6.2"
+      ],
+      "artifacts": [
+        "IERC721Metadata"
+      ]
+    },
+    "/home/waverune/respct-club/ERC998ERC1155/node_modules/@openzeppelin/contracts/token/ERC721/IERC721Enumerable.sol": {
+      "lastModificationDate": 1648368330043,
+      "contentHash": "e282e7d4aa6b40bfc9ee622b0f006ed5",
+      "sourceName": "@openzeppelin/contracts/token/ERC721/IERC721Enumerable.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC721.sol"
+      ],
+      "versionPragmas": [
+        "^0.6.2"
+      ],
+      "artifacts": [
+        "IERC721Enumerable"
+      ]
+    },
+    "/home/waverune/respct-club/ERC998ERC1155/node_modules/@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol": {
+      "lastModificationDate": 1648368330043,
+      "contentHash": "2d2dcc9d59c7447cc1cfbc446137b700",
+      "sourceName": "@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.6.0"
+      ],
+      "artifacts": [
+        "IERC721Receiver"
+      ]
+    },
+    "/home/waverune/respct-club/ERC998ERC1155/node_modules/@openzeppelin/contracts/utils/EnumerableMap.sol": {
+      "lastModificationDate": 1648368329535,
+      "contentHash": "587bbaf85d8405a72ea86e19e796d18d",
+      "sourceName": "@openzeppelin/contracts/utils/EnumerableMap.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.6.0"
+      ],
+      "artifacts": [
+        "EnumerableMap"
+      ]
+    },
+    "/home/waverune/respct-club/ERC998ERC1155/node_modules/@openzeppelin/contracts/utils/Strings.sol": {
+      "lastModificationDate": 1648368329535,
+      "contentHash": "35959f8ce36e9188c1d9b4348e125e48",
+      "sourceName": "@openzeppelin/contracts/utils/Strings.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.6.0"
+      ],
+      "artifacts": [
+        "Strings"
+      ]
+    },
+    "/home/waverune/respct-club/ERC998ERC1155/node_modules/@chainlink/contracts/src/v0.6/Oracle.sol": {
+      "lastModificationDate": 1649320020770,
+      "contentHash": "1e59d4ceeab4c49059d917f4da8c7461",
+      "sourceName": "@chainlink/contracts/src/v0.6/Oracle.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./LinkTokenReceiver.sol",
+        "./interfaces/ChainlinkRequestInterface.sol",
+        "./interfaces/OracleInterface.sol",
+        "./interfaces/LinkTokenInterface.sol",
+        "./interfaces/WithdrawalInterface.sol",
+        "./vendor/Ownable.sol",
+        "./vendor/SafeMathChainlink.sol"
+      ],
+      "versionPragmas": [
+        "0.6.6"
+      ],
+      "artifacts": [
+        "Oracle"
+      ]
+    },
+    "/home/waverune/respct-club/ERC998ERC1155/node_modules/@chainlink/contracts/src/v0.6/LinkTokenReceiver.sol": {
+      "lastModificationDate": 1649320020770,
+      "contentHash": "b16f6ced4c696bf10c861f18c3151fb5",
+      "sourceName": "@chainlink/contracts/src/v0.6/LinkTokenReceiver.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.6.0"
+      ],
+      "artifacts": [
+        "LinkTokenReceiver"
+      ]
+    },
+    "/home/waverune/respct-club/ERC998ERC1155/node_modules/@chainlink/contracts/src/v0.6/interfaces/OracleInterface.sol": {
+      "lastModificationDate": 1649320020794,
+      "contentHash": "3e71abe7008e83f24a48bdd50e685e1f",
+      "sourceName": "@chainlink/contracts/src/v0.6/interfaces/OracleInterface.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.6.0"
+      ],
+      "artifacts": [
+        "OracleInterface"
+      ]
+    },
+    "/home/waverune/respct-club/ERC998ERC1155/node_modules/@chainlink/contracts/src/v0.6/interfaces/WithdrawalInterface.sol": {
+      "lastModificationDate": 1649320020794,
+      "contentHash": "a27b037643fb44a1439291d82a9d0f1c",
+      "sourceName": "@chainlink/contracts/src/v0.6/interfaces/WithdrawalInterface.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.6.0"
+      ],
+      "artifacts": [
+        "WithdrawalInterface"
+      ]
+    },
+    "/home/waverune/respct-club/ERC998ERC1155/node_modules/@chainlink/contracts/src/v0.6/vendor/Ownable.sol": {
+      "lastModificationDate": 1649320020794,
+      "contentHash": "34d1661fc49716fc165ef6f0efcd784e",
+      "sourceName": "@chainlink/contracts/src/v0.6/vendor/Ownable.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.6.0"
+      ],
+      "artifacts": [
+        "Ownable"
+      ]
+    },
+    "/home/waverune/respct-club/ERC998ERC1155/node_modules/@chainlink/contracts/src/v0.6/vendor/SafeMathChainlink.sol": {
+      "lastModificationDate": 1649320020794,
+      "contentHash": "5caf46296cfce2e0b96cb3028b626ee5",
+      "sourceName": "@chainlink/contracts/src/v0.6/vendor/SafeMathChainlink.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.6.0"
+      ],
+      "artifacts": [
+        "SafeMathChainlink"
+      ]
+    },
+    "/home/waverune/respct-club/ERC998ERC1155/contracts/Oracle.sol": {
+      "lastModificationDate": 1649354129614,
+      "contentHash": "3911b61bab6ad28e91842c7b86b4864a",
+      "sourceName": "contracts/Oracle.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@chainlink/contracts/src/v0.6/Oracle.sol"
+      ],
+      "versionPragmas": [
+        "0.6.6"
+      ],
+      "artifacts": []
+    },
+    "/home/waverune/respct-club/ERC998ERC1155/contracts/Migrations.sol": {
+      "lastModificationDate": 1648116720709,
+      "contentHash": "ca8d6ca8a6edf34f149a5095a8b074c9",
+      "sourceName": "contracts/Migrations.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.4.22 <0.8.0"
+      ],
+      "artifacts": [
+        "Migrations"
+      ]
+    }
+  }
+}

@@ -79,11 +79,12 @@ contract ComposableParentERC721 is
         string memory baseURI,
         uint256 firstUpgradeEngagementPoints // at 115 tierId 0
     ) public ERC1155TopDown(name, symbol, baseURI) {
-        _setupRole(ADMIN_ROLE, _msgSender());
-        _setupRole(MINTER_ROLE, _msgSender());
-        _setupRole(PAUSER_ROLE, _msgSender());
+        address deployer = payable(_msgSender());
 
-        owner = payable(msg.sender);
+        _setupRole(ADMIN_ROLE, deployer);
+        _setupRole(MINTER_ROLE, deployer);
+        _setupRole(PAUSER_ROLE, deployer);
+
         composableCount = 0;
         tierIdtoUpgradeCost[1] = firstUpgradeEngagementPoints;
     }
@@ -108,6 +109,17 @@ contract ComposableParentERC721 is
      */
     function getComposableCount() public view returns (uint256) {
         return composableCount;
+    }
+
+    /**
+     * @notice Fetches max supply of snft
+     *
+     * @return uint256 maxSupply
+     *
+     */
+
+    function getMaxSupply() public view returns (uint256) {
+        return maxSupply;
     }
 
     /**
@@ -174,7 +186,7 @@ contract ComposableParentERC721 is
     function changeMaxSupply(uint256 _value) public {
         require(
             hasRole(ADMIN_ROLE, _msgSender()),
-            "Unauthorized total supply setter"
+            "Unauthorized a/c : changeMaxSupply"
         );
         maxSupply = _value;
     }
@@ -197,7 +209,7 @@ contract ComposableParentERC721 is
     function setTierUpgradeCost(uint256 _tierId, uint256 _cost) public {
         require(
             hasRole(ADMIN_ROLE, _msgSender()),
-            "Unauthorized tier price setter"
+            "Unauthorized a/c : setTierUpgradeCost"
         );
 
         tierIdtoUpgradeCost[_tierId] = _cost;
@@ -213,7 +225,10 @@ contract ComposableParentERC721 is
      *
      */
     function setMintCost(uint256 _cost) public {
-        require(hasRole(ADMIN_ROLE, _msgSender()));
+        require(
+            hasRole(ADMIN_ROLE, _msgSender()),
+            "Unauthorized a/c : setMintCost"
+        );
         mintCost = _cost;
         emit NFTMintPriceUpdated(_cost);
     }

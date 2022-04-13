@@ -65,7 +65,7 @@ contract ComposableChildrenERC1155 is
         );
 
         csnftContract = ComposableParentERC721(_csnftContractAdr);
-        setPublicChainlinkToken();
+        // setPublicChainlinkToken();
         oracle = 0x778E59137Af4C3272A060296cb01b4d0D7455Ca2; //add addr
         jobId = ""; //add
         fee = 0.1 * 10**18; // (Varies by network and job)

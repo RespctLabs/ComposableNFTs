@@ -1,0 +1,29 @@
+balance --account 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+balance 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+balance '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266'
+balance '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266',
+await ethers.getSigner()
+await ethers.getSigners()
+ethers.getSigners()
+getSigner()
+tasks
+task
+balance
+web3.eth.getBalance()
+network
+hardhat.network
+tasks
+hardhat.tasks
+const hardhat = require('hardhat')
+a1.domain
+a1
+a1.address
+a1.valueOf()
+a1.valueOf
+a1
+let a1 = ethers.getSigner()
+ethers.getSigner()
+await ethers.getSigner()
+await ethers.getSigner
+ethers.getSigner
+ ethers
