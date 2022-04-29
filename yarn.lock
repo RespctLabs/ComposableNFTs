@@ -164,6 +164,11 @@
     "@babel/helper-validator-identifier" "^7.16.7"
     "to-fast-properties" "^2.0.0"
 
+"@chainlink/contracts@^0.4.0":
+  "integrity" "sha512-yZGeCBd7d+qxfw9r/JxtPzsW2kCc6MorPRZ/tDKnaJI98H99j5P2Fosfehmcwk6wVZlz+0Bp4kS1y480nw3Zow=="
+  "resolved" "https://registry.npmjs.org/@chainlink/contracts/-/contracts-0.4.0.tgz"
+  "version" "0.4.0"
+
 "@ethereumjs/common@^2.4.0", "@ethereumjs/common@^2.5.0", "@ethereumjs/common@^2.6.3":
   "integrity" "sha512-mQwPucDL7FDYIg9XQ8DL31CnIYZwGhU5hyOO5E+BMmT71G0+RHvIT5rIkLBirJEKxV6+Rcf9aEIY0kXInxUWpQ=="
   "resolved" "https://registry.npmjs.org/@ethereumjs/common/-/common-2.6.3.tgz"

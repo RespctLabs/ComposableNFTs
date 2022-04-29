@@ -20,27 +20,20 @@ contract ERC998ERC1155TopDown is
     using EnumerableSet for EnumerableSet.AddressSet;
     using EnumerableSet for EnumerableSet.UintSet;
     // composableId         address
-    mapping(uint256 => mapping(address => mapping(uint256 => uint256)))
-        private _balances; // _ballance is current tier level for a user
+    mapping(uint256 => mapping(address => mapping(uint256 => uint256))) private _balances; // _ballance is current tier level for a user
 
-    mapping(address => mapping(uint256 => EnumerableSet.UintSet))
-        private _holdersOf;
+    mapping(address => mapping(uint256 => EnumerableSet.UintSet)) private _holdersOf;
 
     mapping(uint256 => EnumerableSet.AddressSet) private _childContract;
 
-    mapping(uint256 => mapping(address => EnumerableSet.UintSet))
-        private _childsForChildContract;
+    mapping(uint256 => mapping(address => EnumerableSet.UintSet)) private _childsForChildContract;
 
     // map each composable to maxTier
     /// (erc998.address , id )
-    constructor(
-        string memory _name,
-        string memory _symbol,
-        string memory _baseURI
-    ) public ERC721(_name, _symbol) {
+    constructor(string memory _name,string memory _symbol,string memory _baseURI)public ERC721(_name, _symbol) {
         _setBaseURI(_baseURI);
     }
-
+   
     /**
      * @notice tier level for a composable
      *
@@ -136,7 +129,7 @@ contract ERC998ERC1155TopDown is
         }
 
         _receiveChild(_receiverTokenId, msg.sender, id, amount);
-        ReceivedChild(from, _receiverTokenId, msg.sender, id, amount);
+        ReceivedChild(from, _receiverTokenId, msg.sender,- id, amount);
         //  tier++;
         return this.onERC1155Received.selector;
     }
