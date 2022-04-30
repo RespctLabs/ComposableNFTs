@@ -46,17 +46,15 @@ contract ERC1155TierUpgradePresetMinterPauser is ERC1155PresetMinterPauser, Chai
             _csnftContractAdr != address(0),
             "ERC998: transfer to the zero address"
         );
-
         csnftContract = ERC998ERC1155TopDownPresetMinterPauser(
             _csnftContractAdr
         );
         setChainlinkToken(0x326C977E6efc84E512bB9C30f76E30c160eD06FB);
         oracle = 0x0bDDCD124709aCBf9BB3F824EbC61C87019888bb;
         jobId = "2bb15c3f9cfc4336b95012872ff05092";
-        fee = 0.01 * 10 ** 18; // (Varies by network and job)
+        fee = 0.01 * 10 ** 18; 
     }
-
-    function submitRequest(string memory url ) public returns (bytes32 requestId) 
+    function _submitRequest(string memory url ) internal returns (bytes32 requestId) 
     {
         Chainlink.Request memory request = buildChainlinkRequest(jobId, address(this), this.fulfill.selector);
         
@@ -76,8 +74,8 @@ contract ERC1155TierUpgradePresetMinterPauser is ERC1155PresetMinterPauser, Chai
         requestResult[_requestId] = status; 
     }
 
-    function createRequest() public returns (uint) {
-        string memory url = string(abi.encodePacked(baseUrl, '/', "0xefdC1A6e05e1737F2cfD26BB0f72D5B7FBaDD176"));
+    function _createRequest(string memory _address) internal returns (uint) {
+        string memory url = string(abi.encodePacked(baseUrl, '/', _address));
         uint requestId = uint(submitRequest(url));
         userRequests[msg.sender].push(requestId);
         return requestId;  
@@ -103,23 +101,15 @@ contract ERC1155TierUpgradePresetMinterPauser is ERC1155PresetMinterPauser, Chai
         //add tier checks  if tierId =1 bal(t-1) == 1
         // at t=0 bal(0) >= _FengagementPOints
         require(_upgradeToTierId != 0);
-
         uint256 upgradeCost = csnftContract.getTierPrice(_upgradeToTierId);
-        require(balanceOf(msg.sender, 0) >= upgradeCost); // have enough Engagment points at
+        require(balanceOf(msg.sender, 0) >= upgradeCost); 
         require(balanceOf(msg.sender, _upgradeToTierId - 1) >= 1);
 
-        // if (_tierId == 1) {
-        //     //first upgrade
-        //     require(balanceOf(msg.sender, _tierId - 1) >= 1);
-        // } else {
-        //     require(
-        //         (balanceOf(msg.sender, _tierId) >= _tierPriceArr[_tierId + 1])
-        //     ); //
-        // }
         burn(msg.sender, 0, upgradeCost); // burn engagement tid 0
-
         _mint(address(csnftContract), _upgradeToTierId, 1, data);
     }
-
+    function _updateEngagement(address user) internal returns (bool) {
+        uint request_id = _createRequest(user); 
+    }
     // implement function to mint | claim F(creators engagement ) at tokenId 0
 }
